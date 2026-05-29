@@ -1,0 +1,27 @@
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+
+
+# Backups
+*.claude-backup
+*.bak
+*~
+
+# Node / build artefacts (falls später Tooling dazukommt)
+node_modules/
+dist/
+build/
+.cache/
+
+# Logs
+*.log
