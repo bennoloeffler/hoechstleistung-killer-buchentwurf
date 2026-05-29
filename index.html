@@ -14,7 +14,7 @@
 <meta property="og:title" content="Höchstleistungs-Killer">
 <meta property="og:description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. — Erscheint 1.12.2026.">
 <meta property="og:url" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/">
-<meta property="og:image" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/img/og/preview.jpg">
+<meta property="og:image" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/img/og/preview-v3.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Höchstleistungs-Killer">
 <meta name="twitter:description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. — Erscheint 1.12.2026.">
-<meta name="twitter:image" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/img/og/preview.jpg">
+<meta name="twitter:image" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/img/og/preview-v3.jpg">
 <meta name="twitter:image:alt" content="Höchstleistungs-Killer — Buch-Cover-Vorschau">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -579,6 +579,93 @@ article.text table th{
 }
 article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font-family:var(--font-serif)}
 
+/* Praxis-Teaser — first 20% visible, rest fades to invisible */
+article.text.praxis-teaser{
+  background:linear-gradient(180deg, var(--vs-paper) 0%, var(--vs-paper-deep) 100%);
+  border-top:1px solid var(--vs-paper-rule);
+  position:relative;
+}
+article.text.praxis-teaser .text__inner{padding-bottom:1rem}
+.praxis-meta{
+  display:inline-block;
+  font-family:var(--font-sans);
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--vs-warm);
+  margin:1.5rem 0 .6rem;
+}
+.praxis-meta::before{content:"✎  ";opacity:.7}
+article.text.praxis-teaser h2{margin-top:.3rem;color:var(--vs-paper-ink)}
+article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
+
+.praxis-body{
+  position:relative;
+  max-height:14em;          /* ≈ first 20% */
+  overflow:hidden;
+}
+.praxis-body::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:11em;
+  background:linear-gradient(180deg,
+    rgba(245,239,226,0) 0%,
+    rgba(245,239,226,.65) 45%,
+    var(--vs-paper-deep) 92%);
+  pointer-events:none;
+}
+
+.praxis-cta-wrap{
+  position:relative;
+  margin-top:-2.5rem;   /* pull CTA up into the fade zone */
+  text-align:center;
+  padding:0 1rem 1.5rem;
+  z-index:2;
+}
+.praxis-cta-hint{
+  display:block;
+  font-family:var(--font-sans);
+  font-size:.78rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:#5a5042;
+  margin-bottom:.9rem;
+  font-style:italic;
+}
+.praxis-cta-hint strong{color:var(--vs-warm);font-style:normal}
+.praxis-cta{
+  display:inline-block;
+  padding:.85rem 1.6rem;
+  background:var(--vs-warm);
+  color:var(--vs-ink);
+  font-family:var(--font-sans);
+  font-weight:600;
+  font-size:.74rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-radius:100px;
+  border:1px solid var(--vs-warm);
+  transition:all .25s;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+}
+.praxis-cta:hover{background:transparent;color:var(--vs-warm)}
+
+/* TOC: praxis sub-line under each chapter */
+.toc__chapters li.toc-praxis{margin-top:-.05rem}
+.toc__chapters li.toc-praxis a{
+  font-size:.72rem;
+  color:rgba(255,255,255,.45);
+  padding-left:1.4rem;
+  letter-spacing:.04em;
+  gap:.4rem;
+}
+.toc__chapters li.toc-praxis a::before{content:"↳";opacity:.6;margin-right:.1rem}
+.toc__chapters li.toc-praxis a:hover{color:var(--vs-warm)}
+.toc__chapters li.toc-praxis .num{display:none}
+
 /* Distinction list — pair + short explanation */
 .distinctions{margin:1.75rem 0;font-family:var(--font-sans)}
 .distinction{padding:.85rem 0;border-bottom:1px solid var(--vs-paper-rule)}
@@ -892,7 +979,9 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
         </div>
         <ul class="toc__chapters">
           <li><a href="#k-1"><span class="num">1</span><span>Naive Höchstleistung</span></a></li>
+          <li class="toc-praxis"><a href="#k-1-praxis"><span>Praxis · Landmaschinen­hersteller</span></a></li>
           <li><a href="#k-2"><span class="num">2</span><span>Der Professionalisierungs-Reflex</span></a></li>
+          <li class="toc-praxis"><a href="#k-2-praxis"><span>Praxis · drei Fälle</span></a></li>
           <li><a href="#k-3"><span class="num">3</span><span>Das ERP-System als Trojanisches Pferd</span></a></li>
           <li><a href="#k-4"><span class="num">4</span><span>Compliance als Immunsuppressivum</span></a></li>
           <li><a href="#k-5"><span class="num">5</span><span>Chefs, die führen wollen, aber steuern</span></a></li>
@@ -1037,6 +1126,31 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
+<article class="text praxis-teaser" id="k-1-praxis">
+  <div class="text__inner">
+    <span class="praxis-meta">Teil I · Kapitel 1 · Praxisteil</span>
+    <h2>Wer sich nicht versteht, übersieht das <em>Wesentliche</em></h2>
+    <p class="lead">Landmaschinenhersteller, über 1.000 Mitarbeiter — trotzdem schnell, erfolgreich. Allerdings …</p>
+
+    <div class="praxis-body">
+      <p class="drop">Allerdings hätte niemand in der Firma erklären können, warum sie so gut war. Auf die Frage „Was macht euch eigentlich aus?" kamen Antworten wie *„Wir packen halt an"*, *„Bei uns redet man miteinander"*, *„Der Chef weiß, was er tut"*. Sympathisch, aber als Diagnose untauglich.</p>
+
+      <p>Was tatsächlich passierte: Vertrieb, Konstruktion und Werkstatt saßen physisch in einem Gebäude — kein Zufall, sondern eine Anordnung aus den frühen Neunzigern, die nie hinterfragt wurde. Wenn ein Landwirt anrief und seine Häckseltrommel hatte einen seltenen Fehler, ging der Anruf an den Vertrieb, der lief drei Schritte rüber zum Konstrukteur, der lief weiter zur Werkstatt, und nach 20 Minuten gab es eine Antwort, die im Markt ohne Beispiel war. Niemand nannte das einen Prozess. Es war einfach so.</p>
+
+      <p>Drei Dinge fielen dem Beobachter auf: Erstens schrieben die Werkmeister Aufträge nicht in das ERP-System, sondern auf ein Whiteboard in der Halle — und das ERP wurde abends von einer Sekretärin „nachgepflegt". Zweitens gab es jeden Donnerstag ein <em>Stehgreif-Frühstück</em>, bei dem alle Führungskräfte über die Woche sprachen — ohne Folie, ohne Protokoll, dafür mit Brötchen. Drittens: kein Mitarbeiter hatte einen Jahres­zielbogen. Auf die Frage warum, sagte der Geschäftsführer: <em>„Wozu? Wir sehen doch, ob es läuft."</em></p>
+
+      <p>Dann übernahm ein Konzern die Firma. Die ersten 90-Tage-Maßnahmen: ERP wird verpflichtend, das Whiteboard kommt weg. Donnerstag-Frühstück wird zum Strategiemeeting umgewidmet, jetzt mit Agenda und Folien. Jahres­zielgespräche werden eingeführt — alle gleich, alle dokumentiert, alle mit OKRs.</p>
+
+      <p>Zwölf Monate später: Termintreue auf den Reports plus 4 %. Aber die seltenen Schadensfälle, in denen die Firma immer ihre stärkste Werbung gewesen war, dauern jetzt zehn Tage statt zwanzig Minuten. Der Vertrieb …</p>
+    </div>
+
+    <div class="praxis-cta-wrap">
+      <span class="praxis-cta-hint">Wie der Vertrieb sich an die neue Realität gewöhnte und was die Werkmeister daraufhin entschieden — <strong>im Buch</strong>.</span>
+      <a class="praxis-cta" href="mailto:tietz@v-und-s.de?subject=Vorbestellung%20H%C3%B6chstleistungskiller-Buch">Im Buch weiterlesen</a>
+    </div>
+  </div>
+</article>
+
 <!-- Kapitel 2 -->
 <section class="slide" data-bg="killer" id="k-2">
   <div class="slide__bg"></div>
@@ -1067,6 +1181,31 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p>Die Professionalisierung ersetzt informelle, dynamikrobuste Strukturen durch formale, dynamikempfindliche Strukturen. Die Könner in der Peripherie verlieren ihren Spielraum. Die Ideen versiegen. Die Motivation stirbt. Nicht weil die Menschen schlechter werden — sondern weil der Kontext es ihnen unmöglich macht, gut zu sein.</p>
 
     <blockquote><p>Wer professionell eine Brücke bauen will, sollte die Theorie der Tragwerke kennen. Wer professionell eine Organisation führen will — offensichtlich nicht.</p></blockquote>
+  </div>
+</article>
+
+<article class="text praxis-teaser" id="k-2-praxis">
+  <div class="text__inner">
+    <span class="praxis-meta">Teil I · Kapitel 2 · Praxisteil</span>
+    <h2>Professionalisierung, die in der Realität nach hinten <em>losgeht</em>…</h2>
+    <p class="lead">Drei Fälle aus deutschen Mittelständlern — Namen geändert, Mechanik unverändert.</p>
+
+    <div class="praxis-body">
+      <p class="drop">Eine süddeutsche Werkzeugmaschinen­fabrik, 280 Mitarbeiter, vierte Generation: Der neue COO kommt aus dem Konzern und bringt SAP, Stage-Gates, eine sechsstufige Freigabelogik und einen frischen OKR-Prozess mit. Sechs Monate später produziert die Firma immer noch — aber niemand bemerkt mehr, dass die zwei Werkmeister, die seit 30 Jahren jeden Sonderauftrag retten, inzwischen Dienst nach Vorschrift machen.</p>
+
+      <p>Was im Reporting glänzt — Termintreue 94 %, Ausschussquote auf Rekordtief, alle KPIs grün — verschleiert den eigentlichen Vorgang: <em>Die Organisation hat ihre dynamikrobusten Reflexe verloren</em>. Drei Großaufträge, die im alten Modus in zwei Wochen abgewickelt worden wären, brauchen jetzt acht. Der Vertrieb fängt an, dem Kunden längere Lieferzeiten zu verkaufen — und nennt das „ehrliche Kommunikation".</p>
+
+      <p>Zweiter Fall, anderes Bundesland: Ein Familienunternehmen für Elektrotechnik, gegründet 1962. Der neue CFO bringt eine Compliance-Suite, die jede Bestellung über 500 € durch drei Freigabe­ebenen zwingt. Innerhalb eines Quartals ist die Innovationsabteilung — fünf Ingenieure, die normalerweise Prototypen am Wochenende bauten — komplett ausgebremst.</p>
+
+      <p>Dritter Fall, ein Maschinenbauer in Ostwestfalen: Die HR-Leitung führt ein flächendeckendes Talent-Management-Programm ein. Jährliche Beurteilungsgespräche, Skill-Matrices, Karrierepfade. Die zwei besten Konstrukteure — die seit Jahrzehnten ohne Programm „Talent" waren — verlassen die Firma innerhalb von acht Monaten. Die Begründung, mündlich: „Ich will nicht Talent sein müssen. Ich will arbeiten dürfen."</p>
+
+      <p>Drei verschiedene Branchen, drei verschiedene Stoßrichtungen — und immer dasselbe Muster: Mit den besten Absichten ersetzt jemand etwas, das funktionierte, durch etwas, das auf dem Papier besser aussieht. Die Kosten fallen erst Monate später an, dann aber doppelt: Verlust an Wirksamkeit und an den Menschen, die sie getragen haben.</p>
+    </div>
+
+    <div class="praxis-cta-wrap">
+      <span class="praxis-cta-hint">Drei vollständige Fälle plus die Diagnose-Checkliste finden Sie <strong>im Buch</strong>.</span>
+      <a class="praxis-cta" href="mailto:tietz@v-und-s.de?subject=Vorbestellung%20H%C3%B6chstleistungskiller-Buch">Im Buch weiterlesen</a>
+    </div>
   </div>
 </article>
 
