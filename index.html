@@ -378,42 +378,82 @@ article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font
 .action-box ol{margin-bottom:0}
 
 /* ============================================================
-   TOC + progress + nav
+   TOC drawer + progress + nav
    ============================================================ */
 .toc{
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding:8vh 6vw;
+  position:fixed;
+  top:0; right:0; bottom:0;
+  width:300px;
   background:linear-gradient(170deg, #1a1410 0%, #0d0a08 100%);
   color:#fff;
-  position:relative;
-  overflow:hidden;
+  z-index:80;
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;
+  overflow-x:hidden;
+  box-shadow:-16px 0 40px rgba(0,0,0,.45);
+  overscroll-behavior:contain;
+  border-left:1px solid rgba(255,255,255,.08);
 }
-.toc__inner{max-width:54rem;margin:0 auto;width:100%;position:relative;z-index:2}
+.toc.is-visible{transform:translateX(0)}
+.toc__inner{padding:3.2rem 1.5rem 2.5rem;max-width:none;margin:0;width:auto;position:relative;z-index:2}
 .toc h2{
   font-family:var(--font-serif);
   font-weight:700;
-  font-size:clamp(2rem,4.5vw,3.5rem);
-  letter-spacing:-.02em;
-  margin:0 0 3rem;
+  font-size:1.25rem;
+  letter-spacing:-.01em;
+  margin:0 0 1.5rem;
 }
 .toc h2 .accent{color:var(--vs-warm)}
 .toc ol{list-style:none;padding:0;margin:0}
-.toc__teil{margin-bottom:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.12)}
-.toc__teil-head{display:flex;align-items:baseline;gap:1.2rem;font-family:var(--font-sans);margin-bottom:.5rem}
-.toc__teil-num{font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--vs-warm)}
-.toc__teil-title{font-family:var(--font-serif);font-weight:600;font-size:1.4rem;letter-spacing:-.005em}
+.toc__teil{margin-bottom:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.12)}
+.toc__teil-head{display:flex;flex-direction:column;gap:.2rem;font-family:var(--font-sans);margin-bottom:.4rem}
+.toc__teil-num{font-weight:600;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--vs-warm)}
+.toc__teil-title{font-family:var(--font-serif);font-weight:600;font-size:.98rem;letter-spacing:-.005em;line-height:1.25}
 .toc__teil-title a{color:#fff;text-decoration:none;border-bottom:1px solid transparent}
 .toc__teil-title a:hover{border-bottom-color:var(--vs-warm)}
-.toc__chapters{list-style:none;padding:0;margin:.5rem 0 0;display:grid;gap:.3rem;font-family:var(--font-sans);font-size:.92rem;color:rgba(255,255,255,.72)}
-.toc__chapters a{color:inherit;text-decoration:none;display:flex;gap:.9rem;padding:.1rem 0}
+.toc__chapters{list-style:none;padding:0;margin:.35rem 0 0;display:grid;gap:.18rem;font-family:var(--font-sans);font-size:.8rem;color:rgba(255,255,255,.72)}
+.toc__chapters a{color:inherit;text-decoration:none;display:flex;gap:.6rem;padding:.12rem 0;line-height:1.3}
 .toc__chapters a:hover{color:var(--vs-warm)}
-.toc__chapters .num{flex:0 0 2.3rem;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.45);font-weight:500}
+.toc__chapters .num{flex:0 0 1.4rem;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.45);font-weight:500}
+
+.toc__close{
+  position:absolute;
+  top:.6rem;right:.6rem;
+  width:2rem;height:2rem;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  font-size:1.15rem;line-height:1;
+  cursor:pointer;
+  display:none;
+  align-items:center;justify-content:center;
+  transition:all .2s;
+  z-index:3;
+  padding:0;
+  font-family:var(--font-sans);
+}
+.toc__close:hover{background:var(--vs-warm);color:var(--vs-ink);border-color:var(--vs-warm)}
+
+.toc-backdrop{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.5);
+  -webkit-backdrop-filter:blur(2px);
+  backdrop-filter:blur(2px);
+  z-index:70;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s;
+}
+.toc-backdrop.is-open{opacity:1;pointer-events:auto}
 
 .progress{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:100;pointer-events:none}
 .progress__bar{height:100%;background:var(--vs-warm);width:0;transition:width .12s ease-out}
 
-.nav-toc{position:fixed;top:1.1rem;right:1.1rem;z-index:50;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.nav-toc{position:fixed;top:1.1rem;right:1.1rem;z-index:90;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:opacity .25s, transform .25s}
+.nav-toc.is-hidden{opacity:0;pointer-events:none;transform:translateX(20px)}
+.nav-toc button,
 .nav-toc a{
   display:inline-block;
   padding:.5rem .85rem;
@@ -425,8 +465,22 @@ article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font
   -webkit-backdrop-filter:blur(8px);
   border:1px solid rgba(255,255,255,.18);
   transition:all .2s;
+  font:inherit;
+  letter-spacing:inherit;
+  text-transform:inherit;
+  cursor:pointer;
 }
+.nav-toc button:hover,
 .nav-toc a:hover{background:var(--vs-warm);color:var(--vs-ink);border-color:var(--vs-warm)}
+
+/* On narrow screens the slider acts as a real drawer, not auto-sticky */
+@media (max-width:900px){
+  .toc{width:min(340px,88vw);z-index:200}
+  .toc__close{display:flex}
+  .toc.is-visible{transform:translateX(100%)}
+  .toc.is-open{transform:translateX(0)}
+  .nav-toc.is-hidden{opacity:1;pointer-events:auto;transform:none}
+}
 
 footer.colophon{
   background:#0a0807;
@@ -444,7 +498,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 .slide--epigraph .slogan{font-size:clamp(1.3rem,2.4vw,2rem);margin:0 auto}
 
 @media print{
-  .nav-toc,.progress{display:none}
+  .nav-toc,.progress,.toc,.toc-backdrop{display:none}
   .slide{page-break-after:always;min-height:auto;padding:2cm 1.5cm;background:white;color:black}
   .slide__bg,.slide__overlay,.big-num{display:none}
   .slide h1,.slide h2,.slogan{color:black;text-shadow:none}
@@ -457,7 +511,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <body>
 
 <div class="progress"><div class="progress__bar" id="progressBar"></div></div>
-<nav class="nav-toc"><a href="#toc">Inhalt</a></nav>
+<nav class="nav-toc" id="navToc"><button type="button" id="tocToggle" aria-controls="toc" aria-expanded="false">Inhalt</button></nav>
+<div class="toc-backdrop" id="tocBackdrop" aria-hidden="true"></div>
 
 <!-- ============================================================
      COVER
@@ -478,7 +533,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <!-- ============================================================
      TOC
      ============================================================ -->
-<section class="toc" id="toc">
+<aside class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+  <button type="button" class="toc__close" id="tocClose" aria-label="Inhalt schließen">×</button>
   <div class="toc__inner">
     <h2>Inhalt — <span class="accent">drei Teile.</span></h2>
     <ol>
@@ -539,7 +595,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
       </li>
     </ol>
   </div>
-</section>
+</aside>
 
 <!-- ============================================================
      EPIGRAPH
@@ -575,17 +631,18 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="text__inner">
     <h2>Vorwort · Die unsichtbare Katastrophe</h2>
 
-    <p class="drop">Viele mittelständische Unternehmen waren einmal Höchstleister. Ohne es zu wissen. Ohne Theorie. Ohne Methode. Einfach, weil der Marktdruck, die Nähe zum Kunden und die Könner in der Wertschöpfung das Richtige erzwungen haben. Mehr nebenbei als absichtlich.</p>
+    <p class="drop">Viele mittelständische Unternehmen waren einmal Höchstleister. Ohne es zu wissen. Ohne Theorie. Ohne Methode. Einfach, weil der Marktdruck, die Nähe zum Kunden und die Könner in der Wertschöpfung das Richtige erzwungen haben. Mehr nebenbei als absichtlich. Leute haben sich voll reingehängt. Es gab wenige Regeln aber hohe Leistungserwartungen.</p>
 
     <p>Dann wurde die Firma größer. Erfolgreicher. Und jemand sagte: <em>„Wir müssen professioneller werden."</em></p>
 
-    <p>Das war der Anfang vom Ende.</p>
+    <p>Dann begann die Höchstleistung zu bröckeln.</p>
 
     <p>Dieses Buch handelt davon, wie gut gemeinte Professionalisierung Höchstleistung zerstört. Versehentlich. Systematisch. Mit den besten Absichten.</p>
 
     <p>Es gibt einen zentralen Gedanken aus der Systemtheorie, der dieses Buch durchzieht: <strong>Jede Lösung erzeugt Folgeprobleme.</strong> Immer. Ausnahmslos. In lebendigen Systemen — Ehen, Märkten, Organisationen — gibt es keine Lösung ohne Nebenwirkung. Wer das nicht weiß, wird von den Nebenwirkungen überrascht und hält sie für neue Fehler. Wer es weiß, kann damit rechnen — und die Folgeprobleme als das behandeln, was sie sind: den nächsten Schritt auf einem Weg, der nie fertig ist.</p>
   </div>
 </article>
+
 
 <!-- ============================================================
      TEIL 1
@@ -599,7 +656,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <span class="kicker">Teil 1</span>
     <h1>Wie Höchstleistung<br><span class="accent">verloren geht</span>.</h1>
     <p class="slogan"><span class="quote-mark">„</span>Mit den besten Absichten."</p>
-    <p class="lead">Neun Kapitel über Professionalisierungs-Reflexe, ERP-Trojaner, Compliance-Lähmung — und warum jede gut gemeinte Lösung neue Probleme produziert.</p>
+    <p class="lead">Neun Kapitel über Professionalisierungs-Reflexe, ERP-Trojaner, Projekt-Management, Compliance-Lähmung, Prozess-Management, Qualitäts-Management — und warum jede gut gemeinte Lösung neue Probleme produziert.</p>
   </div>
   <div class="footer-num">Teil 1 · 01 / 10</div>
 </section>
@@ -1446,6 +1503,87 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick);
   tick();
+})();
+
+/* Side TOC slider — auto-sticks once content starts, manual drawer on mobile */
+(function(){
+  var toc=document.getElementById('toc');
+  var nav=document.getElementById('navToc');
+  var btn=document.getElementById('tocToggle');
+  var closeBtn=document.getElementById('tocClose');
+  var backdrop=document.getElementById('tocBackdrop');
+  var cover=document.getElementById('cover');
+  if(!toc||!btn) return;
+
+  var isDesktop=function(){return window.matchMedia('(min-width:901px)').matches};
+  var pastCover=false;       // scrolled past the cover slide
+  var mobileOpen=false;       // mobile drawer state
+
+  function render(){
+    if(isDesktop()){
+      toc.classList.toggle('is-visible', pastCover);
+      toc.classList.remove('is-open');
+      nav.classList.toggle('is-hidden', pastCover);
+      backdrop.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', pastCover?'true':'false');
+    }else{
+      toc.classList.toggle('is-open', mobileOpen);
+      toc.classList.remove('is-visible');
+      backdrop.classList.toggle('is-open', mobileOpen);
+      nav.classList.remove('is-hidden');
+      btn.setAttribute('aria-expanded', mobileOpen?'true':'false');
+    }
+  }
+
+  // Auto-reveal once cover leaves the viewport
+  if(cover && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ pastCover = !e.isIntersecting; });
+      render();
+    },{threshold:0.15});
+    io.observe(cover);
+  }else{
+    pastCover=true;
+  }
+
+  // "Inhalt" button: scroll-to-content on desktop, open drawer on mobile
+  btn.addEventListener('click',function(){
+    if(isDesktop()){
+      var target=document.getElementById('epigraph');
+      if(target) window.scrollTo({top:target.offsetTop,behavior:'smooth'});
+    }else{
+      mobileOpen=true; render();
+    }
+  });
+
+  function closeMobile(){ mobileOpen=false; render(); }
+  closeBtn.addEventListener('click',closeMobile);
+  backdrop.addEventListener('click',closeMobile);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && mobileOpen) closeMobile();
+  });
+
+  // Close drawer after jumping to a chapter (mobile only)
+  toc.addEventListener('click',function(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]');
+    if(a && !isDesktop()) closeMobile();
+  });
+
+  // Any other "#toc" link (footer, etc.)
+  document.querySelectorAll('a[href="#toc"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      if(isDesktop()){
+        var target=document.getElementById('epigraph');
+        if(target) window.scrollTo({top:target.offsetTop,behavior:'smooth'});
+      }else{
+        mobileOpen=true; render();
+      }
+    });
+  });
+
+  window.addEventListener('resize', render);
+  render();
 })();
 </script>
 
