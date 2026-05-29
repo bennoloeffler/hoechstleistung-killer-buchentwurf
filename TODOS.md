@@ -1,0 +1,4 @@
+- die Höchstleistungskiller von Horsch mit rein denken.
+- die Kapitel 21 Wortpaare erläutern - da muss auch "Höchstleistungs-Erwartungen" vs. "Zumutungs-Verwöhnung" rein. Wir argumentieren: das kann man den Leuten nicht zumuten. die Soziologen argementieren, wenn die Orga nicht funktioniert, dann lädt man mit Zielen das versagen der Orga auf die Schultern der MA. ABER: Erwartugnen an Leistung und Erfolg sind nicht falsch sondern notwendig.
+- Verwöhnung als Höchsteistungs-Killer fehlt noch
+- Provokation: Wer nichts kann, sucht Regeln und Abstraktion
