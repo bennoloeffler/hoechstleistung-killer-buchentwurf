@@ -1,0 +1,1453 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Höchstleistung-Killer — Benno Löffler / V&amp;S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Höchstleistung-Killer (v5) — Cinematic with backgrounds
+   Layout & typography mirror v4-2026-05-16-praegnanter-HTML.
+   Backgrounds are referenced from the v4 image folder.
+   ============================================================ */
+
+:root{
+  --font-serif:'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --vs-blue:#0b3a5b;
+  --vs-warm:#d68a2a;
+  --vs-ink:#0f1115;
+  --vs-paper:#f5efe2;
+  --vs-paper-deep:#ece4d0;
+  --vs-paper-ink:#1a1814;
+  --vs-paper-ink-soft:#3a342c;
+  --vs-paper-rule:#d4caaf;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:var(--vs-ink);
+  color:#fff;
+  font-size:18px;
+  line-height:1.5;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+::selection{background:var(--vs-warm);color:var(--vs-ink)}
+
+/* ============================================================
+   SLIDE — full-viewport cinematic
+   ============================================================ */
+.slide{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:flex-end;
+  padding:6vh 6vw;
+  color:#fff;
+  background:var(--vs-ink);
+  overflow:hidden;
+  isolation:isolate;
+}
+.slide--center{align-items:center}
+.slide--top{align-items:flex-start}
+
+.slide__bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-color:#0a0807;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.slide__overlay{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.42) 38%, rgba(0,0,0,0.10) 62%, transparent 82%),
+    linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.55) 100%);
+}
+.slide__stage{position:relative;z-index:2;max-width:54rem;width:100%}
+
+/* Brand bar + footer-num */
+.brand-bar{
+  position:absolute;top:6%;left:6%;z-index:3;
+  font-family:var(--font-sans);
+  font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;
+  font-weight:600;color:#fff;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);
+}
+.brand-bar .vs-mark{font-family:var(--font-serif);font-weight:700;letter-spacing:.04em}
+.brand-bar .sep{margin:0 .8em;opacity:.5}
+.brand-bar .accent{color:var(--vs-warm)}
+
+.footer-num{
+  position:absolute;bottom:4%;right:6%;z-index:3;
+  font-family:var(--font-sans);
+  font-size:.65rem;letter-spacing:.22em;
+  opacity:.72;font-weight:500;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);
+}
+
+.kicker{
+  display:inline-block;
+  font-family:var(--font-sans);
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  font-weight:600;
+  padding:.45rem 1rem;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:100px;
+  margin-bottom:1.5rem;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  background:rgba(0,0,0,.35);
+}
+
+.slide h1,
+.slide h2{
+  font-family:var(--font-serif);
+  font-weight:700;
+  letter-spacing:-.025em;
+  margin:0;
+  text-shadow:0 1px 18px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
+}
+.slide h1{font-size:clamp(2.6rem,7vw,6.5rem);line-height:1.02}
+.slide h2{font-size:clamp(2.2rem,5.5vw,5rem);line-height:1.06}
+.slide h2 + h2{margin-top:.5rem}
+
+.accent{color:var(--vs-warm)}
+
+.slide .lead{
+  font-family:var(--font-sans);
+  font-weight:300;
+  font-size:clamp(1.05rem,1.55vw,1.35rem);
+  line-height:1.5;
+  max-width:34rem;
+  margin:1.5rem 0 0;
+  text-shadow:0 1px 12px rgba(0,0,0,.6);
+}
+.slide .lead em{font-style:italic;color:var(--vs-warm)}
+
+.slogan{
+  font-family:var(--font-serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.4rem,2.6vw,2.4rem);
+  line-height:1.25;
+  margin:1.2rem 0;
+  max-width:40rem;
+  text-shadow:0 1px 14px rgba(0,0,0,.55);
+}
+.slogan + .slogan{margin-top:.5rem;color:#e7d9bf}
+.slogan .quote-mark{
+  display:inline-block;
+  font-family:var(--font-serif);
+  font-size:1.4em;
+  line-height:0;
+  color:var(--vs-warm);
+  vertical-align:-0.15em;
+  margin-right:.05em;
+  font-style:normal;
+  opacity:.85;
+}
+
+.slide--cover h1{
+  font-size:clamp(3rem,9vw,8rem);
+  line-height:.95;
+  letter-spacing:-.035em;
+  font-weight:600;
+}
+.slide--cover h1 em{font-style:italic;color:var(--vs-warm);font-weight:400}
+.slide--cover .lead{font-size:clamp(1.2rem,1.9vw,1.6rem);font-weight:400;font-style:italic;color:#e7d9bf}
+.slide--cover .signature{
+  margin-top:3rem;
+  font-family:var(--font-sans);
+  font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;
+  font-weight:500;
+}
+
+.big-num{
+  position:absolute;
+  right:4vw;bottom:-6vh;
+  font-family:var(--font-serif);
+  font-weight:800;
+  font-style:italic;
+  font-size:clamp(22rem,55vw,44rem);
+  line-height:.82;
+  color:var(--vs-warm);
+  opacity:.28;
+  pointer-events:none;
+  user-select:none;
+  z-index:2;
+  letter-spacing:-.06em;
+  text-shadow:
+    0 0 80px rgba(214,138,42,.35),
+    0 0 30px rgba(214,138,42,.25);
+  -webkit-text-stroke:1px rgba(214,138,42,.18);
+}
+
+@media (max-width:700px){
+  .slide{padding:8vh 1.5rem 6rem}
+  .brand-bar{top:1.5rem;left:1.5rem}
+  .footer-num{bottom:1.5rem;right:1.5rem}
+}
+
+/* ============================================================
+   BACKGROUNDS — photo per section id + mood tint per Teil
+   Photos are referenced from the v4 folder via relative path.
+   ============================================================ */
+#cover .slide__bg     {background-image:url("img/backgrounds/bg-cover.png")}
+#epigraph .slide__bg  {background-image:url("img/backgrounds/bg-t1-02.png")}
+#vorwort .slide__bg   {background-image:url("img/backgrounds/bg-t2-hero.png")}
+
+#teil-1 .slide__bg    {background-image:url("img/backgrounds/bg-t3-hero.png")}
+#k-1 .slide__bg       {background-image:url("img/backgrounds/bg-t4-01.png")}
+#k-2 .slide__bg       {background-image:url("img/backgrounds/bg-t1-hero.png")}
+#k-3 .slide__bg       {background-image:url("img/backgrounds/bg-t3-03.png")}
+#k-4 .slide__bg       {background-image:url("img/backgrounds/bg-t3-02.png")}
+#k-5 .slide__bg       {background-image:url("img/backgrounds/bg-t3-01.png")}
+#k-6 .slide__bg       {background-image:url("img/backgrounds/bg-t2-02.png")}
+#k-7 .slide__bg       {background-image:url("img/backgrounds/bg-t3-04.png")}
+#k-8 .slide__bg       {background-image:url("img/backgrounds/bg-t3-06.png")}
+#k-9 .slide__bg       {background-image:url("img/backgrounds/bg-t1-01.png")}
+
+#teil-2 .slide__bg    {background-image:url("img/backgrounds/bg-t5-hero.png")}
+#k-10 .slide__bg      {background-image:url("img/backgrounds/bg-t5-04.png")}
+#k-11 .slide__bg      {background-image:url("img/backgrounds/bg-t6-03.png")}
+#k-12 .slide__bg      {background-image:url("img/backgrounds/bg-t5-02.png")}
+#k-13 .slide__bg      {background-image:url("img/backgrounds/bg-t6-01.png")}
+#k-14 .slide__bg      {background-image:url("img/backgrounds/bg-t6-04.png")}
+#k-15 .slide__bg      {background-image:url("img/backgrounds/bg-t5-01.png")}
+#k-16 .slide__bg      {background-image:url("img/backgrounds/bg-t5-03.png")}
+#k-17 .slide__bg      {background-image:url("img/backgrounds/bg-t6-hero.png")}
+#k-18 .slide__bg      {background-image:url("img/backgrounds/bg-t5-06.png")}
+
+#teil-3 .slide__bg    {background-image:url("img/backgrounds/bg-t4-hero.png")}
+#k-19 .slide__bg      {background-image:url("img/backgrounds/bg-t4-03.png")}
+#k-20 .slide__bg      {background-image:url("img/backgrounds/bg-t4-02.png")}
+#k-21 .slide__bg      {background-image:url("img/backgrounds/bg-t5-05.png")}
+#k-22 .slide__bg      {background-image:url("img/backgrounds/bg-t6-02.png")}
+
+#closing .slide__bg   {background-image:url("img/backgrounds/bg-closing.png")}
+
+/* Mood tint per Teil */
+.slide__bg::after{content:"";position:absolute;inset:0;pointer-events:none;}
+
+[data-bg="cover"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 70% 90% at 30% 100%, rgba(0,0,0,.30), transparent 60%),
+    linear-gradient(180deg, rgba(10,8,7,.05) 0%, rgba(10,8,7,.25) 100%);
+}
+[data-bg="einleitung"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 50% 60% at 90% 10%, rgba(11,58,91,.18), transparent 60%),
+    linear-gradient(180deg, rgba(5,10,18,.0) 45%, rgba(3,6,12,.28) 100%);
+}
+[data-bg="killer"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 80% 90% at 100% 100%, rgba(140,18,12,.18), transparent 60%),
+    linear-gradient(180deg, rgba(14,3,3,.0) 45%, rgba(14,3,3,.25) 100%);
+}
+[data-bg="paradox"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 60% 70% at 78% 30%, rgba(255,213,120,.10), transparent 55%),
+    linear-gradient(180deg, rgba(26,15,4,.0) 50%, rgba(26,15,4,.25) 100%);
+}
+[data-bg="wirkt"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 60% 100% at 80% 100%, rgba(155,197,128,.08), transparent 50%),
+    linear-gradient(180deg, rgba(6,14,8,.0) 50%, rgba(6,14,8,.22) 100%);
+}
+[data-bg="beispiele"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 90% 100% at 50% 50%, transparent 55%, rgba(0,0,0,.35) 100%),
+    linear-gradient(180deg, rgba(21,16,10,.0) 50%, rgba(21,16,10,.20) 100%);
+}
+[data-bg="peak"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 100% 100% at 75% 100%, rgba(232,200,132,.08), transparent 50%),
+    linear-gradient(180deg, rgba(3,8,26,.0) 50%, rgba(3,8,26,.22) 100%);
+}
+[data-bg="closing"] .slide__bg::after{
+  background:
+    radial-gradient(ellipse 80% 70% at 70% 50%, rgba(232,200,132,.10), transparent 55%),
+    linear-gradient(180deg, rgba(3,5,10,.0) 45%, rgba(3,5,10,.25) 100%);
+}
+
+/* ============================================================
+   TEXT BODY
+   ============================================================ */
+article.text{
+  background:var(--vs-paper);
+  color:var(--vs-paper-ink);
+  font-family:var(--font-serif);
+  font-size:19px;
+  line-height:1.7;
+  font-weight:400;
+}
+.text__inner{
+  max-width:38rem;
+  margin:0 auto;
+  padding:6rem 1.5rem 5rem;
+}
+article.text h2,
+article.text h3{
+  font-family:var(--font-serif);
+  font-weight:700;
+  letter-spacing:-.015em;
+  color:var(--vs-paper-ink);
+}
+article.text > .text__inner > h2:first-child{
+  margin-top:0;
+  font-family:var(--font-sans);
+  font-size:.78rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#8a7f70;
+  font-weight:600;
+}
+article.text h2{font-size:1.7rem;line-height:1.2;margin:3rem 0 1rem}
+article.text h3{font-size:1.25rem;line-height:1.3;margin:2.5rem 0 .7rem;color:var(--vs-paper-ink-soft)}
+article.text p{margin:0 0 1.25em}
+article.text p.lead{
+  font-size:1.22em;line-height:1.55;
+  color:var(--vs-paper-ink-soft);
+  margin-bottom:2rem;
+  font-weight:300;
+}
+article.text p.drop::first-letter{
+  font-family:var(--font-serif);
+  font-weight:700;
+  font-size:4.2em;
+  float:left;
+  line-height:.85;
+  padding:.06em .1em 0 0;
+  color:var(--vs-warm);
+}
+article.text blockquote{
+  margin:2rem 0;
+  padding:.25rem 0 .25rem 1.5rem;
+  border-left:3px solid var(--vs-warm);
+  font-style:italic;
+  font-weight:400;
+  font-size:1.1em;
+  color:var(--vs-paper-ink-soft);
+}
+article.text blockquote p{margin-bottom:.5em}
+article.text blockquote p:last-child{margin-bottom:0}
+article.text ul,
+article.text ol{padding-left:1.4rem;margin:1.25rem 0 1.5rem}
+article.text li{margin-bottom:.45em}
+article.text li::marker{color:#8a7f70}
+article.text strong{font-weight:700;color:var(--vs-paper-ink)}
+article.text em{font-style:italic}
+article.text hr{border:0;height:1px;background:var(--vs-paper-rule);margin:3rem 0}
+article.text a{color:#a35c1a;text-decoration:none;border-bottom:1px solid var(--vs-paper-rule);transition:border-color .2s}
+article.text a:hover{border-bottom-color:var(--vs-warm)}
+article.text table{
+  width:100%;border-collapse:collapse;
+  margin:1.75rem 0;font-size:.95em;
+  font-family:var(--font-sans);
+}
+article.text table th,
+article.text table td{
+  text-align:left;padding:.7rem .9rem;
+  border-bottom:1px solid var(--vs-paper-rule);
+  vertical-align:top;
+}
+article.text table th{
+  font-weight:600;font-size:.74rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:#8a7f70;
+  border-bottom:2px solid var(--vs-paper-ink-soft);
+}
+article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font-family:var(--font-serif)}
+
+.action-box{
+  background:var(--vs-paper-deep);
+  border-left:3px solid var(--vs-warm);
+  padding:1.5rem 1.75rem;
+  margin:2.5rem 0;
+}
+.action-box h3{margin-top:0}
+.action-box ol{margin-bottom:0}
+
+/* ============================================================
+   TOC + progress + nav
+   ============================================================ */
+.toc{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:8vh 6vw;
+  background:linear-gradient(170deg, #1a1410 0%, #0d0a08 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.toc__inner{max-width:54rem;margin:0 auto;width:100%;position:relative;z-index:2}
+.toc h2{
+  font-family:var(--font-serif);
+  font-weight:700;
+  font-size:clamp(2rem,4.5vw,3.5rem);
+  letter-spacing:-.02em;
+  margin:0 0 3rem;
+}
+.toc h2 .accent{color:var(--vs-warm)}
+.toc ol{list-style:none;padding:0;margin:0}
+.toc__teil{margin-bottom:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.12)}
+.toc__teil-head{display:flex;align-items:baseline;gap:1.2rem;font-family:var(--font-sans);margin-bottom:.5rem}
+.toc__teil-num{font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--vs-warm)}
+.toc__teil-title{font-family:var(--font-serif);font-weight:600;font-size:1.4rem;letter-spacing:-.005em}
+.toc__teil-title a{color:#fff;text-decoration:none;border-bottom:1px solid transparent}
+.toc__teil-title a:hover{border-bottom-color:var(--vs-warm)}
+.toc__chapters{list-style:none;padding:0;margin:.5rem 0 0;display:grid;gap:.3rem;font-family:var(--font-sans);font-size:.92rem;color:rgba(255,255,255,.72)}
+.toc__chapters a{color:inherit;text-decoration:none;display:flex;gap:.9rem;padding:.1rem 0}
+.toc__chapters a:hover{color:var(--vs-warm)}
+.toc__chapters .num{flex:0 0 2.3rem;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.45);font-weight:500}
+
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:100;pointer-events:none}
+.progress__bar{height:100%;background:var(--vs-warm);width:0;transition:width .12s ease-out}
+
+.nav-toc{position:fixed;top:1.1rem;right:1.1rem;z-index:50;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.nav-toc a{
+  display:inline-block;
+  padding:.5rem .85rem;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  text-decoration:none;
+  border-radius:100px;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.18);
+  transition:all .2s;
+}
+.nav-toc a:hover{background:var(--vs-warm);color:var(--vs-ink);border-color:var(--vs-warm)}
+
+footer.colophon{
+  background:#0a0807;
+  color:#b09c7e;
+  font-family:var(--font-sans);
+  padding:5rem 1.5rem;
+  text-align:center;
+  font-size:.85rem;line-height:1.8;letter-spacing:.02em;
+}
+footer.colophon strong{color:var(--vs-warm);font-family:var(--font-serif);font-weight:600;font-size:1.05rem;letter-spacing:0}
+footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px solid #4a3a20}
+
+/* Epigraph special */
+.slide--epigraph .slide__stage{max-width:42rem;text-align:center;margin:0 auto}
+.slide--epigraph .slogan{font-size:clamp(1.3rem,2.4vw,2rem);margin:0 auto}
+
+@media print{
+  .nav-toc,.progress{display:none}
+  .slide{page-break-after:always;min-height:auto;padding:2cm 1.5cm;background:white;color:black}
+  .slide__bg,.slide__overlay,.big-num{display:none}
+  .slide h1,.slide h2,.slogan{color:black;text-shadow:none}
+  .accent{color:#8a4f1f !important}
+  .text__inner{padding:1cm 0}
+  body{background:white;color:black;font-size:11pt}
+}
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress__bar" id="progressBar"></div></div>
+<nav class="nav-toc"><a href="#toc">Inhalt</a></nav>
+
+<!-- ============================================================
+     COVER
+     ============================================================ -->
+<section class="slide slide--center slide--cover" data-bg="cover" id="cover">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar"><span>Buchentwurf</span><span class="sep">·</span><span class="accent">Version 5 · 2026-05</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Buchentwurf</span>
+    <h1>Höchstleistung-<em>Killer</em></h1>
+    <p class="lead">Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen.</p>
+    <p class="signature">— Benno Löffler & Florian Glöbl · <span class="accent">#sauguteTransformation</span></p>
+  </div>
+  <div class="footer-num">00</div>
+</section>
+
+<!-- ============================================================
+     TOC
+     ============================================================ -->
+<section class="toc" id="toc">
+  <div class="toc__inner">
+    <h2>Inhalt — <span class="accent">drei Teile.</span></h2>
+    <ol>
+      <li class="toc__teil">
+        <div class="toc__teil-head">
+          <span class="toc__teil-num">Vorspann</span>
+        </div>
+        <ul class="toc__chapters">
+          <li><a href="#epigraph"><span class="num">·</span><span>Epigraph</span></a></li>
+          <li><a href="#vorwort"><span class="num">·</span><span>Vorwort — Die unsichtbare Katastrophe</span></a></li>
+        </ul>
+      </li>
+      <li class="toc__teil">
+        <div class="toc__teil-head">
+          <span class="toc__teil-num">Teil 1</span>
+          <span class="toc__teil-title"><a href="#teil-1">Wie Höchstleistung verloren geht</a></span>
+        </div>
+        <ul class="toc__chapters">
+          <li><a href="#k-1"><span class="num">1</span><span>Naive Höchstleistung</span></a></li>
+          <li><a href="#k-2"><span class="num">2</span><span>Der Professionalisierungs-Reflex</span></a></li>
+          <li><a href="#k-3"><span class="num">3</span><span>Das ERP-System als Trojanisches Pferd</span></a></li>
+          <li><a href="#k-4"><span class="num">4</span><span>Compliance als Immunsuppressivum</span></a></li>
+          <li><a href="#k-5"><span class="num">5</span><span>Chefs, die führen wollen, aber steuern</span></a></li>
+          <li><a href="#k-6"><span class="num">6</span><span>Das Sicherheits-Paradox</span></a></li>
+          <li><a href="#k-7"><span class="num">7</span><span>Die Blaue Falle</span></a></li>
+          <li><a href="#k-8"><span class="num">8</span><span>Die vier apokalyptischen Reiter</span></a></li>
+          <li><a href="#k-9"><span class="num">9</span><span>Jede Lösung erzeugt Folgeprobleme</span></a></li>
+        </ul>
+      </li>
+      <li class="toc__teil">
+        <div class="toc__teil-head">
+          <span class="toc__teil-num">Teil 2</span>
+          <span class="toc__teil-title"><a href="#teil-2">Höchstleistung bewahren und kultivieren</a></span>
+        </div>
+        <ul class="toc__chapters">
+          <li><a href="#k-10"><span class="num">10</span><span>Die eine Erkenntnis, die alles verändert</span></a></li>
+          <li><a href="#k-11"><span class="num">11</span><span>Rot und Blau — die Unterscheidung</span></a></li>
+          <li><a href="#k-12"><span class="num">12</span><span>Primat der Wertschöpfung</span></a></li>
+          <li><a href="#k-13"><span class="num">13</span><span>Zentrum und Peripherie</span></a></li>
+          <li><a href="#k-14"><span class="num">14</span><span>Föderatives Management</span></a></li>
+          <li><a href="#k-15"><span class="num">15</span><span>Einladung statt Vorladung</span></a></li>
+          <li><a href="#k-16"><span class="num">16</span><span>Ko-Evolution — Löwen und Gazellen</span></a></li>
+          <li><a href="#k-17"><span class="num">17</span><span>Zwölf Prinzipien für SystemPraktiker</span></a></li>
+          <li><a href="#k-18"><span class="num">18</span><span>Zehn Hashtags für den Alltag</span></a></li>
+        </ul>
+      </li>
+      <li class="toc__teil">
+        <div class="toc__teil-head">
+          <span class="toc__teil-num">Teil 3</span>
+          <span class="toc__teil-title"><a href="#teil-3">Ein Workshop zum Selbstdenken</a></span>
+        </div>
+        <ul class="toc__chapters">
+          <li><a href="#k-19"><span class="num">19</span><span>Diagnose — Wo stehen wir?</span></a></li>
+          <li><a href="#k-20"><span class="num">20</span><span>Die wichtigen Unterscheidungen</span></a></li>
+          <li><a href="#k-21"><span class="num">21</span><span>Drei Experimente für den Anfang</span></a></li>
+          <li><a href="#k-22"><span class="num">22</span><span>Die eine Frage zum Schluss</span></a></li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     EPIGRAPH
+     ============================================================ -->
+<section class="slide slide--center slide--epigraph" data-bg="einleitung" id="epigraph">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">EPIGRAPH</div>
+  <div class="slide__stage">
+    <p class="slogan"><span class="quote-mark">„</span>Für alle, die spüren:<br>Es müsste besser gehen.</p>
+    <p class="slogan">Aber nicht wissen, warum es das nicht tut.</p>
+    <p class="slogan">Und schon gar nicht —<br>warum sie selbst <span class="accent">Teil des Problems</span> sind."</p>
+  </div>
+  <div class="footer-num">Widmung</div>
+</section>
+
+<!-- ============================================================
+     VORWORT
+     ============================================================ -->
+<section class="slide" data-bg="einleitung" id="vorwort">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">VORWORT</div>
+  <div class="slide__stage">
+    <span class="kicker">Vorwort</span>
+    <h2>Die unsichtbare<br><span class="accent">Katastrophe</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Jede Lösung erzeugt Folgeprobleme.<br>Immer. Ausnahmslos."</p>
+  </div>
+  <div class="footer-num">Vorwort</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>Vorwort · Die unsichtbare Katastrophe</h2>
+
+    <p class="drop">Viele mittelständische Unternehmen waren einmal Höchstleister. Ohne es zu wissen. Ohne Theorie. Ohne Methode. Einfach, weil der Marktdruck, die Nähe zum Kunden und die Könner in der Wertschöpfung das Richtige erzwungen haben. Mehr nebenbei als absichtlich.</p>
+
+    <p>Dann wurde die Firma größer. Erfolgreicher. Und jemand sagte: <em>„Wir müssen professioneller werden."</em></p>
+
+    <p>Das war der Anfang vom Ende.</p>
+
+    <p>Dieses Buch handelt davon, wie gut gemeinte Professionalisierung Höchstleistung zerstört. Versehentlich. Systematisch. Mit den besten Absichten.</p>
+
+    <p>Es gibt einen zentralen Gedanken aus der Systemtheorie, der dieses Buch durchzieht: <strong>Jede Lösung erzeugt Folgeprobleme.</strong> Immer. Ausnahmslos. In lebendigen Systemen — Ehen, Märkten, Organisationen — gibt es keine Lösung ohne Nebenwirkung. Wer das nicht weiß, wird von den Nebenwirkungen überrascht und hält sie für neue Fehler. Wer es weiß, kann damit rechnen — und die Folgeprobleme als das behandeln, was sie sind: den nächsten Schritt auf einem Weg, der nie fertig ist.</p>
+  </div>
+</article>
+
+<!-- ============================================================
+     TEIL 1
+     ============================================================ -->
+<section class="slide slide--center" data-bg="killer" id="teil-1">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span><span class="accent">WIE HÖCHSTLEISTUNG VERLOREN GEHT</span></div>
+  <span class="big-num">1</span>
+  <div class="slide__stage">
+    <span class="kicker">Teil 1</span>
+    <h1>Wie Höchstleistung<br><span class="accent">verloren geht</span>.</h1>
+    <p class="slogan"><span class="quote-mark">„</span>Mit den besten Absichten."</p>
+    <p class="lead">Neun Kapitel über Professionalisierungs-Reflexe, ERP-Trojaner, Compliance-Lähmung — und warum jede gut gemeinte Lösung neue Probleme produziert.</p>
+  </div>
+  <div class="footer-num">Teil 1 · 01 / 10</div>
+</section>
+
+<!-- Kapitel 1 -->
+<section class="slide" data-bg="killer" id="k-1">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 1</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 1</span>
+    <h2>Naive Höchstleistung —<br><span class="accent">das Geschenk, das niemand versteht.</span></h2>
+    <p class="slogan"><span class="quote-mark">„</span>Der Preis des Erfolges: Verständnislosigkeit."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 02 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>1 — Naive Höchstleistung</h2>
+    <p class="lead">Warum die besten Mittelständler nicht wissen, warum sie gut sind.</p>
+
+    <ul>
+      <li>Höchstleistung entsteht im Druck des Marktes. Nicht in Workshops.</li>
+      <li>Die Menschen sind ganz normal. Die Organisation ist etwas sehr Besonderes.</li>
+      <li>Aber: wer nicht versteht, warum es funktioniert, kann es nicht schützen.</li>
+      <li>Naive Höchstleistung ist die unverstandene Fähigkeit, Dynamik auszuhalten und zu erzeugen.</li>
+    </ul>
+
+    <blockquote><p>Der Preis des Erfolges: Verständnislosigkeit.</p></blockquote>
+
+    <h3>Die typischen Auslöser der Katastrophe</h3>
+    <p>Generationenwechsel. Ein neuer Geschäftsführer. Kauf durch eine größere Firma. Wachstum über die 150-Mitarbeiter-Grenze. Jedes dieser Ereignisse kann den Anfang vom Ende bedeuten — wenn niemand versteht, was die Firma wirklich gut gemacht hat.</p>
+  </div>
+</article>
+
+<!-- Kapitel 2 -->
+<section class="slide" data-bg="killer" id="k-2">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 2</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 2</span>
+    <h2>Der Professionalisierungs-Reflex.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Wie ‚endlich richtig machen' <span class="accent">alles kaputt</span> macht."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 03 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>2 — Der Professionalisierungs-Reflex</h2>
+    <p class="lead">Wie „endlich richtig machen" alles kaputt macht.</p>
+
+    <ul>
+      <li>Eine Firma wächst. Der Gründer tritt ab. Der neue GF kommt aus dem Konzern.</li>
+      <li>Erster Gedanke: <em>„Hier fehlt Struktur."</em> Zweiter Gedanke: <em>„Das muss professioneller werden."</em></li>
+      <li>Was dann passiert: Organigramme, Stellenbeschreibungen, Berichtslinien, KPIs, Budgetrunden, Jahreszielgespräche.</li>
+      <li>Alles blau. Alles Steuerung. Alles richtig — in einer Welt ohne Dynamik.</li>
+      <li>In einer Welt mit Dynamik: Havarie.</li>
+    </ul>
+
+    <h3>Der Mechanismus</h3>
+    <p>Die Professionalisierung ersetzt informelle, dynamikrobuste Strukturen durch formale, dynamikempfindliche Strukturen. Die Könner in der Peripherie verlieren ihren Spielraum. Die Ideen versiegen. Die Motivation stirbt. Nicht weil die Menschen schlechter werden — sondern weil der Kontext es ihnen unmöglich macht, gut zu sein.</p>
+
+    <blockquote><p>Wer professionell eine Brücke bauen will, sollte die Theorie der Tragwerke kennen. Wer professionell eine Organisation führen will — offensichtlich nicht.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 3 -->
+<section class="slide" data-bg="killer" id="k-3">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 3<span class="sep">·</span><span class="accent">ERP</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 3</span>
+    <h2>Das ERP-System als<br><span class="accent">Trojanisches Pferd.</span></h2>
+    <p class="slogan"><span class="quote-mark">„</span>Kein ERP-System hat jemals eine Idee gehabt."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 04 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>3 — Das ERP-System als Trojanisches Pferd</h2>
+    <p class="lead">Wie Software die Steuerung zementiert und die Organisation verblödet.</p>
+
+    <ul>
+      <li>Ein ERP-System ist eine blaue Prozess-Maschine. Es bildet Regeln ab, nicht Können.</li>
+      <li>Es erzwingt: standardisierte Abläufe, zentrale Planung, lückenlose Dokumentation.</li>
+      <li>Es verspricht: Transparenz, Effizienz, Kontrolle.</li>
+      <li>Es liefert: Starre. Langsamkeit. Und das Ende der klugen Abkürzung.</li>
+      <li>Wenn der Meister in der Fertigung nicht mehr spontan die Reihenfolge ändern darf, weil das System es nicht erlaubt — dann hat die Maschine den Menschen ersetzt. Ohne es zu merken.</li>
+    </ul>
+
+    <h3>Der Mechanismus</h3>
+    <p>ERP-Systeme technisieren den blauen Anteil der Wertschöpfung — das ist gut. Aber sie kolonisieren auch den roten Anteil. Sie erzwingen Prozess-Konformität dort, wo Können, Improvisation und Urteilskraft gefragt wären. Die asymmetrische Schnittstelle wird zementiert: Das Zentrum liefert Anweisungen, die Peripherie gehorcht. Selbstorganisation stirbt.</p>
+
+    <blockquote><p>Kein ERP-System hat jemals eine Idee gehabt.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 4 -->
+<section class="slide" data-bg="killer" id="k-4">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 4<span class="sep">·</span><span class="accent">COMPLIANCE</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 4</span>
+    <h2>Compliance als<br><span class="accent">Immunsuppressivum.</span></h2>
+    <p class="slogan"><span class="quote-mark">„</span>Wenn das Immunsystem die eigenen Organe angreift,<br>wird es zum Killer."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 05 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>4 — Compliance als Immunsuppressivum</h2>
+    <p class="lead">Wie Absicherung die Handlungsfähigkeit lähmt.</p>
+
+    <ul>
+      <li>Compliance, Qualitätsmanagement, Audit-Pflichten, ISO-Normen, Datenschutz — alles berechtigt. Alles wichtig.</li>
+      <li>Aber: Jede Regel, die den roten Anteil der Arbeit ignoriert, macht die Organisation dümmer.</li>
+      <li>Wenn Mitarbeiter mehr Zeit mit Dokumentation verbringen als mit dem Kunden. Wenn ein Monteur vor Ort drei Formulare ausfüllen muss, bevor er helfen darf. Wenn Innovationsprojekte an der Rechtsabteilung sterben.</li>
+      <li>Dann hat Compliance ihren Zweck verfehlt: Sie schützt nicht mehr die Organisation. Sie schützt nur noch sich selbst.</li>
+    </ul>
+
+    <h3>Der Mechanismus</h3>
+    <p>Compliance erzeugt eine Kultur der Absicherung. Nicht-Handeln wird sicherer als Handeln. Fehler werden teurer als Stillstand. Wer nichts macht, macht nichts falsch. Die Organisation hört auf, Probleme zu lösen — und beginnt, Probleme zu vermeiden. Auch die wichtigen.</p>
+
+    <blockquote><p>Compliance ist wie ein Immunsystem: lebensnotwendig. Aber wenn es die eigenen Organe angreift, wird es zum Killer.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 5 -->
+<section class="slide" data-bg="killer" id="k-5">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 5<span class="sep">·</span><span class="accent">CHEFS</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 5</span>
+    <h2>Chefs, die führen wollen —<br><span class="accent">aber steuern.</span></h2>
+    <p class="slogan"><span class="quote-mark">„</span>Wer 10 Leuten ein echtes Problem zeigt,<br>bekommt 10 Ideen."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 06 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>5 — Chefs, die führen wollen, aber steuern</h2>
+    <p class="lead">Das Macht-Paradox in hierarchischen Organisationen.</p>
+
+    <ul>
+      <li>Fast alle Führungskräfte wollen das Beste. Fast alle machen versehentlich das Falsche.</li>
+      <li>Weil: Wer Macht hat, neigt dazu, sie zu benutzen. Macht erzeugt Gehorsam. Gehorsam ersetzt Denken.</li>
+      <li>Steuerung funktioniert nur für den blauen Anteil der Arbeit. Für alles andere braucht es Führung.</li>
+      <li>Steuerung braucht Macht. Führung braucht Ansehen.</li>
+      <li>Steuerung gibt Anweisungen. Führung stellt Fragen.</li>
+      <li>Ein Mächtiger kann keinen Rat geben — das würde als Anweisung wirken.</li>
+    </ul>
+
+    <h3>Der Mechanismus</h3>
+    <p>Chefs entscheiden über „richtig oder falsch". Chefs entscheiden über Werte. Chefs entscheiden, dass Prozesse „richtig" sind. Chefs entscheiden über Rollen. Das Management wird versehentlich zum Flaschenhals der Organisation. Die Peripherie wartet auf Anweisungen, statt Probleme zu lösen. Die Organisation verblödet — trotz reichlich vorhandener Intelligenz.</p>
+
+    <blockquote><p>Wer 10 Leuten sagt, was sie tun sollen, bekommt 10 Ausführende.<br>Wer 10 Leuten ein echtes Problem zeigt, bekommt 10 Ideen.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 6 -->
+<section class="slide" data-bg="killer" id="k-6">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 6</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 6</span>
+    <h2>Das Sicherheits-<wbr>Paradox.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Firmen, die ihre Zukunft planen, <span class="accent">optimieren die Vergangenheit</span>."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 07 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>6 — Das Sicherheits-Paradox</h2>
+    <p class="lead">Wie Planung, Kontrolle und Risikovermeidung die Firma gefährden.</p>
+
+    <ul>
+      <li>Pläne funktionieren bei niedriger Dynamik. Strategie bei hoher.</li>
+      <li>Plan ist blau: Schritt 1, 2, 3, 4. Wenn bekannt ist, wie es geht.</li>
+      <li>Strategie ist rot: ein leerer Handlungsraum, begrenzt durch Prinzipien. Wenn der Weg unbekannt ist.</li>
+      <li>Wer in hoher Dynamik plant statt sucht, der verschwendet nicht nur Zeit — er verhindert aktiv, dass die Organisation lernt.</li>
+    </ul>
+
+    <h3>Der Mechanismus</h3>
+    <p>Detaillierte Planung suggeriert Sicherheit. Aber: <em>„Wer glaubt, zu wissen, wie es geht, der muss nichts mehr auf dem Weg lernen."</em> Die Organisation wird blind für Überraschungen. Und Überraschungen sind in dynamischen Märkten keine Störung — sie sind der Normalfall.</p>
+
+    <blockquote><p>Firmen, die ihre Zukunft planen, optimieren die Vergangenheit.<br>Firmen, die ihre Zukunft suchen, finden Neues.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 7 -->
+<section class="slide" data-bg="killer" id="k-7">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 7</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 7</span>
+    <h2>Die <span class="accent">Blaue Falle</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Erst Rot stärken. Dann wird Blau von alleine besser."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 08 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>7 — Die Blaue Falle</h2>
+    <p class="lead">Warum „zuerst die Prozesse, dann die Innovation" eine Katastrophe ist.</p>
+
+    <ul>
+      <li>Der Reflex: <em>„Erst Ordnung schaffen, dann kreativ werden."</em></li>
+      <li>Die Realität: Wenn die Dynamik steigt und die roten Anteile zu schwach sind, trifft die Dynamik direkt auf die Prozesse. Die Prozesse blähen sich auf. Die Probleme wachsen. Der Versuch, sie zu reparieren, ist wie Löschen mit Benzin.</li>
+      <li>Erst wenn die roten Anteile die Dynamik abfangen können, werden die blauen Prozesse wieder schlank und elegant.</li>
+    </ul>
+
+    <h3>Der Mechanismus</h3>
+    <p>Aus Gewohnheit versuchen Unternehmen, beide Typen von Überraschung durch Wissen zu begegnen. Bei Dynamikproblemen bleibt die Wirkung aus. Also wird noch mehr Wissen produziert. Geschwollene, entzündete Prozesse ohne Chance, mit dynamischen Störungen fertig zu werden. Das ist eine Havarie.</p>
+
+    <blockquote><p>Die Reihenfolge ist entscheidend: Erst Rot stärken. Dann wird Blau von alleine besser.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 8 -->
+<section class="slide" data-bg="killer" id="k-8">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 8<span class="sep">·</span><span class="accent">REITER</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 8</span>
+    <h2>Die vier<br>apokalyptischen Reiter.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Die meisten Transformationen leiden<br>nicht an guten Absichten —<br>sondern an <span class="accent">Reflexen</span>."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 09 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>8 — Die vier apokalyptischen Reiter</h2>
+    <p class="lead">Die Zusammenfassung: Wie gut gemeinte Transformation scheitert.</p>
+
+    <p class="drop">Die vier tief verwurzelten Reflexe, die in der Management-DNA verankert sind:</p>
+
+    <h3>Reiter 1 — Implementieren statt Lernen</h3>
+    <p><em>„Wir wissen, wie es geht. Macht es einfach richtig."</em><br>Konsequenz: Methoden-Theater. Motivation stirbt. Lernen versiegt.</p>
+
+    <h3>Reiter 2 — Der Mensch muss sich ändern statt der Kontext</h3>
+    <p><em>„Die Leute brauchen ein anderes Mindset."</em><br>Konsequenz: Zynismus. Engagement-Verlust. Dienst nach Vorschrift.</p>
+
+    <h3>Reiter 3 — Von der Lösung statt vom Problem</h3>
+    <p><em>„Wir implementieren Scrum / Lean / SAFe / OKR."</em><br>Konsequenz: Beschäftigung ohne Nutzen. <em>„Schwachsinn!"</em> sagen die Mitarbeiter.</p>
+
+    <h3>Reiter 4 — Macht statt Energie</h3>
+    <p><em>„Wer nicht für uns ist, ist gegen uns."</em><br>Konsequenz: Gehorsam statt Ideen. Ideologie statt Empirie. Die Besten machen früher Feierabend.</p>
+
+    <blockquote><p>Die meisten Transformationen leiden nicht an guten Absichten — sondern an den Reflexen und Denkfehlern, die die typische Organisation hat.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 9 -->
+<section class="slide" data-bg="killer" id="k-9">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 9</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 9</span>
+    <h2>Jede Lösung erzeugt<br><span class="accent">Folgeprobleme</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Nicht die Lösung ist das Problem."</p>
+    <p class="slogan"><span class="quote-mark">„</span>Sondern der Glaube, dass es eine <span class="accent">endgültige</span> gibt."</p>
+  </div>
+  <div class="footer-num">Teil 1 · 10 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>9 — Jede Lösung erzeugt Folgeprobleme</h2>
+    <p class="lead">Der systemtheoretische Grund, warum es nie „fertig" wird.</p>
+
+    <p class="drop">Dies ist vielleicht der wichtigste Gedanke dieses Buches. Und der unbequemste.</p>
+
+    <p>In lebendigen Systemen — und Organisationen sind lebendige Systeme — gibt es keine Lösung ohne Nebenwirkung. Jede Intervention verändert das System. Und das veränderte System reagiert auf eine Weise, die niemand vollständig vorhersehen konnte.</p>
+
+    <h3>Beispiele, die jeder kennt</h3>
+    <ul>
+      <li>Die Firma führt ein ERP-System ein, um Effizienz zu steigern. Folge: Die Prozesse werden starrer, die Reaktionszeit steigt, die Könner verlieren ihren Spielraum. Neues Problem.</li>
+      <li>Das Management zentralisiert Entscheidungen, um Qualität zu sichern. Folge: Die Peripherie wird passiv, wartet auf Anweisungen, hört auf mitzudenken. Neues Problem.</li>
+      <li>HR etabliert ein Talentmanagement-Programm. Folge: Alle wollen „Talent" sein, die wahren Könner empfinden es als Zirkus. Neues Problem.</li>
+      <li>Die Compliance-Abteilung sichert Risiken ab. Folge: Innovation wird zum bürokratischen Hürdenlauf. Neues Problem.</li>
+    </ul>
+
+    <h3>Das Muster</h3>
+    <p>Jeder Höchstleistung-Killer aus den vorigen Kapiteln war einmal eine Lösung. Professionalisierung war die Lösung für Chaos. ERP war die Lösung für Intransparenz. Compliance war die Lösung für Haftungsrisiken. Und jede dieser Lösungen hat genau die Probleme erzeugt, die wir jetzt bekämpfen.</p>
+
+    <h3>Die Konsequenz ist nicht Resignation</h3>
+    <p>Die Konsequenz ist: Hört auf, nach der endgültigen Lösung zu suchen. Es gibt keine. Es gibt nur kluge nächste Schritte — und die Bereitschaft, deren Nebenwirkungen ehrlich zu beobachten und darauf zu reagieren.</p>
+
+    <p>Organisation ist nie fertig. Wer das akzeptiert, hört auf, Transformationsprojekte zu planen — und fängt an, kontinuierlich zu lernen.</p>
+
+    <p>Und es sind nicht nur Lösungen, die Folgeprobleme erzeugen. Auch falsche Glaubenssätze führen zu Management-Praktiken, die Höchstleistung zerstören. Wer glaubt, dass Menschen das Problem sind, wird Kontrollsysteme bauen. Wer glaubt, dass Planung Sicherheit schafft, wird die Organisation in Starre treiben. Wer glaubt, dass Kultur sich per Workshop ändern lässt, wird enttäuscht — und die Mitarbeiter gleich mit. Glaubenssätze erzeugen Management-Rituale. Und Management-Rituale erzeugen Management-Unterlassungen: das, was nicht getan wird, weil niemand es für nötig hält.</p>
+
+    <blockquote><p>Nicht die Lösung ist das Problem. Sondern der Glaube, dass es eine endgültige gibt.</p></blockquote>
+  </div>
+</article>
+
+<!-- ============================================================
+     TEIL 2
+     ============================================================ -->
+<section class="slide slide--center" data-bg="paradox" id="teil-2">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span><span class="accent">HÖCHSTLEISTUNG BEWAHREN UND KULTIVIEREN</span></div>
+  <span class="big-num">2</span>
+  <div class="slide__stage">
+    <span class="kicker">Teil 2</span>
+    <h1>Höchstleistung<br>bewahren und<br><span class="accent">kultivieren</span>.</h1>
+    <p class="slogan"><span class="quote-mark">„</span>Kontext vor Mensch. Immer."</p>
+    <p class="lead">Neun Kapitel über die wirksamen Unterscheidungen, das Föderative Management, die Einladung statt der Vorladung — und zwölf Prinzipien.</p>
+  </div>
+  <div class="footer-num">Teil 2 · 01 / 10</div>
+</section>
+
+<!-- Kapitel 10 -->
+<section class="slide" data-bg="paradox" id="k-10">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 10</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 10</span>
+    <h2>Die eine Erkenntnis,<br><span class="accent">die alles verändert</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Kultur ist der <span class="accent">Schatten</span> des gemeinsamen Handelns."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 02 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>10 — Die eine Erkenntnis, die alles verändert</h2>
+    <p class="lead">Der Denkfehler schlechthin — und was stattdessen hilft.</p>
+
+    <p class="drop"><strong>Der Denkfehler schlechthin: Menschen sind schuld.</strong> Nicht der Kontext. Nicht die Struktur. Nicht die Spielregeln. Sondern die Menschen. <em>„Die Leute müssen sich ändern."</em> <em>„Wir brauchen ein anderes Mindset."</em> <em>„Der Fisch stinkt vom Kopf."</em></p>
+
+    <p>Der Fisch-Spruch stimmt — aber anders, als die meisten denken. Ja, es beginnt oben. Aber nicht, weil die Chefs schlechte Menschen wären. Sondern weil ihre Glaubenssätze die Management-Rituale erzeugen, die das System vergiften. Und weil dieselben Glaubenssätze zu Management-Unterlassungen führen: zu dem, was nicht getan wird, weil es niemand für nötig hält.</p>
+
+    <p><strong>Glaubenssatz → Management-Ritual → Management-Unterlassung.</strong> Das ist die Kausalkette. Wer glaubt, Menschen seien das Problem, wird Kontrolle aufbauen — und Vertrauen unterlassen. Wer glaubt, Planung schaffe Sicherheit, wird Pläne fordern — und Experimente unterlassen. Wer glaubt, Kultur sei gestaltbar, wird Workshops ansetzen — und das Verändern von Rahmenbedingungen unterlassen.</p>
+
+    <h3>Die eine Erkenntnis</h3>
+    <p><strong>Kultur ist der Schatten des gemeinsamen Handelns.</strong></p>
+    <ul>
+      <li>Kultur kann man nicht direkt verändern. Sie ist Ergebnis, nicht Ursache.</li>
+      <li>Wer die Verhältnisse verändert, verändert das Verhalten. Dann die Leistung. Dann die Kultur.</li>
+      <li>Nicht am Menschen arbeiten. Am Kontext.</li>
+      <li><em>„Die Menschen in Nordkorea verhalten sich ganz anders als die in Südkorea. Das kann nur am Mindset liegen."</em> — Wirklich?</li>
+    </ul>
+
+    <blockquote><p>Kontext vor Mensch. Immer.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 11 -->
+<section class="slide" data-bg="paradox" id="k-11">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 11<span class="sep">·</span><span class="accent">ROT/BLAU</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 11</span>
+    <h2>Rot und Blau —<br><span class="accent">die Unterscheidung</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Das Rote erschafft und schützt das Blaue."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 03 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>11 — Rot und Blau</h2>
+    <p class="lead">Zwei Welten. Zwei Logiken. Ein Unternehmen.</p>
+
+    <table>
+      <thead><tr><th>&nbsp;</th><th>Blau (tot)</th><th>Rot (lebendig)</th></tr></thead>
+      <tbody>
+        <tr><td>Problem</td><td>Chaos (Unwissenheit)</td><td>Dynamik (Überraschung)</td></tr>
+        <tr><td>Lösung</td><td>Wissen, Regeln, Prozesse</td><td>Können, Ideen, Talente</td></tr>
+        <tr><td>Frage</td><td>Wie geht es?</td><td>Wer kann es schaffen?</td></tr>
+        <tr><td>Steuerung durch</td><td>Macht</td><td>Ansehen</td></tr>
+        <tr><td>Kultur</td><td>Verhaltenskultur (Vorderbühne)</td><td>Wertekultur (Hinterbühne)</td></tr>
+        <tr><td>Navigation</td><td>Plan</td><td>Strategie (Prinzipien)</td></tr>
+        <tr><td>Werkzeug</td><td>Methode</td><td>Werkzeug</td></tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>Das Rote erschafft und schützt das Blaue.</li>
+      <li>Können wird fundamental anders kultiviert als Prozesse. Exzellenz erfordert beides.</li>
+      <li>Auf dem roten Auge sind viele Unternehmenslenker weniger gut ausgebildet als auf dem blauen.</li>
+    </ul>
+
+    <blockquote><p>Die Kunst liegt nicht darin, Rot oder Blau zu wählen — sondern beides gleichzeitig auszuhalten.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 12 -->
+<section class="slide" data-bg="paradox" id="k-12">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 12</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 12</span>
+    <h2>Primat der<br><span class="accent">Wertschöpfung</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Dient es der Wertschöpfung? Nein? Dann nicht."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 04 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>12 — Primat der Wertschöpfung</h2>
+    <p class="lead">Die einzige Frage, die zählt: Dient es der Wertschöpfung?</p>
+
+    <ul>
+      <li>Jede Verbesserung wird im Lichte der Wertschöpfung betrachtet. Alles andere ist weniger wichtig.</li>
+      <li>Wertschöpfung ist die Tätigkeit, die der Kunde bemängelt, wenn sie unterlassen wird. Reduzierte Verschwendung bemerkt er nicht.</li>
+      <li>Echte Probleme als Kompass: Wenn nach der Lösung eines Problems die Wertschöpfung nicht besser ist — war es kein echtes Problem.</li>
+      <li>Drei Kategorien von Erfolg: Kunde spürt etwas. Mitarbeiter sind stolz. Eigentümer verdient Geld.</li>
+    </ul>
+
+    <blockquote><p>Dient es der Wertschöpfung? Nein? Dann nicht.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 13 -->
+<section class="slide" data-bg="paradox" id="k-13">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 13</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 13</span>
+    <h2>Zentrum und<br><span class="accent">Peripherie</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Die Peripherie weiß mehr über die echten Probleme<br>als jeder Vorstand."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 05 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>13 — Zentrum und Peripherie</h2>
+    <p class="lead">Warum die Lösung fast immer in der Peripherie liegt.</p>
+
+    <ul>
+      <li>Peripherie: dort, wo die Wertschöpfung mit dem Markt in Kontakt ist.</li>
+      <li>Zentrum: dort, wo Strategie und Zukunft verhandelt werden.</li>
+      <li>Bei hoher Dynamik: Das Zentrum verliert seinen Informationsvorsprung. Die Peripherie weiß mehr über die echten Probleme als jeder Vorstand.</li>
+      <li>Höchstleister symmetrisieren die Schnittstellen: gegenseitige Abhängigkeit statt einseitige Anweisung.</li>
+    </ul>
+
+    <blockquote><p>Sobald die Peripherie zu viel Macht und Gehorsam abbekommt, kollabiert die engagierte, offene, marktgerichtete Selbstorganisation — und damit die Höchstleistung.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 14 -->
+<section class="slide" data-bg="paradox" id="k-14">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 14</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 14</span>
+    <h2>Föderatives Management —<br><span class="accent">Steuerung UND Führung</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Führung sitzt hierarchisch <span class="accent">tiefer</span> als Steuerung."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 06 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>14 — Föderatives Management</h2>
+    <p class="lead">Das Betriebssystem für dynamikrobuste Organisationen.</p>
+
+    <ul>
+      <li>Steuerung: für den blauen Anteil. Anweisungen. Prozesse. Effizienz. Braucht Macht.</li>
+      <li>Führung: für den roten Anteil. Probleme sichtbar machen. Talente finden. Schutzräume bauen. Braucht Ansehen.</li>
+      <li>Führung sitzt hierarchisch tiefer als Steuerung! Nicht höher.</li>
+      <li>Macht nutzen, um Kontext zu verändern. Nicht um Lösungen durchzudrücken.</li>
+      <li>Energie entfesseln statt Gehorsam einfordern.</li>
+    </ul>
+
+    <blockquote><p>Wenn Führung fehlt und alles der Steuerung aufgebürdet wird, „verblödet" die Organisation des Unternehmens.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 15 -->
+<section class="slide" data-bg="paradox" id="k-15">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 15</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 15</span>
+    <h2><span class="accent">Einladung</span> statt Vorladung.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Würdevolles Scheitern statt Fehlervermeidung."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 07 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>15 — Einladung statt Vorladung</h2>
+    <p class="lead">Wie Verbesserung wirklich entsteht.</p>
+
+    <ul>
+      <li>Echte Probleme zeigen. Mit Bedeutung aufladen. Dann einladen.</li>
+      <li>Wenn erstmal echte Probleme angegangen werden, sind Mitarbeiter erstaunlich schnell dabei.</li>
+      <li>Erprobung vor Implementierung. Was hilft, darf bleiben. Was stört, kommt weg.</li>
+      <li>Selbstverpflichtung statt Fremdverpflichtung.</li>
+      <li>Würdevolles Scheitern statt Fehlervermeidung.</li>
+    </ul>
+
+    <blockquote><p>Organisationen, die lernen wollen, brauchen Störungen. Und Strukturen, um daraus Nutzen zu ziehen.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 16 -->
+<section class="slide" data-bg="paradox" id="k-16">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 16<span class="sep">·</span><span class="accent">KO-EVOLUTION</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 16</span>
+    <h2>Die Ko-Evolution<br>nutzen — <span class="accent">Löwen<br>und Gazellen</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Die Gazellen machen die Löwen schneller,<br>indem sie selbst schneller rennen."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 08 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>16 — Die Ko-Evolution nutzen</h2>
+    <p class="lead">Warum man andere nicht verändern kann. Nur sich selbst.</p>
+
+    <ul>
+      <li>Eine Population von Löwen wird fit gehalten durch die Population von Beutetieren — und umgekehrt.</li>
+      <li>Sperrt man die Löwen in ein Gehege und wirft ihnen tote Beutetiere, verkümmern sie in Generationen.</li>
+      <li>In Organisationen: Management und Wertschöpfung sind ko-evolutionär gekoppelt.</li>
+      <li>Die Gazellen können die Löwen nicht schneller machen, indem sie ihnen Tipps geben. Nur indem sie selbst schneller rennen.</li>
+      <li>Management kann die Wertschöpfung nicht „transformieren". Nur die eigenen Muster und den Kontext verändern.</li>
+    </ul>
+
+    <blockquote><p>Wer die Organisation verbessern will, muss den Mut haben, sich selbst irritieren zu lassen.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 17 -->
+<section class="slide" data-bg="paradox" id="k-17">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 17<span class="sep">·</span><span class="accent">12 PRINZIPIEN</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 17</span>
+    <h2>Zwölf Prinzipien<br>für <span class="accent">SystemPraktiker</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Diese Prinzipien sind kein Programm.<br>Sie sind Haltung."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 09 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>17 — Zwölf Prinzipien für SystemPraktiker</h2>
+    <p class="lead">Orientierung statt Rezept. Verdichtet aus der Arbeit vieler Praktiker.</p>
+
+    <p class="drop">Die folgenden Prinzipien stammen aus der Arbeit der SystemPraktiker (systempraktiker.org) — einer Gemeinschaft von Menschen, die Organisation aus systemtheoretischer Perspektive gestalten. Sie sind kein Regelwerk. Sie sind Kompass.</p>
+
+    <h3>1 — Fokus Wertschöpfung</h3>
+    <p>Wertschöpfung und Innovation stehen im Zentrum allen Tuns. Echte Probleme mit Bezug zu Markt und Kunde treiben Verbesserungen — nicht abstrakte Initiativen.</p>
+
+    <h3>2 — Menschen finden statt formen</h3>
+    <p>Stärken fördern, statt normieren. Entscheidungen bei Teamzusammensetzung, Einstellung und Beförderung prägen die Wettbewerbsfähigkeit mehr als jeder Versuch, Mitarbeiter umzuformen.</p>
+
+    <h3>3 — Chefs bauen „das System"</h3>
+    <p>System-Praktiker arbeiten an Rahmenbedingungen — das ist DER Hebel. Nicht an einzelnen Personen oder Prozessen. Kontext vor Mensch.</p>
+
+    <h3>4 — Überregulierung schadet</h3>
+    <p>Passende Freiheitsgrade sind entscheidend. Zu viele Regeln beschädigen die Fähigkeit, schnell auf Marktveränderungen zu reagieren. Jede unnötige Regel ist ein Höchstleistung-Killer.</p>
+
+    <h3>5 — Planungs-Illusion stört</h3>
+    <p>Bei Ungewissheit ist bewusste Erprobung wichtiger als Planung. Ohne schnelles Scheitern kein schnelles Lernen — besonders bei großer Unsicherheit.</p>
+
+    <h3>6 — Kultur kommt von selbst</h3>
+    <p>Passende Kultur entsteht organisch beim Lösen echter Probleme — nicht durch Plakate, Workshops oder Leitbilder am Reißbrett.</p>
+
+    <h3>7 — Konflikte sind etwas Feines</h3>
+    <p>Konflikte sind DER Treibstoff für Entscheidungen und Veränderung. Wer Konflikte unterdrückt, unterdrückt Lernen. Konstruktive Bearbeitung täglicher Konflikte fördert die Organisationsfähigkeit.</p>
+
+    <h3>8 — Fokus hilft</h3>
+    <p>Zuviel gleichzeitig schadet. Fokus ist eine wesentliche Managementaufgabe — für Strategie und Wertschöpfung.</p>
+
+    <h3>9 — Risiken sind normal</h3>
+    <p>Entscheidungen trotz Ungewissheit schaffen Wettbewerbsfähigkeit. Psychologische Sicherheit ermöglicht schnellere, beherztere Entscheidungen. Wer nichts riskiert, riskiert alles.</p>
+
+    <h3>10 — Schädliches erkennen und unterlassen</h3>
+    <p>Unterlassung schädlicher Managementpraktiken ist eine wesentliche Leistung. Vertrauensvorschuss statt Kontrollmechanismen. Manchmal ist der beste nächste Schritt: etwas Bestehendes weglassen.</p>
+
+    <h3>11 — Organisation ist nie fertig</h3>
+    <p>Die Gestaltungsaufgabe ist kein Projekt, sondern ein Dauerzustand. Kontinuierliche Reflexion und externe Sparringspartner helfen beim Erkennen blinder Flecken. (Siehe Kapitel 9: Jede Lösung erzeugt Folgeprobleme.)</p>
+
+    <h3>12 — Mannschaften meistern Komplexität</h3>
+    <p>Interdisziplinäre Zusammenarbeit wird für komplexe Projekte immer notwendiger. Fachübergreifende Teamarbeit überwindet klassische Abteilungsgrenzen — dort, wo es drauf ankommt.</p>
+
+    <blockquote><p>Diese Prinzipien sind kein Programm. Sie sind Haltung.<br>Man kann sie nicht implementieren. Man kann nur anfangen, danach zu handeln.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 18 -->
+<section class="slide" data-bg="paradox" id="k-18">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 18<span class="sep">·</span><span class="accent">HASHTAGS</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 18</span>
+    <h2>Zehn Hashtags<br>für den Alltag.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Zum Aufhängen, Erinnern, <span class="accent">Streiten</span>."</p>
+  </div>
+  <div class="footer-num">Teil 2 · 10 / 10</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>18 — Zehn Hashtags für den Alltag</h2>
+    <p class="lead">Kurzform der Prinzipien — zum Aufhängen, Erinnern, Streiten.</p>
+
+    <ol>
+      <li><strong>#PrimatDerWertschöpfung</strong> — statt Ablenkung durch Scheinprobleme</li>
+      <li><strong>#FöderativesManagement</strong> — statt hierarchischer Überforderung</li>
+      <li><strong>#EinladungZurVerbesserung</strong> — statt Vorladung, Vorgaben und Gehorsam</li>
+      <li><strong>#WürdevollSchnellScheitern</strong> — statt Stillstand durch Fehlervermeidung</li>
+      <li><strong>#LernenDurchExperimente</strong> — statt lange an schlechten Vorgaben zu leiden</li>
+      <li><strong>#HerausforderungUndSelbstverpflichtung</strong> — statt Budgets, Zielvorgaben und Boni</li>
+      <li><strong>#VollerFokus</strong> — statt mehr, als gleichzeitig guttut</li>
+      <li><strong>#KultivierungVonKönnen</strong> — ist wichtiger als optimierte Prozesse</li>
+      <li><strong>#Selbstzweifel</strong> — statt Selbstüberschätzung im Management</li>
+      <li><strong>#InTeamSphäre</strong> — statt funktionales Abteilungs-Defensivspiel</li>
+    </ol>
+  </div>
+</article>
+
+<!-- ============================================================
+     TEIL 3
+     ============================================================ -->
+<section class="slide slide--center" data-bg="wirkt" id="teil-3">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 3<span class="sep">·</span><span class="accent">EIN WORKSHOP ZUM SELBSTDENKEN</span></div>
+  <span class="big-num">3</span>
+  <div class="slide__stage">
+    <span class="kicker">Teil 3</span>
+    <h1>Ein Workshop<br>zum <span class="accent">Selbstdenken</span>.</h1>
+    <p class="slogan"><span class="quote-mark">„</span>Nicht reden. Machen."</p>
+    <p class="lead">Vier Kapitel mit Fragen, Unterscheidungen und drei kleinen Experimenten für den Anfang.</p>
+  </div>
+  <div class="footer-num">Teil 3 · 01 / 05</div>
+</section>
+
+<!-- Kapitel 19 -->
+<section class="slide" data-bg="wirkt" id="k-19">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 19</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 19</span>
+    <h2>Diagnose —<br><span class="accent">wo stehen wir?</span></h2>
+    <p class="slogan"><span class="quote-mark">„</span>Fragen an Ihr Führungsteam."</p>
+  </div>
+  <div class="footer-num">Teil 3 · 02 / 05</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>19 — Diagnose: Wo stehen wir?</h2>
+    <p class="lead">Fragen an Ihr Führungsteam.</p>
+
+    <h3>Runde 1 — Symptome erkennen</h3>
+    <ul>
+      <li>Welche der Höchstleistung-Killer erkennen Sie in Ihrer Organisation?</li>
+      <li>Wo haben wir in den letzten 5 Jahren „professionalisiert" — und es wurde schlechter?</li>
+      <li>Welche Prozesse haben wir eingeführt, die kein Mensch braucht?</li>
+      <li>Wo warten Mitarbeiter auf Anweisungen, obwohl sie die Antwort kennen?</li>
+    </ul>
+
+    <h3>Runde 2 — Die Unterscheidung üben</h3>
+    <ul>
+      <li>Nehmen Sie drei aktuelle Probleme. Welche Anteile sind rot, welche blau?</li>
+      <li>Wo versuchen wir, rote Probleme mit blauen Werkzeugen zu lösen?</li>
+      <li>Wo brauchen wir Steuerung — und wo Führung?</li>
+    </ul>
+
+    <h3>Runde 3 — Ehrliche Reflektion</h3>
+    <ul>
+      <li>Was davon haben wir selbst verursacht?</li>
+      <li>Wo behindert unsere eigene Führung Energie, statt sie freizusetzen?</li>
+      <li>Welche echten Probleme ignorieren wir — und könnten daran wachsen?</li>
+    </ul>
+  </div>
+</article>
+
+<!-- Kapitel 20 -->
+<section class="slide" data-bg="wirkt" id="k-20">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 20</div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 20</span>
+    <h2>Die wichtigen<br><span class="accent">Unterscheidungen</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Wortpaare, die den Blick schärfen."</p>
+  </div>
+  <div class="footer-num">Teil 3 · 03 / 05</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>20 — Die wichtigen Unterscheidungen</h2>
+    <p class="lead">Wortpaare, die den Blick schärfen.</p>
+
+    <table>
+      <thead><tr><th>statt …</th><th>besser …</th></tr></thead>
+      <tbody>
+        <tr><td>Kompliziert (Blau)</td><td>Komplex (Rot)</td></tr>
+        <tr><td>Wissen</td><td>Können (üben!)</td></tr>
+        <tr><td>Fehler</td><td>Irrtum (Lernen)</td></tr>
+        <tr><td>Steuerung</td><td>Führung</td></tr>
+        <tr><td>Zentrum</td><td>Peripherie</td></tr>
+        <tr><td>Implementierung</td><td>Erprobung, Experiment</td></tr>
+        <tr><td>Plan</td><td>Option, Strategie</td></tr>
+        <tr><td>Abteilung</td><td>Team</td></tr>
+        <tr><td>Regel</td><td>Prinzip</td></tr>
+        <tr><td>Gehorsam</td><td>Ermächtigung</td></tr>
+        <tr><td>Fremdverpflichtung</td><td>Selbstverpflichtung</td></tr>
+        <tr><td>Vorladung</td><td>Einladung</td></tr>
+        <tr><td>Menschen ändern</td><td>Kontext ändern</td></tr>
+        <tr><td>Methode</td><td>Werkzeug</td></tr>
+        <tr><td>Routine</td><td>Überraschung (Dynamik)</td></tr>
+        <tr><td>Vorderbühne</td><td>Hinterbühne</td></tr>
+      </tbody>
+    </table>
+
+    <div class="action-box">
+      <h3>Übung</h3>
+      <p>Gehen Sie die linke Spalte durch. Bei jedem Wort: Wo benutzen wir das in unserer Organisation? Dann die rechte Spalte: Was wäre das Äquivalent bei uns — und was müssten wir dafür ändern?</p>
+    </div>
+  </div>
+</article>
+
+<!-- Kapitel 21 -->
+<section class="slide" data-bg="wirkt" id="k-21">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 21<span class="sep">·</span><span class="accent">EXPERIMENTE</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 21</span>
+    <h2>Drei Experimente<br>für den <span class="accent">Anfang</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Nicht reden. Machen. Aber klein anfangen."</p>
+  </div>
+  <div class="footer-num">Teil 3 · 04 / 05</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>21 — Drei Experimente für den Anfang</h2>
+    <p class="lead">Nicht reden. Machen. Aber klein anfangen.</p>
+
+    <h3>Experiment 1 — Ein echtes Problem sichtbar machen</h3>
+    <p>Finden Sie ein Problem, das alle kennen, aber niemand anspricht. Laden Sie die Betroffenen ein (nicht vorladen!). Fragen Sie: <em>„Was hindert euch?"</em> Hören Sie zu. Ändern Sie eine Rahmenbedingung. Beobachten Sie.</p>
+
+    <h3>Experiment 2 — Eine Schnittstelle symmetrisieren</h3>
+    <p>Suchen Sie eine Stelle, an der ein zentraler Dienst der Peripherie etwas vorschreibt. Drehen Sie die Abhängigkeit um: Die Peripherie bestellt, der zentrale Dienst liefert. Was passiert?</p>
+
+    <h3>Experiment 3 — Führungsteam als Team</h3>
+    <p>Nehmen Sie ein konkretes, echtes Problem aus der Wertschöpfung. Bearbeiten Sie es im Führungsteam — nicht als Gremium (Entscheidung), sondern als Team (Ideen). Kein Protokoll. Keine Beschlüsse. Nur: Was könnte man versuchen?</p>
+
+    <blockquote><p>Ein Mann, der eine Katze am Schwanz trägt, lernt etwas, das er auf keine andere Weise lernen kann. — Mark Twain</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 22 -->
+<section class="slide" data-bg="wirkt" id="k-22">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 22<span class="sep">·</span><span class="accent">DIE EINE FRAGE</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 22</span>
+    <h2>Die eine Frage<br>zum Schluss.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Welches Ihrer eigenen Management-Rituale<br>würden Sie als erstes in Frage stellen?"</p>
+  </div>
+  <div class="footer-num">Teil 3 · 05 / 05</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>22 — Die eine Frage zum Schluss</h2>
+
+    <p class="lead">Wenn Sie nur eine Sache verändern könnten — welches Ihrer eigenen Management-Rituale würden Sie als erstes in Frage stellen?</p>
+
+    <p>Nicht die Rituale der anderen.</p>
+
+    <p>Ihre eigenen.</p>
+
+    <blockquote><p>Transformation ist die nützliche Veränderung zentraler Management-Muster.<br>Wer die Organisation verbessern will, muss den Mut haben, sich irritieren zu lassen.</p></blockquote>
+  </div>
+</article>
+
+<!-- ============================================================
+     CLOSING
+     ============================================================ -->
+<section class="slide slide--center" data-bg="closing" id="closing">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar"><span class="vs-mark">V&amp;S BERATUNG</span><span class="sep">·</span><span class="accent">Höchstleistung-Killer</span></div>
+  <div class="slide__stage" style="text-align:left">
+    <span class="kicker">Schluss</span>
+    <h1>Eine kleine Sache —<br><span class="accent">nächste Woche.</span></h1>
+    <p class="lead">Benno Löffler · V&amp;S GmbH<br><em>#sauguteTransformation</em></p>
+    <p class="signature" style="margin-top:3rem">Entwurf · Mai 2026</p>
+  </div>
+  <div class="footer-num">Ende</div>
+</section>
+
+<footer class="colophon">
+  <p><strong>Höchstleistung-Killer</strong> · Benno Löffler · V&amp;S GmbH</p>
+  <p>Buchentwurf v5 · 2026-05-17 · <a href="#cover">Zum Anfang</a> · <a href="#toc">Inhalt</a></p>
+  <p>Satz in Fraunces und Inter. Hintergrundbilder aus v4. <em>#sauguteTransformation</em></p>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('progressBar');
+  function tick(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    var p=max>0?(h.scrollTop/max)*100:0;
+    bar.style.width=p+'%';
+  }
+  window.addEventListener('scroll',tick,{passive:true});
+  window.addEventListener('resize',tick);
+  tick();
+})();
+</script>
+
+</body>
+</html>
