@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Höchstleistung-Killer — Benno Löffler / V&amp;S</title>
+<title>Höchstleistungs-Killer — Benno Löffler / V&amp;S</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Höchstleistung-Killer (v5) — Cinematic with backgrounds
+   Höchstleistungs-Killer (v5) — Cinematic with backgrounds
    Layout & typography mirror v4-2026-05-16-praegnanter-HTML.
    Backgrounds are referenced from the v4 image folder.
    ============================================================ */
@@ -213,25 +213,26 @@ body{
 #k-5 .slide__bg       {background-image:url("img/backgrounds/bg-t3-01.png")}
 #k-6 .slide__bg       {background-image:url("img/backgrounds/bg-t2-02.png")}
 #k-7 .slide__bg       {background-image:url("img/backgrounds/bg-t3-04.png")}
-#k-8 .slide__bg       {background-image:url("img/backgrounds/bg-t3-06.png")}
+#k-8 .slide__bg       {background-image:url("img/backgrounds/bg-t1-02.png")}
 #k-9 .slide__bg       {background-image:url("img/backgrounds/bg-t1-01.png")}
+#k-10 .slide__bg      {background-image:url("img/backgrounds/bg-t3-06.png")}
 
 #teil-2 .slide__bg    {background-image:url("img/backgrounds/bg-t5-hero.png")}
-#k-10 .slide__bg      {background-image:url("img/backgrounds/bg-t5-04.png")}
-#k-11 .slide__bg      {background-image:url("img/backgrounds/bg-t6-03.png")}
-#k-12 .slide__bg      {background-image:url("img/backgrounds/bg-t5-02.png")}
-#k-13 .slide__bg      {background-image:url("img/backgrounds/bg-t6-01.png")}
-#k-14 .slide__bg      {background-image:url("img/backgrounds/bg-t6-04.png")}
-#k-15 .slide__bg      {background-image:url("img/backgrounds/bg-t5-01.png")}
-#k-16 .slide__bg      {background-image:url("img/backgrounds/bg-t5-03.png")}
-#k-17 .slide__bg      {background-image:url("img/backgrounds/bg-t6-hero.png")}
-#k-18 .slide__bg      {background-image:url("img/backgrounds/bg-t5-06.png")}
+#k-11 .slide__bg      {background-image:url("img/backgrounds/bg-t5-04.png")}
+#k-12 .slide__bg      {background-image:url("img/backgrounds/bg-t6-03.png")}
+#k-13 .slide__bg      {background-image:url("img/backgrounds/bg-t5-02.png")}
+#k-14 .slide__bg      {background-image:url("img/backgrounds/bg-t6-01.png")}
+#k-15 .slide__bg      {background-image:url("img/backgrounds/bg-t6-04.png")}
+#k-16 .slide__bg      {background-image:url("img/backgrounds/bg-t5-01.png")}
+#k-17 .slide__bg      {background-image:url("img/backgrounds/bg-t5-03.png")}
+#k-18 .slide__bg      {background-image:url("img/backgrounds/bg-t6-hero.png")}
+#k-19 .slide__bg      {background-image:url("img/backgrounds/bg-t5-06.png")}
 
 #teil-3 .slide__bg    {background-image:url("img/backgrounds/bg-t4-hero.png")}
-#k-19 .slide__bg      {background-image:url("img/backgrounds/bg-t4-03.png")}
-#k-20 .slide__bg      {background-image:url("img/backgrounds/bg-t4-02.png")}
-#k-21 .slide__bg      {background-image:url("img/backgrounds/bg-t5-05.png")}
-#k-22 .slide__bg      {background-image:url("img/backgrounds/bg-t6-02.png")}
+#k-20 .slide__bg      {background-image:url("img/backgrounds/bg-t4-03.png")}
+#k-21 .slide__bg      {background-image:url("img/backgrounds/bg-t4-02.png")}
+#k-22 .slide__bg      {background-image:url("img/backgrounds/bg-t5-05.png")}
+#k-23 .slide__bg      {background-image:url("img/backgrounds/bg-t6-02.png")}
 
 #closing .slide__bg   {background-image:url("img/backgrounds/bg-closing.png")}
 
@@ -511,6 +512,19 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 .slide--epigraph .slide__stage{max-width:42rem;text-align:center;margin:0 auto}
 .slide--epigraph .slogan{font-size:clamp(1.3rem,2.4vw,2rem);margin:0 auto}
 
+/* Closing slide — quote block */
+.closing-quote{
+  font-family:var(--font-serif);
+  font-style:italic;
+  font-size:clamp(1.05rem,1.5vw,1.35rem);
+  line-height:1.5;
+  margin:1rem 0 1.6rem;
+  padding-left:1.2rem;
+  border-left:2px solid var(--vs-warm);
+  color:#f0e3c8;
+}
+.closing-quote .quote-mark{color:var(--vs-warm);opacity:.9}
+
 /* Autoren */
 .autoren{
   min-height:100vh;
@@ -602,7 +616,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar"><span>Buchentwurf</span><span class="sep">·</span><span class="accent">Version 5 · 2026-05</span></div>
   <div class="slide__stage">
     <span class="kicker">Buchentwurf</span>
-    <h1>Höchstleistung-<em>Killer</em></h1>
+    <h1>Höchstleistungs-<em>Killer</em></h1>
     <p class="lead">Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen.</p>
     <p class="signature">— Benno Löffler & Florian Glöbl · <span class="accent">#sauguteTransformation</span></p>
   </div>
@@ -638,8 +652,9 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
           <li><a href="#k-5"><span class="num">5</span><span>Chefs, die führen wollen, aber steuern</span></a></li>
           <li><a href="#k-6"><span class="num">6</span><span>Das Sicherheits-Paradox</span></a></li>
           <li><a href="#k-7"><span class="num">7</span><span>Die Blaue Falle</span></a></li>
-          <li><a href="#k-8"><span class="num">8</span><span>Die vier apokalyptischen Reiter</span></a></li>
+          <li><a href="#k-8"><span class="num">8</span><span>Was alle wissen, aber niemand sagen darf</span></a></li>
           <li><a href="#k-9"><span class="num">9</span><span>Jede Lösung erzeugt Folgeprobleme</span></a></li>
+          <li><a href="#k-10"><span class="num">10</span><span>Die vier apokalyptischen Illusionen</span></a></li>
         </ul>
       </li>
       <li class="toc__teil">
@@ -648,15 +663,15 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
           <span class="toc__teil-title"><a href="#teil-2">Höchstleistung bewahren und kultivieren</a></span>
         </div>
         <ul class="toc__chapters">
-          <li><a href="#k-10"><span class="num">10</span><span>Die eine Erkenntnis, die alles verändert</span></a></li>
-          <li><a href="#k-11"><span class="num">11</span><span>Rot und Blau — die Unterscheidung</span></a></li>
-          <li><a href="#k-12"><span class="num">12</span><span>Primat der Wertschöpfung</span></a></li>
-          <li><a href="#k-13"><span class="num">13</span><span>Zentrum und Peripherie</span></a></li>
-          <li><a href="#k-14"><span class="num">14</span><span>Föderatives Management</span></a></li>
-          <li><a href="#k-15"><span class="num">15</span><span>Einladung statt Vorladung</span></a></li>
-          <li><a href="#k-16"><span class="num">16</span><span>Ko-Evolution — Löwen und Gazellen</span></a></li>
-          <li><a href="#k-17"><span class="num">17</span><span>Zwölf Prinzipien für SystemPraktiker</span></a></li>
-          <li><a href="#k-18"><span class="num">18</span><span>Zehn Hashtags für den Alltag</span></a></li>
+          <li><a href="#k-11"><span class="num">11</span><span>Die eine Erkenntnis, die alles verändert</span></a></li>
+          <li><a href="#k-12"><span class="num">12</span><span>Rot und Blau — die Unterscheidung</span></a></li>
+          <li><a href="#k-13"><span class="num">13</span><span>Primat der Wertschöpfung</span></a></li>
+          <li><a href="#k-14"><span class="num">14</span><span>Zentrum und Peripherie</span></a></li>
+          <li><a href="#k-15"><span class="num">15</span><span>Föderatives Management</span></a></li>
+          <li><a href="#k-16"><span class="num">16</span><span>Einladung statt Vorladung</span></a></li>
+          <li><a href="#k-17"><span class="num">17</span><span>Ko-Evolution — Löwen und Gazellen</span></a></li>
+          <li><a href="#k-18"><span class="num">18</span><span>Zwölf Prinzipien für SystemPraktiker</span></a></li>
+          <li><a href="#k-19"><span class="num">19</span><span>Zehn Hashtags für den Alltag</span></a></li>
         </ul>
       </li>
       <li class="toc__teil">
@@ -665,10 +680,10 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
           <span class="toc__teil-title"><a href="#teil-3">Ein Workshop zum Selbstdenken</a></span>
         </div>
         <ul class="toc__chapters">
-          <li><a href="#k-19"><span class="num">19</span><span>Diagnose — Wo stehen wir?</span></a></li>
-          <li><a href="#k-20"><span class="num">20</span><span>Die wichtigen Unterscheidungen</span></a></li>
-          <li><a href="#k-21"><span class="num">21</span><span>Drei Experimente für den Anfang</span></a></li>
-          <li><a href="#k-22"><span class="num">22</span><span>Die eine Frage zum Schluss</span></a></li>
+          <li><a href="#k-20"><span class="num">20</span><span>Diagnose — Wo stehen wir?</span></a></li>
+          <li><a href="#k-21"><span class="num">21</span><span>Die wichtigen Unterscheidungen</span></a></li>
+          <li><a href="#k-22"><span class="num">22</span><span>Drei Experimente für den Anfang</span></a></li>
+          <li><a href="#k-23"><span class="num">23</span><span>Die eine Frage zum Schluss</span></a></li>
         </ul>
       </li>
       <li class="toc__teil">
@@ -743,7 +758,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p class="slogan"><span class="quote-mark">„</span>Mit den besten Absichten.<span class="quote-mark">“</span></p>
     <p class="lead">Neun Kapitel über Professionalisierungs-Reflexe, ERP-Trojaner, Projekt-Management, Compliance-Lähmung, Prozess-Management, Qualitäts-Management — und warum jede gut gemeinte Lösung neue Probleme produziert.</p>
   </div>
-  <div class="footer-num">Teil 1 · 01 / 10</div>
+  <div class="footer-num">Teil 1 · 01 / 11</div>
 </section>
 
 <!-- Kapitel 1 -->
@@ -756,7 +771,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>Naive Höchstleistung —<br><span class="accent">das Geschenk, das niemand versteht.</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Der Preis des Erfolges: Verständnislosigkeit.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 02 / 10</div>
+  <div class="footer-num">Teil 1 · 02 / 11</div>
 </section>
 
 <article class="text">
@@ -788,7 +803,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>Der Professionalisierungs-Reflex.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Wie ‚endlich richtig machen' <span class="accent">alles kaputt</span> macht.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 03 / 10</div>
+  <div class="footer-num">Teil 1 · 03 / 11</div>
 </section>
 
 <article class="text">
@@ -821,7 +836,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>Das ERP-System als<br><span class="accent">Trojanisches Pferd.</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Kein ERP-System hat jemals eine Idee gehabt.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 04 / 10</div>
+  <div class="footer-num">Teil 1 · 04 / 11</div>
 </section>
 
 <article class="text">
@@ -854,7 +869,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>Compliance als<br><span class="accent">Immunsuppressivum.</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Wenn das Immunsystem die eigenen Organe angreift,<br>wird es zum Killer.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 05 / 10</div>
+  <div class="footer-num">Teil 1 · 05 / 11</div>
 </section>
 
 <article class="text">
@@ -886,7 +901,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>Chefs, die führen wollen —<br><span class="accent">aber steuern.</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Wer 10 Leuten ein echtes Problem zeigt,<br>bekommt 10 Ideen.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 06 / 10</div>
+  <div class="footer-num">Teil 1 · 06 / 11</div>
 </section>
 
 <article class="text">
@@ -920,7 +935,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>Das Sicherheits-<wbr>Paradox.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Firmen, die ihre Zukunft planen, <span class="accent">optimieren die Vergangenheit</span>.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 07 / 10</div>
+  <div class="footer-num">Teil 1 · 07 / 11</div>
 </section>
 
 <article class="text">
@@ -952,7 +967,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>Die <span class="accent">Blaue Falle</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Erst Rot stärken. Dann wird Blau von alleine besser.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 08 / 10</div>
+  <div class="footer-num">Teil 1 · 08 / 11</div>
 </section>
 
 <article class="text">
@@ -977,35 +992,48 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <section class="slide" data-bg="killer" id="k-8">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 8<span class="sep">·</span><span class="accent">REITER</span></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 8</div>
   <div class="slide__stage">
     <span class="kicker">Kapitel 8</span>
-    <h2>Die vier<br>apokalyptischen Reiter.</h2>
-    <p class="slogan"><span class="quote-mark">„</span>Die meisten Transformationen leiden<br>nicht an guten Absichten —<br>sondern an <span class="accent">Reflexen</span>.<span class="quote-mark">“</span></p>
+    <h2>Was alle wissen,<br>aber niemand <span class="accent">sagen darf</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Nicht das Unbekannte ist gefährlich.<span class="quote-mark">“</span></p>
+    <p class="slogan"><span class="quote-mark">„</span>Gefährlich ist das <span class="accent">Bekannte</span>,<br>das nicht besprechbar ist.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 09 / 10</div>
+  <div class="footer-num">Teil 1 · 09 / 11</div>
 </section>
 
 <article class="text">
   <div class="text__inner">
-    <h2>8 — Die vier apokalyptischen Reiter</h2>
-    <p class="lead">Die Zusammenfassung: Wie gut gemeinte Transformation scheitert.</p>
+    <h2>8 — Was alle wissen, aber niemand sagen darf</h2>
+    <p class="lead">Tabus schützen Strukturen. Bis sie Höchstleistung verhindern.</p>
 
-    <p class="drop">Die vier tief verwurzelten Reflexe, die in der Management-DNA verankert sind:</p>
+    <p class="drop">Organisationen haben Themen, die alle kennen. Aber niemand spricht sie offiziell an. Nicht aus Dummheit. Nicht aus Feigheit. Sondern weil das offene Ansprechen eine bestehende Struktur gefährden würde.</p>
 
-    <h3>Reiter 1 — Implementieren statt Lernen</h3>
-    <p><em>„Wir wissen, wie es geht. Macht es einfach richtig."</em><br>Konsequenz: Methoden-Theater. Motivation stirbt. Lernen versiegt.</p>
+    <p>Stefan Kühl nennt das <em>Kommunikationslatenz</em>: Ein Thema ist beobachtbar, aber in bestimmten Kommunikationszusammenhängen nicht anschlussfähig. Das kann sogar funktional sein — weil es Strukturen schützt, die sonst zerbrechen würden.</p>
 
-    <h3>Reiter 2 — Der Mensch muss sich ändern statt der Kontext</h3>
-    <p><em>„Die Leute brauchen ein anderes Mindset."</em><br>Konsequenz: Zynismus. Engagement-Verlust. Dienst nach Vorschrift.</p>
+    <h3>Der Mechanismus</h3>
+    <p>Eine Organisation sieht ein Problem. Aber sie kann es nicht offiziell bearbeiten. Zum Beispiel:</p>
+    <ul>
+      <li>Ein Prozess funktioniert nur durch <em>Abkürzungen</em>.</li>
+      <li>Ein Kunde wird nur durch <em>Regelbruch</em> gerettet.</li>
+      <li>Eine Führungskraft ist überfordert, aber politisch <em>geschützt</em>.</li>
+      <li>Ein Produkt hat Schwächen, aber der Markterfolg darf nicht <em>beschädigt</em> werden.</li>
+      <li>Ein Projekt ist tot, aber niemand will die <em>Beerdigung</em> bezahlen.</li>
+    </ul>
+    <p>Dann entsteht eine gefährliche Lage: Die Organisation <em>weiß</em> etwas. Aber sie kann aus diesem Wissen nicht lernen.</p>
 
-    <h3>Reiter 3 — Von der Lösung statt vom Problem</h3>
-    <p><em>„Wir implementieren Scrum / Lean / SAFe / OKR."</em><br>Konsequenz: Beschäftigung ohne Nutzen. <em>„Schwachsinn!"</em> sagen die Mitarbeiter.</p>
+    <h3>Warum das Höchstleistung killt</h3>
+    <p>Höchstleistung braucht schnelle, konkrete und ehrliche Rückkopplung. Tabus unterbrechen diese Rückkopplung. Dann arbeitet die Organisation mit zwei Wirklichkeiten:</p>
+    <ul>
+      <li>Die eine Wirklichkeit ist <strong>offiziell</strong>.</li>
+      <li>Die andere ist <strong>wirksam</strong>.</li>
+    </ul>
+    <p>Und irgendwann gewinnt die offizielle Wirklichkeit. Dann wird es teuer.</p>
 
-    <h3>Reiter 4 — Macht statt Energie</h3>
-    <p><em>„Wer nicht für uns ist, ist gegen uns."</em><br>Konsequenz: Gehorsam statt Ideen. Ideologie statt Empirie. Die Besten machen früher Feierabend.</p>
+    <h3>Quellen und Begriffe</h3>
+    <p>Bei Kühl: Kommunikationslatenz, Beobachtungslatenz, Tabu, Hidden Agenda, Strukturschutz. Die Begriffe markieren die Stellen, an denen eine Organisation weniger lernen kann, als sie sehen könnte.</p>
 
-    <blockquote><p>Die meisten Transformationen leiden nicht an guten Absichten — sondern an den Reflexen und Denkfehlern, die die typische Organisation hat.</p></blockquote>
+    <blockquote><p>Nicht das Unbekannte ist gefährlich. Gefährlich ist das Bekannte, das nicht besprechbar ist.</p></blockquote>
   </div>
 </article>
 
@@ -1020,7 +1048,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p class="slogan"><span class="quote-mark">„</span>Nicht die Lösung ist das Problem.<span class="quote-mark">“</span></p>
     <p class="slogan"><span class="quote-mark">„</span>Sondern der Glaube, dass es eine <span class="accent">endgültige</span> gibt.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Teil 1 · 10 / 10</div>
+  <div class="footer-num">Teil 1 · 10 / 11</div>
 </section>
 
 <article class="text">
@@ -1041,7 +1069,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     </ul>
 
     <h3>Das Muster</h3>
-    <p>Jeder Höchstleistung-Killer aus den vorigen Kapiteln war einmal eine Lösung. Professionalisierung war die Lösung für Chaos. ERP war die Lösung für Intransparenz. Compliance war die Lösung für Haftungsrisiken. Und jede dieser Lösungen hat genau die Probleme erzeugt, die wir jetzt bekämpfen.</p>
+    <p>Jeder Höchstleistungs-Killer aus den vorigen Kapiteln war einmal eine Lösung. Professionalisierung war die Lösung für Chaos. ERP war die Lösung für Intransparenz. Compliance war die Lösung für Haftungsrisiken. Und jede dieser Lösungen hat genau die Probleme erzeugt, die wir jetzt bekämpfen.</p>
 
     <h3>Die Konsequenz ist nicht Resignation</h3>
     <p>Die Konsequenz ist: Hört auf, nach der endgültigen Lösung zu suchen. Es gibt keine. Es gibt nur kluge nächste Schritte — und die Bereitschaft, deren Nebenwirkungen ehrlich zu beobachten und darauf zu reagieren.</p>
@@ -1051,6 +1079,56 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p>Und es sind nicht nur Lösungen, die Folgeprobleme erzeugen. Auch falsche Glaubenssätze führen zu Management-Praktiken, die Höchstleistung zerstören. Wer glaubt, dass Menschen das Problem sind, wird Kontrollsysteme bauen. Wer glaubt, dass Planung Sicherheit schafft, wird die Organisation in Starre treiben. Wer glaubt, dass Kultur sich per Workshop ändern lässt, wird enttäuscht — und die Mitarbeiter gleich mit. Glaubenssätze erzeugen Management-Rituale. Und Management-Rituale erzeugen Management-Unterlassungen: das, was nicht getan wird, weil niemand es für nötig hält.</p>
 
     <blockquote><p>Nicht die Lösung ist das Problem. Sondern der Glaube, dass es eine endgültige gibt.</p></blockquote>
+  </div>
+</article>
+
+<!-- Kapitel 10 -->
+<section class="slide" data-bg="killer" id="k-10">
+  <div class="slide__bg"></div>
+  <div class="slide__overlay"></div>
+  <div class="brand-bar">TEIL 1<span class="sep">·</span>KAPITEL 10<span class="sep">·</span><span class="accent">FINALE</span></div>
+  <div class="slide__stage">
+    <span class="kicker">Kapitel 10</span>
+    <h2>Die vier apokalyptischen<br><span class="accent">Illusionen</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Vier Selbstverständlichkeiten —<br>vier <span class="accent">blinde Flecken</span>.<span class="quote-mark">“</span></p>
+    <p class="slogan"><span class="quote-mark">„</span>Jede für sich plausibel.<br>Zusammen tödlich für Höchstleistung.<span class="quote-mark">“</span></p>
+  </div>
+  <div class="footer-num">Teil 1 · 11 / 11</div>
+</section>
+
+<article class="text">
+  <div class="text__inner">
+    <h2>10 — Die vier apokalyptischen Illusionen</h2>
+    <p class="lead">Vier Denkfehler, die fast jede gewachsene Organisation in sich trägt — und an denen Höchstleistung typischerweise zerschellt.</p>
+
+    <p class="drop">Wenn die ersten neun Kapitel die Mechanik einzelner Höchstleistungs-Killer zeigen, dann sind die vier Illusionen die Hintergrund-Annahmen, die diese Mechanik überhaupt erst zulassen. Vier Selbstverständlichkeiten, die jede für sich plausibel klingt — und die zusammen die Lernfähigkeit einer Organisation systematisch korrodieren.</p>
+
+    <p>Wir nennen sie <em>Illusionen</em>, weil sie sich anfühlen wie gesunder Menschenverstand. Sie sind so eingebaut, dass man sie nicht mehr sieht. Und genau deshalb wirken sie so verlässlich.</p>
+
+    <h3>1. Zweck-Illusion — der Wertschöpfungs-Fokus geht unter</h3>
+    <p>Eine Firma existiert, weil Kunden ein Problem haben, das die Firma löst — wertschöpfend, ertragreich, so, dass die Leute, die es tun, nicht kotzen. Dieser Dreiklang ist der originäre Zweck.</p>
+    <p>Die Zweck-Illusion entsteht, sobald interne Themen — Nachhaltigkeit, KI, Agilität, Digitalisierung, Compliance, „bessere Planung" — sich zum Selbstzweck erheben. Niemand kann offiziell dagegen sein. Und plötzlich messen interne KPIs den Fortschritt dieser Selbstzwecke statt der Wertschöpfung. Die Organisation referenziert nach innen, nicht mehr nach außen. Der Kunde merkt nichts davon. Der Eigentümer auch nicht. Die Mitarbeiter arbeiten länger — für etwas, das nichts nützt.</p>
+    <p><em>Diagnose-Frage:</em> Wenn wir das Programm morgen einstellten — würde irgendein Kunde es bemerken?</p>
+
+    <h3>2. Mensch-Illusion — der Kontext bleibt blinder Fleck</h3>
+    <p>Der Reflex: Verhalten erklärt sich aus dem Menschen. „Der ist halt so." „Die brauchen ein anderes Mindset." „Wir brauchen mehr Akademiker / mehr Praktiker / mehr Persönlichkeitsentwicklung." Coaching, Trainings, Recruiting — alles mit demselben Hebel: Menschen ändern.</p>
+    <p>Die Gegenthese stammt aus der Soziologie: <em>Verhältnisse prägen Verhalten</em> (Sprenger). <em>Das Spiel macht die Spieler — nicht umgekehrt</em> (Simon). 80–90 % des beobachtbaren Verhaltens erklärt sich aus dem Kontext: Sitzordnung, Incentives, Meeting-Struktur, Prozesse, was geduldet wird, was sanktioniert wird. Wer das System tatsächlich verändern will, muss am Kontext arbeiten — nicht an den Menschen.</p>
+    <p>Das gilt mit Vorbehalt: Manchmal ist tatsächlich eine Person das Problem. Aber das ist der <em>zweite</em> Gedanke, nicht der erste.</p>
+
+    <h3>3. Prozess-Illusion — die Könner werden unwirksam</h3>
+    <p>Die Verwechslung von <em>Wissen</em> und <em>Können</em>. Wissen kann man aufschreiben, vorgeben, kopieren. Es funktioniert in stabilen, vorhersehbaren Umgebungen — Routine, Methode, Prozess, Plan. Wenn die Realität still hält, ist das großartig.</p>
+    <p>Können entsteht durch lange Übung am Rand der Überforderung. Es ist nicht aufschreibbar. Es ist Voraussetzung, sobald Überraschungen die Realität durchschütteln — also dort, wo Probleme nicht trivial sind. Wenn Organisationen ihr ganzes Heil im Prozess suchen, lähmen sie genau die Könner, deren Urteil sie eigentlich bräuchten. Übrig bleibt: Disziplin ohne Wirkung. Methode statt Substanz.</p>
+    <p>Die Frage ist nie „Wissen oder Können?", sondern: <em>Welche Anteile hat dieses konkrete Problem?</em></p>
+
+    <h3>4. Wissens-Illusion — Chef-Perspektiven werden überschätzt</h3>
+    <p>Die Annahme: Wer Macht hat, weiß, wie es geht. Das Zentrum denkt über Zukunft nach, formuliert Vorgaben, treibt sie über Macht in die Peripherie. Wenn Macht plus tatsächlicher Wissensvorsprung zusammenkommen, ist das funktional — Taylorismus.</p>
+    <p>Aber im wirklichen Alltag sitzt das relevante Können <em>in der Peripherie</em>: bei denen, die täglich mit Kunden, Maschinen, Konstruktionen, Markt umgehen. Das Zentrum hat keinen Wissensvorsprung — sondern eine Wissensvorsprungs-<em>Illusion</em>. Es entsteht <em>Prozesstheater</em>: die Peripherie spielt Compliance, löst ihre Probleme aber so, wie sie es immer getan hat. Das Zentrum bekommt nur noch saubere Rückmeldungen — und kann nicht mehr lernen. Die <em>blaue Falle</em> schnappt zu.</p>
+    <p>Die Alternative ist nicht „keine Macht". Sondern: Macht wird anders eingesetzt — sie öffnet Schutzräume, in denen Könner würdevoll scheitern können, statt operative Vorgaben zu machen.</p>
+
+    <h3>Warum gerade <em>vier</em>?</h3>
+    <p>Weil sie unabhängig voneinander entstehen — und zusammen ein abgeschlossenes Lähmungs-System bilden. Die <em>Zweck-Illusion</em> verschiebt den Bezugspunkt nach innen. Die <em>Mensch-Illusion</em> verschiebt die Ursache aufs Individuum. Die <em>Prozess-Illusion</em> verschiebt die Lösung in die Standardisierung. Die <em>Wissens-Illusion</em> verschiebt die Entscheidung nach oben. In Summe: Eine Organisation, die nicht mehr weiß, wofür sie da ist, niemandem mehr zutraut, was zu können, und sich selbst über ein Theaterspiel hinwegtäuscht.</p>
+
+    <blockquote><p>Vier Illusionen genügen, um eine erfolgreiche Organisation taub gegen ihre eigene Realität zu machen. Erst wer sie benennt, kann anfangen, durch sie hindurchzuschauen.</p></blockquote>
   </div>
 </article>
 
@@ -1071,13 +1149,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="footer-num">Teil 2 · 01 / 10</div>
 </section>
 
-<!-- Kapitel 10 -->
-<section class="slide" data-bg="paradox" id="k-10">
+<!-- Kapitel 11 -->
+<section class="slide" data-bg="paradox" id="k-11">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 10</div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 11</div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 10</span>
+    <span class="kicker">Kapitel 11</span>
     <h2>Die eine Erkenntnis,<br><span class="accent">die alles verändert</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Kultur ist der <span class="accent">Schatten</span> des gemeinsamen Handelns.<span class="quote-mark">“</span></p>
   </div>
@@ -1086,7 +1164,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>10 — Die eine Erkenntnis, die alles verändert</h2>
+    <h2>11 — Die eine Erkenntnis, die alles verändert</h2>
     <p class="lead">Der Denkfehler schlechthin — und was stattdessen hilft.</p>
 
     <p class="drop"><strong>Der Denkfehler schlechthin: Menschen sind schuld.</strong> Nicht der Kontext. Nicht die Struktur. Nicht die Spielregeln. Sondern die Menschen. <em>„Die Leute müssen sich ändern."</em> <em>„Wir brauchen ein anderes Mindset."</em> <em>„Der Fisch stinkt vom Kopf."</em></p>
@@ -1108,13 +1186,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 11 -->
-<section class="slide" data-bg="paradox" id="k-11">
+<!-- Kapitel 12 -->
+<section class="slide" data-bg="paradox" id="k-12">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
   <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 11<span class="sep">·</span><span class="accent">ROT/BLAU</span></div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 11</span>
+    <span class="kicker">Kapitel 12</span>
     <h2>Rot und Blau —<br><span class="accent">die Unterscheidung</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Das Rote erschafft und schützt das Blaue.<span class="quote-mark">“</span></p>
   </div>
@@ -1123,7 +1201,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>11 — Rot und Blau</h2>
+    <h2>12 — Rot und Blau</h2>
     <p class="lead">Zwei Welten. Zwei Logiken. Ein Unternehmen.</p>
 
     <table>
@@ -1149,13 +1227,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 12 -->
-<section class="slide" data-bg="paradox" id="k-12">
+<!-- Kapitel 13 -->
+<section class="slide" data-bg="paradox" id="k-13">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 12</div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 13</div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 12</span>
+    <span class="kicker">Kapitel 13</span>
     <h2>Primat der<br><span class="accent">Wertschöpfung</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Dient es der Wertschöpfung? Nein? Dann nicht.<span class="quote-mark">“</span></p>
   </div>
@@ -1164,7 +1242,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>12 — Primat der Wertschöpfung</h2>
+    <h2>13 — Primat der Wertschöpfung</h2>
     <p class="lead">Die einzige Frage, die zählt: Dient es der Wertschöpfung?</p>
 
     <ul>
@@ -1178,13 +1256,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 13 -->
-<section class="slide" data-bg="paradox" id="k-13">
+<!-- Kapitel 14 -->
+<section class="slide" data-bg="paradox" id="k-14">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 13</div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 14</div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 13</span>
+    <span class="kicker">Kapitel 14</span>
     <h2>Zentrum und<br><span class="accent">Peripherie</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Die Peripherie weiß mehr über die echten Probleme<br>als jeder Vorstand.<span class="quote-mark">“</span></p>
   </div>
@@ -1193,7 +1271,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>13 — Zentrum und Peripherie</h2>
+    <h2>14 — Zentrum und Peripherie</h2>
     <p class="lead">Warum die Lösung fast immer in der Peripherie liegt.</p>
 
     <ul>
@@ -1207,13 +1285,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 14 -->
-<section class="slide" data-bg="paradox" id="k-14">
+<!-- Kapitel 15 -->
+<section class="slide" data-bg="paradox" id="k-15">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 14</div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 15</div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 14</span>
+    <span class="kicker">Kapitel 15</span>
     <h2>Föderatives Management —<br><span class="accent">Steuerung UND Führung</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Führung sitzt hierarchisch <span class="accent">tiefer</span> als Steuerung.<span class="quote-mark">“</span></p>
   </div>
@@ -1222,7 +1300,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>14 — Föderatives Management</h2>
+    <h2>15 — Föderatives Management</h2>
     <p class="lead">Das Betriebssystem für dynamikrobuste Organisationen.</p>
 
     <ul>
@@ -1237,13 +1315,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 15 -->
-<section class="slide" data-bg="paradox" id="k-15">
+<!-- Kapitel 16 -->
+<section class="slide" data-bg="paradox" id="k-16">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 15</div>
+  <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 16</div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 15</span>
+    <span class="kicker">Kapitel 16</span>
     <h2><span class="accent">Einladung</span> statt Vorladung.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Würdevolles Scheitern statt Fehlervermeidung.<span class="quote-mark">“</span></p>
   </div>
@@ -1252,7 +1330,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>15 — Einladung statt Vorladung</h2>
+    <h2>16 — Einladung statt Vorladung</h2>
     <p class="lead">Wie Verbesserung wirklich entsteht.</p>
 
     <ul>
@@ -1267,13 +1345,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 16 -->
-<section class="slide" data-bg="paradox" id="k-16">
+<!-- Kapitel 17 -->
+<section class="slide" data-bg="paradox" id="k-17">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
   <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 16<span class="sep">·</span><span class="accent">KO-EVOLUTION</span></div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 16</span>
+    <span class="kicker">Kapitel 17</span>
     <h2>Die Ko-Evolution<br>nutzen — <span class="accent">Löwen<br>und Gazellen</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Die Gazellen machen die Löwen schneller,<br>indem sie selbst schneller rennen.<span class="quote-mark">“</span></p>
   </div>
@@ -1282,7 +1360,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>16 — Die Ko-Evolution nutzen</h2>
+    <h2>17 — Die Ko-Evolution nutzen</h2>
     <p class="lead">Warum man andere nicht verändern kann. Nur sich selbst.</p>
 
     <ul>
@@ -1297,13 +1375,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 17 -->
-<section class="slide" data-bg="paradox" id="k-17">
+<!-- Kapitel 18 -->
+<section class="slide" data-bg="paradox" id="k-18">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
   <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 17<span class="sep">·</span><span class="accent">12 PRINZIPIEN</span></div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 17</span>
+    <span class="kicker">Kapitel 18</span>
     <h2>Zwölf Prinzipien<br>für <span class="accent">SystemPraktiker</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Diese Prinzipien sind kein Programm.<br>Sie sind Haltung.<span class="quote-mark">“</span></p>
   </div>
@@ -1312,7 +1390,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>17 — Zwölf Prinzipien für SystemPraktiker</h2>
+    <h2>18 — Zwölf Prinzipien für SystemPraktiker</h2>
     <p class="lead">Orientierung statt Rezept. Verdichtet aus der Arbeit vieler Praktiker.</p>
 
     <p class="drop">Die folgenden Prinzipien stammen aus der Arbeit der SystemPraktiker (systempraktiker.org) — einer Gemeinschaft von Menschen, die Organisation aus systemtheoretischer Perspektive gestalten. Sie sind kein Regelwerk. Sie sind Kompass.</p>
@@ -1327,7 +1405,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p>System-Praktiker arbeiten an Rahmenbedingungen — das ist DER Hebel. Nicht an einzelnen Personen oder Prozessen. Kontext vor Mensch.</p>
 
     <h3>4 — Überregulierung schadet</h3>
-    <p>Passende Freiheitsgrade sind entscheidend. Zu viele Regeln beschädigen die Fähigkeit, schnell auf Marktveränderungen zu reagieren. Jede unnötige Regel ist ein Höchstleistung-Killer.</p>
+    <p>Passende Freiheitsgrade sind entscheidend. Zu viele Regeln beschädigen die Fähigkeit, schnell auf Marktveränderungen zu reagieren. Jede unnötige Regel ist ein Höchstleistungs-Killer.</p>
 
     <h3>5 — Planungs-Illusion stört</h3>
     <p>Bei Ungewissheit ist bewusste Erprobung wichtiger als Planung. Ohne schnelles Scheitern kein schnelles Lernen — besonders bei großer Unsicherheit.</p>
@@ -1357,13 +1435,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 18 -->
-<section class="slide" data-bg="paradox" id="k-18">
+<!-- Kapitel 19 -->
+<section class="slide" data-bg="paradox" id="k-19">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
   <div class="brand-bar">TEIL 2<span class="sep">·</span>KAPITEL 18<span class="sep">·</span><span class="accent">HASHTAGS</span></div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 18</span>
+    <span class="kicker">Kapitel 19</span>
     <h2>Zehn Hashtags<br>für den Alltag.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Zum Aufhängen, Erinnern, <span class="accent">Streiten</span>.<span class="quote-mark">“</span></p>
   </div>
@@ -1372,7 +1450,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>18 — Zehn Hashtags für den Alltag</h2>
+    <h2>19 — Zehn Hashtags für den Alltag</h2>
     <p class="lead">Kurzform der Prinzipien — zum Aufhängen, Erinnern, Streiten.</p>
 
     <ol>
@@ -1407,13 +1485,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="footer-num">Teil 3 · 01 / 05</div>
 </section>
 
-<!-- Kapitel 19 -->
-<section class="slide" data-bg="wirkt" id="k-19">
+<!-- Kapitel 20 -->
+<section class="slide" data-bg="wirkt" id="k-20">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 19</div>
+  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 20</div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 19</span>
+    <span class="kicker">Kapitel 20</span>
     <h2>Diagnose —<br><span class="accent">wo stehen wir?</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Fragen an Ihr Führungsteam.<span class="quote-mark">“</span></p>
   </div>
@@ -1422,12 +1500,12 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>19 — Diagnose: Wo stehen wir?</h2>
+    <h2>20 — Diagnose: Wo stehen wir?</h2>
     <p class="lead">Fragen an Ihr Führungsteam.</p>
 
     <h3>Runde 1 — Symptome erkennen</h3>
     <ul>
-      <li>Welche der Höchstleistung-Killer erkennen Sie in Ihrer Organisation?</li>
+      <li>Welche der Höchstleistungs-Killer erkennen Sie in Ihrer Organisation?</li>
       <li>Wo haben wir in den letzten 5 Jahren „professionalisiert" — und es wurde schlechter?</li>
       <li>Welche Prozesse haben wir eingeführt, die kein Mensch braucht?</li>
       <li>Wo warten Mitarbeiter auf Anweisungen, obwohl sie die Antwort kennen?</li>
@@ -1449,13 +1527,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 20 -->
-<section class="slide" data-bg="wirkt" id="k-20">
+<!-- Kapitel 21 -->
+<section class="slide" data-bg="wirkt" id="k-21">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 20</div>
+  <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 21</div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 20</span>
+    <span class="kicker">Kapitel 21</span>
     <h2>Die wichtigen<br><span class="accent">Unterscheidungen</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Wortpaare, die den Blick schärfen.<span class="quote-mark">“</span></p>
   </div>
@@ -1464,7 +1542,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>20 — Die wichtigen Unterscheidungen</h2>
+    <h2>21 — Die wichtigen Unterscheidungen</h2>
     <p class="lead">Wortpaare, die den Blick schärfen.</p>
 
     <table>
@@ -1496,13 +1574,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 21 -->
-<section class="slide" data-bg="wirkt" id="k-21">
+<!-- Kapitel 22 -->
+<section class="slide" data-bg="wirkt" id="k-22">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
   <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 21<span class="sep">·</span><span class="accent">EXPERIMENTE</span></div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 21</span>
+    <span class="kicker">Kapitel 22</span>
     <h2>Drei Experimente<br>für den <span class="accent">Anfang</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Nicht reden. Machen. Aber klein anfangen.<span class="quote-mark">“</span></p>
   </div>
@@ -1511,7 +1589,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
 <article class="text">
   <div class="text__inner">
-    <h2>21 — Drei Experimente für den Anfang</h2>
+    <h2>22 — Drei Experimente für den Anfang</h2>
     <p class="lead">Nicht reden. Machen. Aber klein anfangen.</p>
 
     <h3>Experiment 1 — Ein echtes Problem sichtbar machen</h3>
@@ -1527,22 +1605,22 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   </div>
 </article>
 
-<!-- Kapitel 22 -->
-<section class="slide" data-bg="wirkt" id="k-22">
+<!-- Kapitel 23 -->
+<section class="slide" data-bg="wirkt" id="k-23">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
   <div class="brand-bar">TEIL 3<span class="sep">·</span>KAPITEL 22<span class="sep">·</span><span class="accent">DIE EINE FRAGE</span></div>
   <div class="slide__stage">
-    <span class="kicker">Kapitel 22</span>
+    <span class="kicker">Kapitel 23</span>
     <h2>Die eine Frage<br>zum Schluss.</h2>
-    <p class="slogan"><span class="quote-mark">„</span>Welches Ihrer eigenen Management-Rituale<br>würden Sie als erstes in Frage stellen?<span class="quote-mark">“</span></p>
+    <p class="slogan"><span class="quote-mark">„</span>Welches Ihrer eigenen Management&#8209;Rituale<br>würden Sie als erstes in Frage stellen?&nbsp;<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil 3 · 05 / 05</div>
 </section>
 
 <article class="text">
   <div class="text__inner">
-    <h2>22 — Die eine Frage zum Schluss</h2>
+    <h2>23 — Die eine Frage zum Schluss</h2>
 
     <p class="lead">Wenn Sie nur eine Sache verändern könnten — welches Ihrer eigenen Management-Rituale würden Sie als erstes in Frage stellen?</p>
 
@@ -1557,15 +1635,22 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <!-- ============================================================
      CLOSING
      ============================================================ -->
-<section class="slide slide--center" data-bg="closing" id="closing">
+<section class="slide" data-bg="closing" id="closing">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar"><span class="vs-mark">V&amp;S BERATUNG</span><span class="sep">·</span><span class="accent">Höchstleistung-Killer</span></div>
-  <div class="slide__stage" style="text-align:left">
-    <span class="kicker">Schluss</span>
-    <h1>Eine kleine Sache —<br><span class="accent">nächste Woche.</span></h1>
-    <p class="lead">Benno Löffler · V&amp;S GmbH<br><em>#sauguteTransformation</em></p>
-    <p class="signature" style="margin-top:3rem">Entwurf · Mai 2026</p>
+  <div class="brand-bar"><span class="vs-mark">ANFANGEN!</span><span class="sep">·</span><span class="accent">Höchstleistungs-Killer</span></div>
+  <div class="slide__stage" style="text-align:left;max-width:54rem">
+    <span class="kicker">Anfangen</span>
+    <h1>Wie könnte man <span class="accent">anfangen</span>?</h1>
+    <p class="lead">Was kann man anders machen?</p>
+
+    <p style="margin-top:1.6rem">Es geht oben los — mit der Frage im Management-Team:</p>
+
+    <p class="closing-quote"><span class="quote-mark">„</span>Hey Kollegen! Schaut euch mal diese vier Illusionen und diese sechs Höchstleistungs-Killer an. Mein Eindruck: Da könnte mehr dran sein, als ich mir wünsche … Wie seht ihr das denn?<span class="quote-mark">“</span></p>
+
+    <p>Wenn darüber offen gesprochen werden darf, kann echte Reflexion stattfinden — denn wenn sich das <span class="accent">kollektive Denken</span> ändert, hat die Transformation schon begonnen.</p>
+
+    <p class="signature" style="margin-top:2.6rem">Benno Löffler · Florian Glöbl · <em>#sauguteTransformation</em></p>
   </div>
   <div class="footer-num">Ende</div>
 </section>
@@ -1585,16 +1670,18 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <div class="autor">
       <img class="autor__photo" src="img/autoren/florian.jpg" alt="Florian Glöbl" loading="lazy" width="520" height="520">
       <h3 class="autor__name">Florian Glöbl</h3>
-      <p class="autor__role">Berater · V&amp;S GmbH</p>
+      <p class="autor__role">Geschäftsführer G&amp;P</p>
       <p class="autor__bio">Übersetzt Systemdenken in den Werks- und Büroalltag. Mag konkrete Experimente lieber als große Programme.</p>
     </div>
   </div>
 </section>
 
 <footer class="colophon">
-  <p><strong>Höchstleistung-Killer</strong> · Benno Löffler · V&amp;S GmbH</p>
+  <p><strong>Höchstleistungs-Killer</strong> · Benno Löffler · Florian Glöbl</p>
   <p>Buchentwurf v5 · 2026-05-17 · <a href="#cover">Zum Anfang</a> · <a href="#toc">Inhalt</a></p>
-  <p>Satz in Fraunces und Inter. Hintergrundbilder aus v4. <em>#sauguteTransformation</em></p>
+  <p>Satz in Fraunces und Inter.</p>
+  <p><em>#höchstleistungsKiller</em></p>
+  <p><em>#sauguteTransformation</em></p>
 </footer>
 
 <script>
