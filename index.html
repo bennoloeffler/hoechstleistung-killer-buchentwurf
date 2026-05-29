@@ -511,6 +511,71 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 .slide--epigraph .slide__stage{max-width:42rem;text-align:center;margin:0 auto}
 .slide--epigraph .slogan{font-size:clamp(1.3rem,2.4vw,2rem);margin:0 auto}
 
+/* Autoren */
+.autoren{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:8vh 6vw;
+  background:linear-gradient(170deg,#1a1410 0%,#0d0a08 100%);
+  color:#fff;
+  position:relative;overflow:hidden;
+}
+.autoren__inner{max-width:64rem;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.autoren h2{
+  grid-column:1/-1;
+  font-family:var(--font-serif);
+  font-weight:700;
+  font-size:clamp(2rem,4vw,3rem);
+  letter-spacing:-.02em;
+  margin:0 0 2rem;
+  text-align:center;
+}
+.autoren h2 .accent{color:var(--vs-warm)}
+.autor{display:flex;flex-direction:column;align-items:center;text-align:center}
+.autor__photo{
+  width:clamp(180px,22vw,260px);
+  height:clamp(180px,22vw,260px);
+  border-radius:50%;
+  object-fit:cover;
+  object-position:50% 25%;
+  filter:saturate(.88) contrast(1.03);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 0 4px rgba(212,140,73,.35),
+    0 22px 60px rgba(0,0,0,.55);
+  margin-bottom:1.4rem;
+  transition:transform .4s ease, filter .4s ease;
+}
+.autor__photo:hover{transform:translateY(-3px);filter:saturate(1) contrast(1.05)}
+.autor__name{
+  font-family:var(--font-serif);
+  font-weight:700;
+  font-size:1.55rem;
+  letter-spacing:-.005em;
+  margin:0 0 .3rem;
+}
+.autor__role{
+  font-family:var(--font-sans);
+  font-weight:600;
+  font-size:.66rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--vs-warm);
+  margin:0 0 1rem;
+}
+.autor__bio{
+  font-family:var(--font-serif);
+  font-style:italic;
+  font-size:1rem;
+  line-height:1.55;
+  color:rgba(255,255,255,.78);
+  max-width:22rem;
+  margin:0;
+}
+@media (max-width:760px){
+  .autoren__inner{grid-template-columns:1fr;gap:3.5rem}
+}
+
 @media print{
   .nav-toc,.progress,.toc,.toc-backdrop{display:none}
   .slide{page-break-after:always;min-height:auto;padding:2cm 1.5cm;background:white;color:black}
@@ -541,7 +606,6 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p class="lead">Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen.</p>
     <p class="signature">— Benno Löffler & Florian Glöbl · <span class="accent">#sauguteTransformation</span></p>
   </div>
-  <div class="footer-num">00</div>
 </section>
 
 <!-- ============================================================
@@ -607,6 +671,14 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
           <li><a href="#k-22"><span class="num">22</span><span>Die eine Frage zum Schluss</span></a></li>
         </ul>
       </li>
+      <li class="toc__teil">
+        <div class="toc__teil-head">
+          <span class="toc__teil-num">Anhang</span>
+        </div>
+        <ul class="toc__chapters">
+          <li><a href="#autoren"><span class="num">·</span><span>Die Autoren</span></a></li>
+        </ul>
+      </li>
     </ol>
   </div>
 </aside>
@@ -623,7 +695,6 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p class="slogan">Aber er weiß nicht warum.</p>
     <p class="slogan">Und er versteht vor allem nicht,<br>dass sein <span class="accent">Denken</span> Teil des Problems ist.<span class="quote-mark">“</span></p>
   </div>
-  <div class="footer-num">Widmung</div>
 </section>
 
 <!-- ============================================================
@@ -1497,6 +1568,27 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p class="signature" style="margin-top:3rem">Entwurf · Mai 2026</p>
   </div>
   <div class="footer-num">Ende</div>
+</section>
+
+<!-- ============================================================
+     AUTOREN
+     ============================================================ -->
+<section class="autoren" id="autoren">
+  <div class="autoren__inner">
+    <h2>Die <span class="accent">Autoren</span></h2>
+    <div class="autor">
+      <img class="autor__photo" src="img/autoren/benno.jpg" alt="Benno Löffler" loading="lazy" width="520" height="520">
+      <h3 class="autor__name">Benno Löffler</h3>
+      <p class="autor__role">Geschäftsführer · V&amp;S GmbH</p>
+      <p class="autor__bio">Begleitet seit über zwei Jahrzehnten Unternehmen dabei, ihre eigenen Höchstleistungs-Killer zu erkennen — und Schritt für Schritt loszuwerden.</p>
+    </div>
+    <div class="autor">
+      <img class="autor__photo" src="img/autoren/florian.jpg" alt="Florian Glöbl" loading="lazy" width="520" height="520">
+      <h3 class="autor__name">Florian Glöbl</h3>
+      <p class="autor__role">Berater · V&amp;S GmbH</p>
+      <p class="autor__bio">Übersetzt Systemdenken in den Werks- und Büroalltag. Mag konkrete Experimente lieber als große Programme.</p>
+    </div>
+  </div>
 </section>
 
 <footer class="colophon">
