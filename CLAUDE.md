@@ -3,10 +3,7 @@
 These rules apply to every task inthis project unless explicitly overridden.
 Bias: caution over speed on non-trivial work. Use judgment on trivial tasks.
 
-**Goals / Definition-of-Done live in [@GOALS.md](./GOALS.md)** — read that for the
-phase plan (Phase 0 done; Phase 1 in flight; Phase 2–4 pending). The
-LLM-first reconstruction strategy is in
-[`v4doc/100-restart-with-llm-first-reconstruction.md`](./v4doc/100-restart-with-llm-first-reconstruction.md).
+**Goals / Definition-of-Done live in [@GOALS.md](./GOALS.md)** 
 
 ## Rule 1 — Think Before Coding
 
@@ -59,11 +56,5 @@ Only after finding errors by inspection: codify as a regression test.
 ## Rule 10 — At the end of any work that produces visible output, OPEN the HTML in the browser
 
 The user wants to SEE what was done — not just read a summary. When a step
-finishes that produced an integrity dashboard, an entity inspector, a
-stichprobe view, a card-render, or any other browseable artefact: open the
-file with `open <path>` (or equivalent) so it lands in their browser
-immediately. Do not just print the path and stop.
-
-Applies after: migration runs, loader runs, extraction passes, dedupe
-passes, and all G3 review gates per `GOALS.md`. Hand-in-hand with Rule 9
-(doubt the result) — the browser view is how the user judges integrity.
+finishes show in a browser immediately. You may use playwright to check it for yourself.
+Make bottom up tests. Guess what have could be wrong and check it.

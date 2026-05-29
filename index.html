@@ -417,6 +417,21 @@ article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font
 .toc__chapters a:hover{color:var(--vs-warm)}
 .toc__chapters .num{flex:0 0 1.4rem;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.45);font-weight:500}
 
+.toc__chapters a.is-active,
+.toc__teil-title a.is-active{color:var(--vs-warm)}
+.toc__chapters a.is-active{font-weight:600;position:relative}
+.toc__chapters a.is-active .num{color:var(--vs-warm)}
+.toc__chapters a.is-active::before{
+  content:"";
+  position:absolute;
+  left:-.85rem;
+  top:.35em;bottom:.35em;
+  width:2px;
+  background:var(--vs-warm);
+  border-radius:2px;
+}
+.toc__teil-title a.is-active{border-bottom-color:var(--vs-warm)}
+
 .toc__close{
   position:absolute;
   top:.6rem;right:.6rem;
@@ -427,7 +442,7 @@ article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font
   color:#fff;
   font-size:1.15rem;line-height:1;
   cursor:pointer;
-  display:none;
+  display:flex;
   align-items:center;justify-content:center;
   transition:all .2s;
   z-index:3;
@@ -476,7 +491,6 @@ article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font
 /* On narrow screens the slider acts as a real drawer, not auto-sticky */
 @media (max-width:900px){
   .toc{width:min(340px,88vw);z-index:200}
-  .toc__close{display:flex}
   .toc.is-visible{transform:translateX(100%)}
   .toc.is-open{transform:translateX(0)}
   .nav-toc.is-hidden{opacity:1;pointer-events:auto;transform:none}
@@ -543,7 +557,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
           <span class="toc__teil-num">Vorspann</span>
         </div>
         <ul class="toc__chapters">
-          <li><a href="#epigraph"><span class="num">·</span><span>Epigraph</span></a></li>
+          <li><a href="#epigraph"><span class="num">·</span><span>Kernthese</span></a></li>
           <li><a href="#vorwort"><span class="num">·</span><span>Vorwort — Die unsichtbare Katastrophe</span></a></li>
         </ul>
       </li>
@@ -603,7 +617,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <section class="slide slide--center slide--epigraph" data-bg="einleitung" id="epigraph">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar">EPIGRAPH</div>
+  <div class="brand-bar">KERNTHESE</div>
   <div class="slide__stage">
     <p class="slogan"><span class="quote-mark">„</span>Für alle, die spüren:<br>Es müsste besser gehen.</p>
     <p class="slogan">Aber nicht wissen, warum es das nicht tut.</p>
@@ -1517,28 +1531,36 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
   var isDesktop=function(){return window.matchMedia('(min-width:901px)').matches};
   var pastCover=false;       // scrolled past the cover slide
-  var mobileOpen=false;       // mobile drawer state
+  var mobileOpen=false;      // mobile drawer state
+  var userHidden=false;      // desktop: user clicked × to collapse
 
   function render(){
     if(isDesktop()){
-      toc.classList.toggle('is-visible', pastCover);
+      var visible = pastCover && !userHidden;
+      toc.classList.toggle('is-visible', visible);
       toc.classList.remove('is-open');
-      nav.classList.toggle('is-hidden', pastCover);
+      nav.classList.toggle('is-hidden', visible);
       backdrop.classList.remove('is-open');
-      btn.setAttribute('aria-expanded', pastCover?'true':'false');
+      btn.setAttribute('aria-expanded', visible?'true':'false');
+      btn.textContent = pastCover ? 'Inhalt anzeigen' : 'Inhalt';
     }else{
       toc.classList.toggle('is-open', mobileOpen);
       toc.classList.remove('is-visible');
       backdrop.classList.toggle('is-open', mobileOpen);
       nav.classList.remove('is-hidden');
       btn.setAttribute('aria-expanded', mobileOpen?'true':'false');
+      btn.textContent = 'Inhalt';
     }
   }
 
   // Auto-reveal once cover leaves the viewport
   if(cover && 'IntersectionObserver' in window){
     var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ pastCover = !e.isIntersecting; });
+      entries.forEach(function(e){
+        var nowPast = !e.isIntersecting;
+        if(!nowPast) userHidden=false;   // reset manual hide once we're back on the cover
+        pastCover = nowPast;
+      });
       render();
     },{threshold:0.15});
     io.observe(cover);
@@ -1546,27 +1568,36 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     pastCover=true;
   }
 
-  // "Inhalt" button: scroll-to-content on desktop, open drawer on mobile
+  // "Inhalt" pill: expand on desktop, open drawer on mobile, scroll into content from cover
   btn.addEventListener('click',function(){
     if(isDesktop()){
-      var target=document.getElementById('epigraph');
-      if(target) window.scrollTo({top:target.offsetTop,behavior:'smooth'});
+      if(pastCover){
+        userHidden=false; render();
+      }else{
+        var target=document.getElementById('epigraph');
+        if(target) window.scrollTo({top:target.offsetTop,behavior:'smooth'});
+      }
     }else{
       mobileOpen=true; render();
     }
   });
 
-  function closeMobile(){ mobileOpen=false; render(); }
-  closeBtn.addEventListener('click',closeMobile);
-  backdrop.addEventListener('click',closeMobile);
+  // × button: hide on desktop, close drawer on mobile
+  closeBtn.addEventListener('click',function(){
+    if(isDesktop()){ userHidden=true; render(); }
+    else { mobileOpen=false; render(); }
+  });
+  backdrop.addEventListener('click',function(){ mobileOpen=false; render(); });
   document.addEventListener('keydown',function(e){
-    if(e.key==='Escape' && mobileOpen) closeMobile();
+    if(e.key!=='Escape') return;
+    if(isDesktop() && pastCover && !userHidden){ userHidden=true; render(); }
+    else if(!isDesktop() && mobileOpen){ mobileOpen=false; render(); }
   });
 
   // Close drawer after jumping to a chapter (mobile only)
   toc.addEventListener('click',function(e){
     var a=e.target.closest && e.target.closest('a[href^="#"]');
-    if(a && !isDesktop()) closeMobile();
+    if(a && !isDesktop()){ mobileOpen=false; render(); }
   });
 
   // Any other "#toc" link (footer, etc.)
@@ -1574,8 +1605,10 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     a.addEventListener('click',function(e){
       e.preventDefault();
       if(isDesktop()){
+        userHidden=false;
         var target=document.getElementById('epigraph');
         if(target) window.scrollTo({top:target.offsetTop,behavior:'smooth'});
+        render();
       }else{
         mobileOpen=true; render();
       }
@@ -1584,6 +1617,33 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
   window.addEventListener('resize', render);
   render();
+
+  /* Scroll-spy: highlight the chapter currently in view */
+  var links=Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+  var pairs=[];
+  links.forEach(function(a){
+    var id=a.getAttribute('href').slice(1);
+    var el=document.getElementById(id);
+    if(el) pairs.push({el:el,a:a});
+  });
+  if('IntersectionObserver' in window && pairs.length){
+    var spy=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        links.forEach(function(l){l.classList.remove('is-active');});
+        var match=pairs.find(function(p){return p.el===entry.target;});
+        if(!match) return;
+        match.a.classList.add('is-active');
+        // keep active link in view inside the sidebar
+        var r=match.a.getBoundingClientRect();
+        var tr=toc.getBoundingClientRect();
+        if(r.top<tr.top+40 || r.bottom>tr.bottom-40){
+          match.a.scrollIntoView({block:'nearest'});
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px',threshold:0});
+    pairs.forEach(function(p){spy.observe(p.el);});
+  }
 })();
 </script>
 
