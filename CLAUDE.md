@@ -5,9 +5,6 @@ Bias: caution over speed on non-trivial work. Use judgment on trivial tasks.
 
 **Goals / Definition-of-Done live in [@GOALS.md](./GOALS.md)** 
 
-For website releases, follow [DEPLOYMENT.md](./DEPLOYMENT.md) and use `./deploy.ps1`
-so that both the V&S and G&P domains receive the same source commit.
-
 ## Rule 1 — Think Before Coding
 
 State assumptions explicitly. If uncertain, ask rather than guess.
