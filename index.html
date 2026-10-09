@@ -199,14 +199,15 @@ button,a{-webkit-tap-highlight-color:rgba(183,12,52,.18)}
 .slide--cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(15rem,19rem);gap:clamp(2rem,5vw,5rem);padding-bottom:9rem}
 .slide--cover .slide__stage{max-width:52rem;container-type:inline-size}
 .slide--cover h1{
-  font-size:clamp(1.5rem,9.5cqw,5rem);
+  font-size:clamp(2rem,12cqw,6.25rem);
   line-height:.95;
   letter-spacing:-.035em;
   font-weight:600;
 }
-.cover-title__line{display:flex;align-items:baseline;white-space:nowrap;font-size:.9em}
+.cover-title__line{display:block;white-space:nowrap}
+.cover-title__second{display:flex;align-items:baseline;gap:.2em;margin-top:.05em;white-space:nowrap}
 .slide--cover h1 em{font-size:1.25em;font-style:italic;color:var(--brand-red);font-weight:400}
-.cover-title__context{display:block;margin-top:.3em;color:#fff;font-size:.55em;line-height:1.2;letter-spacing:-.015em;font-weight:500}
+.cover-title__context{color:#fff;font-size:.435em;line-height:1.2;letter-spacing:-.015em;font-weight:500}
 @media (min-width:701px){
   .slide--cover h1{position:relative;top:-2.5rem}
 }
@@ -924,7 +925,7 @@ body.toc-modal-open{overflow:hidden}
   <div class="slide__overlay"></div>
   <div class="brand-bar"><span>Buchentwurf</span><span class="sep">·</span><span class="accent">Version 6 · 2026-10-09</span></div>
   <div class="slide__stage">
-    <h1><span class="cover-title__line">Höchstleistungs-<em>Killer</em></span> <span class="cover-title__context">in Organisationen</span></h1>
+    <h1><span class="cover-title__line">Höchstleistungs-</span><span class="cover-title__second"><em>Killer</em> <span class="cover-title__context">in Organisationen</span></span></h1>
     <p class="lead"><span class="cover-subtitle__line">Wie sich Unternehmen versehentlich zugrunde richten.</span><span class="cover-subtitle__line">Und wie man die Leistungsfähigkeit wieder zurückgewinnen kann.</span></p>
     <p class="signature">— Benno Löffler & Florian Glöbl · <span class="accent">#saugutezusammenarbeit</span></p>
     <a class="cover-cta-btn" href="mailto:tietz@v-und-s.de?cc=info%40g-u-p.de&amp;subject=Vorbestellung%20H%C3%B6chstleistungskiller%20in%20Organisationen">Buch vorbestellen</a>
