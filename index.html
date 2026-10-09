@@ -3,53 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Höchstleistungs-Killer — Benno Löffler &amp; Florian Glöbl</title>
-<meta name="description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. Buchentwurf von Benno Löffler &amp; Florian Glöbl — Erscheint 1.12.2026.">
+<title>Höchstleistungskiller in Organisationen — Benno Löffler &amp; Florian Glöbl</title>
+<meta name="description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. Buchentwurf von Benno Löffler &amp; Florian Glöbl — Erscheint im Q1/2027.">
 <meta name="author" content="Benno Löffler, Florian Glöbl">
-<meta name="theme-color" content="#0f1115">
+<meta name="theme-color" content="#180910">
 
 <!-- Open Graph -->
 <meta property="og:type" content="book">
-<meta property="og:site_name" content="Höchstleistungs-Killer">
-<meta property="og:title" content="Höchstleistungs-Killer">
-<meta property="og:description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. — Erscheint 1.12.2026.">
+<meta property="og:site_name" content="Höchstleistungskiller in Organisationen">
+<meta property="og:title" content="Höchstleistungskiller in Organisationen">
+<meta property="og:description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. — Erscheint im Q1/2027.">
 <meta property="og:url" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/">
 <meta property="og:image" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/img/og/preview-v3.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
-<meta property="og:image:alt" content="Dunkle Silhouette einer Anzugfigur mit orangenen Blutspritzern an der Wand — Noir-Editorial-Bildsprache zum Buch Höchstleistungs-Killer">
+<meta property="og:image:alt" content="Dunkle Silhouette einer Anzugfigur mit orangenen Blutspritzern an der Wand — Noir-Editorial-Bildsprache zum Buch Höchstleistungskiller in Organisationen">
 <meta property="og:locale" content="de_DE">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Höchstleistungs-Killer">
-<meta name="twitter:description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. — Erscheint 1.12.2026.">
+<meta name="twitter:title" content="Höchstleistungskiller in Organisationen">
+<meta name="twitter:description" content="Wie wir unsere Unternehmen versehentlich zugrunde richten. Und wie wir Leistung zurückholen. — Erscheint im Q1/2027.">
 <meta name="twitter:image" content="https://bennoloeffler.github.io/hoechstleistung-killer-buchentwurf/img/og/preview-v3.jpg">
-<meta name="twitter:image:alt" content="Höchstleistungs-Killer — Buch-Cover-Vorschau">
+<meta name="twitter:image:alt" content="Höchstleistungskiller in Organisationen — Buch-Cover-Vorschau">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Höchstleistungs-Killer (v5) — Cinematic with backgrounds
-   Layout & typography mirror v4-2026-05-16-praegnanter-HTML.
-   Backgrounds are referenced from the v4 image folder.
+   Höchstleistungskiller in Organisationen — G&P palette and editorial reading layout
    ============================================================ */
 
 :root{
   --font-serif:'Fraunces', Georgia, 'Times New Roman', serif;
   --font-sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --vs-blue:#0b3a5b;
-  --vs-warm:#d68a2a;
-  --vs-ink:#0f1115;
-  --vs-paper:#f5efe2;
-  --vs-paper-deep:#ece4d0;
-  --vs-paper-ink:#1a1814;
-  --vs-paper-ink-soft:#3a342c;
-  --vs-paper-rule:#d4caaf;
+  --brand-red:#B70C34;
+  --brand-light:#ff8aa5;
+  --comparison-blue:#145a8a;
+  --vs-ink:#180910;
+  --vs-paper:#faf5f6;
+  --vs-paper-deep:#f1e5e9;
+  --vs-paper-ink:#29151d;
+  --vs-paper-ink-soft:#56434b;
+  --vs-paper-rule:#dcc5ce;
+  --muted-ink:#725c65;
+  --toc-width:300px;
+  --page-gutter:clamp(1.5rem,6vw,6rem);
 }
 
 *{box-sizing:border-box}
@@ -65,7 +67,10 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
-::selection{background:var(--vs-warm);color:var(--vs-ink)}
+::selection{background:var(--brand-red);color:#fff}
+:focus-visible{outline:3px solid var(--brand-light);outline-offset:5px}
+article.text :focus-visible,.cover-stoerer :focus-visible{outline-color:var(--brand-red)}
+button,a{-webkit-tap-highlight-color:rgba(183,12,52,.18)}
 
 /* ============================================================
    SLIDE — full-viewport cinematic
@@ -73,9 +78,10 @@ body{
 .slide{
   position:relative;
   min-height:100vh;
+  min-height:100svh;
   display:flex;
   align-items:center;
-  padding:6vh 6vw;
+  padding:7rem var(--page-gutter) 6rem;
   color:#fff;
   background:var(--vs-ink);
   overflow:hidden;
@@ -85,33 +91,39 @@ body{
 .slide--top{align-items:flex-start}
 
 .slide__bg{position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-color:#0a0807;
+  background-color:#180910;
+  filter:grayscale(1);
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
 }
+.slide::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:var(--brand-red);mix-blend-mode:color;
+}
 .slide__overlay{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.42) 38%, rgba(0,0,0,0.10) 62%, transparent 82%),
+    linear-gradient(90deg, rgba(24,9,16,.84) 0%, rgba(24,9,16,.56) 45%, rgba(24,9,16,.12) 82%),
     linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.55) 100%);
 }
 .slide__stage{position:relative;z-index:2;max-width:54rem;width:100%}
 
 /* Brand bar + footer-num */
 .brand-bar{
-  position:absolute;top:6%;left:6%;z-index:3;
+  position:absolute;top:2.5rem;left:var(--page-gutter);right:var(--page-gutter);z-index:3;
+  line-height:1.7;
   font-family:var(--font-sans);
-  font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
   font-weight:600;color:#fff;
   text-shadow:0 1px 6px rgba(0,0,0,.6);
 }
 .brand-bar .vs-mark{font-family:var(--font-serif);font-weight:700;letter-spacing:.04em}
 .brand-bar .sep{margin:0 .8em;opacity:.5}
-.brand-bar .accent{color:var(--vs-warm)}
+.brand-bar .accent{color:var(--brand-light)}
 
 .footer-num{
-  position:absolute;bottom:4%;right:6%;z-index:3;
+  position:absolute;bottom:2rem;right:var(--page-gutter);z-index:3;
   font-family:var(--font-sans);
   font-size:.65rem;letter-spacing:.22em;
   opacity:.72;font-weight:500;
@@ -137,14 +149,17 @@ body{
   font-family:var(--font-serif);
   font-weight:700;
   letter-spacing:-.025em;
+  overflow-wrap:anywhere;
+  hyphens:auto;
+  text-wrap:pretty;
   margin:0;
   text-shadow:0 1px 18px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
 }
-.slide h1{font-size:clamp(2.6rem,7vw,6.5rem);line-height:1.02}
-.slide h2{font-size:clamp(2.2rem,5.5vw,5rem);line-height:1.06}
+.slide h1{font-size:clamp(2.5rem,6vw,5.5rem);line-height:1.06}
+.slide h2{font-size:clamp(2.1rem,5vw,4.5rem);line-height:1.08}
 .slide h2 + h2{margin-top:.5rem}
 
-.accent{color:var(--vs-warm)}
+.accent{color:var(--brand-light)}
 
 .slide .lead{
   font-family:var(--font-sans);
@@ -155,127 +170,151 @@ body{
   margin:1.5rem 0 0;
   text-shadow:0 1px 12px rgba(0,0,0,.6);
 }
-.slide .lead em{font-style:italic;color:var(--vs-warm)}
+.slide .lead em{font-style:italic;color:var(--brand-light)}
 
 .slogan{
   font-family:var(--font-serif);
   font-style:italic;
   font-weight:400;
-  font-size:clamp(1.4rem,2.6vw,2.4rem);
-  line-height:1.25;
+  font-size:clamp(1.25rem,2.1vw,1.8rem);
+  line-height:1.4;
   margin:1.2rem 0;
-  max-width:40rem;
+  max-width:100%;
+  text-wrap:balance;
   text-shadow:0 1px 14px rgba(0,0,0,.55);
 }
-.slogan + .slogan{margin-top:.5rem;color:#e7d9bf}
+.slogan + .slogan{margin-top:.5rem;color:#f3dfe6}
 .slogan .quote-mark{
-  display:inline-block;
+  display:inline;
   font-family:var(--font-serif);
-  font-size:1.4em;
-  line-height:0;
-  color:var(--vs-warm);
-  vertical-align:-0.15em;
+  font-size:1em;
+  line-height:inherit;
+  color:var(--brand-light);
+  vertical-align:baseline;
   margin-right:.05em;
   font-style:normal;
   opacity:.85;
 }
 
-.slide--cover .slide__stage{max-width:clamp(32rem, 58vw, 48rem)}
+.slide--cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(15rem,19rem);gap:clamp(2rem,5vw,5rem);padding-bottom:9rem}
+.slide--cover .slide__stage{max-width:52rem;container-type:inline-size}
 .slide--cover h1{
-  font-size:clamp(3rem,9vw,8rem);
+  font-size:clamp(1.5rem,9.5cqw,5rem);
   line-height:.95;
   letter-spacing:-.035em;
   font-weight:600;
 }
-.slide--cover h1 em{font-style:italic;color:var(--vs-warm);font-weight:400}
-.slide--cover .lead{font-size:clamp(1.2rem,1.9vw,1.6rem);font-weight:400;font-style:italic;color:#e7d9bf;max-width:46rem}
-/* Cover CTA button — classic pill below the signature */
-.cover-cta-btn{
+.cover-title__line{display:flex;align-items:baseline;white-space:nowrap;font-size:.9em}
+.slide--cover h1 em{font-size:1.25em;font-style:italic;color:var(--brand-red);font-weight:400}
+.cover-title__context{display:block;margin-top:.3em;color:#fff;font-size:.55em;line-height:1.2;letter-spacing:-.015em;font-weight:500}
+@media (min-width:701px){
+  .slide--cover h1{position:relative;top:-2.5rem}
+}
+.slide--cover .lead{font-size:clamp(1.05rem,1.55vw,1.35rem);font-weight:400;font-style:italic;color:#f3dfe6;max-width:none}
+.cover-subtitle__line{display:block;white-space:nowrap}
+/* Shared preorder buttons */
+.cover-cta-btn,
+.book-order__button,
+article.text a.book-order__button,
+article.text a.praxis-cta{
   display:inline-block;
-  margin-top:1.6rem;
   padding:.85rem 1.6rem;
-  background:var(--vs-warm);
-  color:var(--vs-ink);
+  background:var(--brand-red);
+  color:#fff;
   font-family:var(--font-sans);
   font-weight:600;
-  font-size:.74rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+  font-size:.9rem;
+  letter-spacing:.02em;
+  text-align:center;
   text-decoration:none;
   border-radius:100px;
-  border:1px solid var(--vs-warm);
-  transition:all .25s;
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
+  border:1px solid var(--brand-red);
+  transition:background .2s, border-color .2s;
+  min-height:48px;
 }
-.cover-cta-btn:hover{background:transparent;color:var(--vs-warm)}
+.cover-cta-btn{margin-top:1.6rem}
+.cover-cta-btn:hover,.book-order__button:hover,article.text a.book-order__button:hover,article.text a.praxis-cta:hover{background:#940a2a;border-color:#940a2a;color:#fff}
+.book-order{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.25rem;
+  margin-top:2.5rem;padding-top:1.5rem;
+  border-top:1px solid var(--vs-paper-rule);
+  font-family:var(--font-sans);
+}
+.book-order__date{font-size:.82rem;line-height:1.4;color:var(--muted-ink)}
+.slide .book-order{border-color:rgba(255,255,255,.2)}
+.slide .book-order__date{color:rgba(255,255,255,.78)}
 .cover-pubdate{
   margin:.95rem 0 0;
   font-family:var(--font-sans);
-  font-size:.72rem;
+  font-size:.88rem;
   font-weight:500;
-  letter-spacing:.2em;
-  text-transform:uppercase;
+  letter-spacing:.02em;
   color:rgba(255,255,255,.78);
   text-shadow:0 1px 8px rgba(0,0,0,.6);
 }
 .cover-pubdate .accent{font-weight:700}
 
-/* Cover Störer — angled paper-sticker card with the hint text */
+/* Lift the paper note to reveal the practical layer underneath. */
 .cover-stoerer{
-  position:absolute;
-  right:clamp(60px, 11vw, 200px);
-  top:50%;
-  transform:translateY(-50%) rotate(3deg);
-  width:clamp(220px, 24vw, 320px);
-  padding:1.7rem 1.5rem 1.5rem;
-  background:linear-gradient(155deg, var(--vs-paper) 0%, var(--vs-paper-deep) 100%);
-  color:var(--vs-paper-ink);
-  border:none;
-  border-radius:6px;
-  box-shadow:
-    0 30px 64px rgba(0,0,0,.55),
-    0 6px 14px rgba(0,0,0,.35),
-    inset 0 -3px 0 rgba(0,0,0,.06);
+  position:relative;
+  top:-2.5rem;
+  margin-block:2rem;
   font-family:var(--font-serif);
   z-index:3;
-  animation: stoerer-tilt 6s ease-in-out infinite, stoerer-glow 4.5s ease-in-out infinite;
+  isolation:isolate;
 }
-.cover-stoerer::before{
-  /* warm tape strip pinning the sticker to the cover */
-  content:"";
-  position:absolute;
-  top:-9px; left:50%;
-  transform:translateX(-50%) rotate(-3deg);
-  width:68px; height:16px;
-  background:linear-gradient(180deg, rgba(214,138,42,.7), rgba(214,138,42,.45));
-  border-radius:2px;
-  box-shadow:0 2px 4px rgba(0,0,0,.25);
-  pointer-events:none;
+.cover-stoerer__back{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:1.1rem 1.5rem;
+  background:var(--brand-red);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:3px 8px 8px 3px;
+  color:#fff;
+  transform:rotate(3deg);
+  box-shadow:0 18px 36px rgba(0,0,0,.3);
 }
-.cover-stoerer::after{
-  /* inner hairline for the printed-card feel */
-  content:"";
-  position:absolute;
-  inset:6px;
-  border:1px solid rgba(154,99,28,.25);
+.cover-stoerer__back span{font-family:var(--font-sans);font-size:.7rem;letter-spacing:.03em}
+.cover-stoerer__back strong{font-size:1.5rem;font-style:italic;font-weight:500;line-height:1.25}
+.cover-stoerer__front{
+  position:relative;display:block;
+  padding:1.75rem;
+  background:var(--vs-paper);
+  color:var(--vs-paper-ink);
+  border:1px solid var(--vs-paper-rule);
   border-radius:3px;
-  pointer-events:none;
+  text-decoration:none;
+  transform:translate(-4px,-8px) rotate(-2deg);
+  transform-origin:15% 85%;
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;
+}
+.cover-stoerer__front::after{
+  content:"";position:absolute;top:-1px;right:-1px;
+  width:1.7rem;height:1.7rem;
+  background:linear-gradient(225deg,var(--brand-red) 49%,var(--vs-paper-deep) 50%);
+  border-bottom-left-radius:3px;
+}
+.cover-stoerer__front:focus-visible{
+  outline:3px solid var(--brand-light);outline-offset:6px;
+  transform:translate(-6px,-4.6rem) rotate(-5deg);
+  box-shadow:8px 24px 36px rgba(0,0,0,.28);
+}
+@media (hover:hover) and (pointer:fine){
+  .cover-stoerer:hover .cover-stoerer__front{
+    transform:translate(-6px,-4.6rem) rotate(-5deg);
+    box-shadow:8px 24px 36px rgba(0,0,0,.28);
+  }
 }
 .cover-stoerer__label{
-  display:inline-block;
-  background:var(--vs-warm);
-  color:var(--vs-ink);
+  display:flex;align-items:center;gap:.6rem;
+  color:var(--brand-red);
   font-family:var(--font-sans);
-  font-weight:700;
-  font-size:.6rem;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  padding:.32rem .75rem;
-  border-radius:100px;
-  margin:0 0 .9rem;
-  box-shadow:0 4px 10px rgba(0,0,0,.18);
-  transform:rotate(-2deg);
+  font-weight:600;
+  font-size:.8rem;
+  margin:0 0 1rem;
 }
+.cover-stoerer__label svg{width:1.5rem;height:1.5rem;flex:none}
 .cover-stoerer__text{
   margin:0;
   font-size:clamp(.95rem, 1.1vw, 1.05rem);
@@ -284,35 +323,18 @@ body{
   z-index:1;
 }
 .cover-stoerer__text strong{
-  color:#a35c1a;
+  color:var(--brand-red);
   font-weight:700;
-  font-style:italic;
-  background:linear-gradient(transparent 62%, rgba(214,138,42,.28) 62%);
-  padding:0 .1em;
+  font-style:normal;
 }
-
-@keyframes stoerer-tilt{
-  0%,100%{transform:translateY(-50%) rotate(3deg)}
-  50%    {transform:translateY(-50%) rotate(2deg)}
+.cover-stoerer__action{
+  display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+  margin-top:1.2rem;padding-top:.85rem;
+  border-top:1px solid var(--vs-paper-rule);
+  color:var(--brand-red);
+  font-family:var(--font-sans);font-size:.8rem;font-weight:600;
 }
-@keyframes stoerer-glow{
-  0%,100%{
-    box-shadow:
-      0 30px 64px rgba(0,0,0,.55),
-      0 6px 14px rgba(0,0,0,.35),
-      inset 0 -3px 0 rgba(0,0,0,.06),
-      0 0 0 0 rgba(214,138,42,.55),
-      0 0 24px 0 rgba(214,138,42,.35);
-  }
-  60%    {
-    box-shadow:
-      0 30px 64px rgba(0,0,0,.55),
-      0 6px 14px rgba(0,0,0,.35),
-      inset 0 -3px 0 rgba(0,0,0,.06),
-      0 0 0 44px rgba(214,138,42,0),
-      0 0 64px 16px rgba(214,138,42,0);
-  }
-}
+.cover-stoerer__action svg{width:1.1rem;height:1.1rem;flex:none}
 
 /* Scroll-down hint at bottom of cover */
 .cover-scroll{
@@ -328,55 +350,39 @@ body{
   font-family:var(--font-sans);
   font-size:.74rem;
   font-weight:600;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+  letter-spacing:.06em;
   text-decoration:none;
   z-index:4;
   padding:.4rem 1rem;
   transition:color .25s, transform .25s;
 }
-.cover-scroll:hover{color:var(--vs-warm)}
+.cover-scroll:hover{color:var(--brand-red)}
 .cover-scroll__text{text-shadow:0 2px 12px rgba(0,0,0,.8)}
 .cover-scroll__arrow{
   display:inline-flex;
   align-items:center;justify-content:center;
   width:2.2rem;height:2.2rem;
   border-radius:50%;
-  background:var(--vs-warm);
-  color:var(--vs-ink);
+  background:var(--brand-red);
+  color:#fff;
   font-size:1.15rem;
   line-height:1;
   font-weight:700;
   box-shadow:0 8px 20px rgba(0,0,0,.4);
-  animation:scroll-bounce 1.8s ease-in-out infinite;
-}
-@keyframes scroll-bounce{
-  0%,100%{transform:translateY(0)}
-  50%    {transform:translateY(7px)}
+
 }
 
-@media (max-width:880px){
-  .slide--cover{flex-direction:column;align-items:flex-start;justify-content:center;gap:1rem}
-  .slide--cover .slide__stage{max-width:none}
-  .cover-stoerer{
-    position:static;
-    transform:rotate(1.5deg);
-    animation:none;
-    margin:2rem auto 0;
-    width:auto;
-    max-width:min(420px, 100%);
-    padding:1.5rem 1.3rem 1.3rem;
-  }
-  .cover-stoerer__label{font-size:.58rem;padding:.3rem .65rem}
-  .cover-stoerer__text{font-size:.95rem;line-height:1.5}
+@media (max-width:1100px){
+  .slide--cover{grid-template-columns:1fr;gap:2rem;padding-top:8rem}
+  .cover-stoerer{max-width:34rem;left:0;top:0}
+  .cover-stoerer__front{padding:1.4rem 1.5rem}
 }
-.slide--cover .signature{
-  margin-top:3rem;
+.signature{
+  margin-top:2rem;
   font-family:var(--font-sans);
-  font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;
+  font-size:.85rem;line-height:1.7;
   font-weight:500;
 }
-
 .big-num{
   position:absolute;
   right:4vw;bottom:-6vh;
@@ -385,31 +391,47 @@ body{
   font-style:italic;
   font-size:clamp(22rem,55vw,44rem);
   line-height:.82;
-  color:var(--vs-warm);
-  opacity:.28;
+  color:var(--brand-red);
+  opacity:.2;
   pointer-events:none;
   user-select:none;
-  z-index:2;
+  z-index:1;
   letter-spacing:-.06em;
   text-shadow:
-    0 0 80px rgba(214,138,42,.35),
-    0 0 30px rgba(214,138,42,.25);
-  -webkit-text-stroke:1px rgba(214,138,42,.18);
+    0 0 80px rgba(183,12,52,.35),
+    0 0 30px rgba(183,12,52,.25);
+  -webkit-text-stroke:1px rgba(183,12,52,.18);
 }
-/* Push big-num left so the auto-visible TOC slider doesn't cover it */
-@media (min-width:901px){
-  .big-num{right:clamp(320px, 26vw, 380px)}
+/* Keep the reading column clear of the desktop contents panel. */
+@media (min-width:1200px){
+  .slide:not(.slide--cover),article.text,.autoren,footer.colophon{margin-right:var(--toc-width)}
+  .slide--cover{padding-right:calc(var(--page-gutter) + var(--toc-width));grid-template-columns:minmax(0,1fr) 19rem;gap:2rem}
+  .cover-stoerer{width:19rem}
+  .slide--cover .lead{font-size:clamp(.95rem,1.25vw,1.2rem)}
+  .cover-scroll{left:calc((100% - var(--toc-width))/2)}
+}
+@media (min-width:1200px) and (max-width:1339px){
+  .slide--cover{grid-template-columns:1fr}
+  .cover-stoerer{top:0}
 }
 
 @media (max-width:700px){
-  .slide{padding:8vh 1.5rem 6rem}
-  .brand-bar{top:1.5rem;left:1.5rem}
-  .footer-num{bottom:1.5rem;right:1.5rem}
+  .slide{padding:8rem var(--page-gutter) 5rem}
+  .slide--cover{padding-top:7.5rem;padding-bottom:9rem;gap:2rem}
+  .slide--cover .brand-bar{top:4.75rem}
+  .brand-bar{top:1.5rem;font-size:.65rem;letter-spacing:.1em}
+  .brand-bar .sep{margin:0 .5em}
+  .footer-num{bottom:1.5rem}
+  .big-num{font-size:clamp(16rem,65vw,28rem);opacity:.15}
+  .slide--cover .lead{font-size:1.12rem}
+  .cover-subtitle__line{white-space:normal}
+  .cover-scroll{bottom:1.5rem}
+  .slide h2 br{display:none}
 }
 
 /* ============================================================
    BACKGROUNDS — photo per section id + mood tint per Teil
-   Photos are referenced from the v4 folder via relative path.
+   Original photographs share the same red color treatment.
    ============================================================ */
 #cover .slide__bg     {background-image:url("img/backgrounds/bg-cover.png")}
 #epigraph .slide__bg  {background-image:url("img/backgrounds/bg-t1-02.png")}
@@ -446,50 +468,6 @@ body{
 
 #closing .slide__bg   {background-image:url("img/backgrounds/bg-closing.png")}
 
-/* Mood tint per Teil */
-.slide__bg::after{content:"";position:absolute;inset:0;pointer-events:none;}
-
-[data-bg="cover"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 70% 90% at 30% 100%, rgba(0,0,0,.30), transparent 60%),
-    linear-gradient(180deg, rgba(10,8,7,.05) 0%, rgba(10,8,7,.25) 100%);
-}
-[data-bg="einleitung"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 50% 60% at 90% 10%, rgba(11,58,91,.18), transparent 60%),
-    linear-gradient(180deg, rgba(5,10,18,.0) 45%, rgba(3,6,12,.28) 100%);
-}
-[data-bg="killer"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 80% 90% at 100% 100%, rgba(140,18,12,.18), transparent 60%),
-    linear-gradient(180deg, rgba(14,3,3,.0) 45%, rgba(14,3,3,.25) 100%);
-}
-[data-bg="paradox"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 60% 70% at 78% 30%, rgba(255,213,120,.10), transparent 55%),
-    linear-gradient(180deg, rgba(26,15,4,.0) 50%, rgba(26,15,4,.25) 100%);
-}
-[data-bg="wirkt"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 60% 100% at 80% 100%, rgba(155,197,128,.08), transparent 50%),
-    linear-gradient(180deg, rgba(6,14,8,.0) 50%, rgba(6,14,8,.22) 100%);
-}
-[data-bg="beispiele"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 90% 100% at 50% 50%, transparent 55%, rgba(0,0,0,.35) 100%),
-    linear-gradient(180deg, rgba(21,16,10,.0) 50%, rgba(21,16,10,.20) 100%);
-}
-[data-bg="peak"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 100% 100% at 75% 100%, rgba(232,200,132,.08), transparent 50%),
-    linear-gradient(180deg, rgba(3,8,26,.0) 50%, rgba(3,8,26,.22) 100%);
-}
-[data-bg="closing"] .slide__bg::after{
-  background:
-    radial-gradient(ellipse 80% 70% at 70% 50%, rgba(232,200,132,.10), transparent 55%),
-    linear-gradient(180deg, rgba(3,5,10,.0) 45%, rgba(3,5,10,.25) 100%);
-}
-
 /* ============================================================
    TEXT BODY
    ============================================================ */
@@ -497,14 +475,16 @@ article.text{
   background:var(--vs-paper);
   color:var(--vs-paper-ink);
   font-family:var(--font-serif);
-  font-size:19px;
+  font-size:clamp(1.0625rem,1.4vw,1.1875rem);
+  overflow-wrap:anywhere;
+  hyphens:auto;
   line-height:1.7;
   font-weight:400;
 }
 .text__inner{
-  max-width:38rem;
+  max-width:42rem;
   margin:0 auto;
-  padding:6rem 1.5rem 5rem;
+  padding:clamp(3rem,6vw,5rem) 1.5rem;
 }
 article.text h2,
 article.text h3{
@@ -512,14 +492,16 @@ article.text h3{
   font-weight:700;
   letter-spacing:-.015em;
   color:var(--vs-paper-ink);
+  hyphens:manual;
+  text-wrap:pretty;
 }
 article.text > .text__inner > h2:first-child{
   margin-top:0;
   font-family:var(--font-sans);
-  font-size:.78rem;
-  letter-spacing:.32em;
-  text-transform:uppercase;
-  color:#8a7f70;
+  font-size:.85rem;
+  line-height:1.6;
+  letter-spacing:.04em;
+  color:var(--muted-ink);
   font-weight:600;
 }
 article.text h2{font-size:1.7rem;line-height:1.2;margin:3rem 0 1rem}
@@ -529,21 +511,22 @@ article.text p.lead{
   font-size:1.22em;line-height:1.55;
   color:var(--vs-paper-ink-soft);
   margin-bottom:2rem;
-  font-weight:300;
+  font-weight:400;
+  hyphens:manual;
 }
-article.text p.drop::first-letter{
+article.text p.drop:not(.lead)::first-letter{
   font-family:var(--font-serif);
   font-weight:700;
   font-size:4.2em;
   float:left;
   line-height:.85;
   padding:.06em .1em 0 0;
-  color:var(--vs-warm);
+  color:var(--brand-red);
 }
 article.text blockquote{
   margin:2rem 0;
   padding:.25rem 0 .25rem 1.5rem;
-  border-left:3px solid var(--vs-warm);
+  border-left:3px solid var(--brand-red);
   font-style:italic;
   font-weight:400;
   font-size:1.1em;
@@ -554,30 +537,32 @@ article.text blockquote p:last-child{margin-bottom:0}
 article.text ul,
 article.text ol{padding-left:1.4rem;margin:1.25rem 0 1.5rem}
 article.text li{margin-bottom:.45em}
-article.text li::marker{color:#8a7f70}
+article.text li::marker{color:var(--muted-ink)}
 article.text strong{font-weight:700;color:var(--vs-paper-ink)}
 article.text em{font-style:italic}
 article.text hr{border:0;height:1px;background:var(--vs-paper-rule);margin:3rem 0}
-article.text a{color:#a35c1a;text-decoration:none;border-bottom:1px solid var(--vs-paper-rule);transition:border-color .2s}
-article.text a:hover{border-bottom-color:var(--vs-warm)}
+article.text a{color:var(--brand-red);text-decoration:none;border-bottom:1px solid var(--vs-paper-rule);transition:border-color .2s}
+article.text a:hover{border-bottom-color:var(--brand-red)}
 article.text table{
-  width:100%;border-collapse:collapse;
+  width:100%;table-layout:fixed;border-collapse:collapse;
   margin:1.75rem 0;font-size:.95em;
   font-family:var(--font-sans);
 }
 article.text table th,
 article.text table td{
-  text-align:left;padding:.7rem .9rem;
+  text-align:left;padding:.7rem clamp(.35rem,1vw,.9rem);
   border-bottom:1px solid var(--vs-paper-rule);
   vertical-align:top;
 }
 article.text table th{
   font-weight:600;font-size:.74rem;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:#8a7f70;
+  letter-spacing:.02em;
+  color:var(--muted-ink);
   border-bottom:2px solid var(--vs-paper-ink-soft);
 }
 article.text table td:first-child{font-weight:600;color:var(--vs-paper-ink);font-family:var(--font-serif)}
+article.text .comparison-table :is(th,td):nth-child(2){color:var(--comparison-blue)}
+article.text .comparison-table :is(th,td):nth-child(3){color:var(--brand-red)}
 
 /* Praxis-Teaser — first 20% visible, rest fades to invisible */
 article.text.praxis-teaser{
@@ -589,16 +574,14 @@ article.text.praxis-teaser .text__inner{padding-bottom:1rem}
 .praxis-meta{
   display:inline-block;
   font-family:var(--font-sans);
-  font-size:.66rem;
+  font-size:.78rem;
   font-weight:600;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--vs-warm);
+  letter-spacing:.04em;
+  color:var(--brand-red);
   margin:1.5rem 0 .6rem;
 }
-.praxis-meta::before{content:"✎  ";opacity:.7}
 article.text.praxis-teaser h2{margin-top:.3rem;color:var(--vs-paper-ink)}
-article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
+article.text.praxis-teaser h2 em{color:var(--brand-red);font-style:italic}
 
 .praxis-body{
   position:relative;
@@ -611,8 +594,8 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
   left:0;right:0;bottom:0;
   height:11em;
   background:linear-gradient(180deg,
-    rgba(245,239,226,0) 0%,
-    rgba(245,239,226,.65) 45%,
+    rgba(250,245,246,0) 0%,
+    rgba(250,245,246,.65) 45%,
     var(--vs-paper-deep) 92%);
   pointer-events:none;
 }
@@ -630,40 +613,22 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
   font-size:.78rem;
   font-weight:500;
   letter-spacing:.04em;
-  color:#5a5042;
+  color:var(--vs-paper-ink-soft);
   margin-bottom:.9rem;
   font-style:italic;
 }
-.praxis-cta-hint strong{color:var(--vs-warm);font-style:normal}
-.praxis-cta{
-  display:inline-block;
-  padding:.85rem 1.6rem;
-  background:var(--vs-warm);
-  color:var(--vs-ink);
-  font-family:var(--font-sans);
-  font-weight:600;
-  font-size:.74rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  text-decoration:none;
-  border-radius:100px;
-  border:1px solid var(--vs-warm);
-  transition:all .25s;
-  box-shadow:0 8px 22px rgba(0,0,0,.18);
-}
-.praxis-cta:hover{background:transparent;color:var(--vs-warm)}
-
+.praxis-cta-hint strong{color:var(--brand-red);font-style:normal}
 /* TOC: praxis sub-line under each chapter */
 .toc__chapters li.toc-praxis{margin-top:-.05rem}
 .toc__chapters li.toc-praxis a{
   font-size:.72rem;
-  color:rgba(255,255,255,.45);
-  padding-left:1.4rem;
+  color:#baa7af;
+  padding-left:2rem;
   letter-spacing:.04em;
   gap:.4rem;
 }
 .toc__chapters li.toc-praxis a::before{content:"↳";opacity:.6;margin-right:.1rem}
-.toc__chapters li.toc-praxis a:hover{color:var(--vs-warm)}
+.toc__chapters li.toc-praxis a:hover{color:var(--brand-red)}
 .toc__chapters li.toc-praxis .num{display:none}
 
 /* Distinction list — pair + short explanation */
@@ -681,25 +646,27 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
   gap:.6em;
   flex-wrap:wrap;
 }
-.distinction__pair .from{color:#8a7f70;font-weight:500}
-.distinction__pair .arrow{color:#b5a48a;font-weight:400;font-size:.9em}
-.distinction__pair .to{color:#a35c1a}
-.distinction__note{
+.distinction__pair .from{color:var(--comparison-blue);font-weight:500}
+.distinction__pair .arrow{color:var(--muted-ink);font-weight:400;font-size:.9em}
+.distinction__pair .to{color:var(--brand-red)}
+article.text .distinction__pair{margin-bottom:.5rem}
+article.text .distinction__note{
   margin:0;
   font-size:.92em;
   line-height:1.5;
-  color:#5a5042;
+  color:var(--vs-paper-ink-soft);
   font-family:var(--font-sans);
-  font-weight:300;
+  font-weight:400;
 }
 
 .action-box{
   background:var(--vs-paper-deep);
-  border-left:3px solid var(--vs-warm);
+  border-left:3px solid var(--brand-red);
   padding:1.5rem 1.75rem;
   margin:2.5rem 0;
 }
-.action-box h3{margin-top:0}
+article.text .action-box h3{margin-top:0}
+article.text .action-box > :last-child{margin-bottom:0}
 .action-box ol{margin-bottom:0}
 
 /* ============================================================
@@ -708,19 +675,20 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
 .toc{
   position:fixed;
   top:0; right:0; bottom:0;
-  width:300px;
-  background:linear-gradient(170deg, #1a1410 0%, #0d0a08 100%);
+  width:var(--toc-width);
+  background:linear-gradient(170deg, #261019 0%, #180910 100%);
   color:#fff;
   z-index:80;
   transform:translateX(100%);
-  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  visibility:hidden;
+  transition:transform .3s ease,visibility .3s;
   overflow-y:auto;
   overflow-x:hidden;
   box-shadow:-16px 0 40px rgba(0,0,0,.45);
   overscroll-behavior:contain;
   border-left:1px solid rgba(255,255,255,.08);
 }
-.toc.is-visible{transform:translateX(0)}
+.toc.is-visible,.toc.is-open{transform:translateX(0);visibility:visible}
 .toc__inner{padding:3.2rem 1.5rem 2.5rem;max-width:none;margin:0;width:auto;position:relative;z-index:2}
 .toc h2{
   font-family:var(--font-serif);
@@ -729,38 +697,38 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
   letter-spacing:-.01em;
   margin:0 0 1.5rem;
 }
-.toc h2 .accent{color:var(--vs-warm)}
+.toc h2 .accent{color:var(--brand-light)}
 .toc ol{list-style:none;padding:0;margin:0}
 .toc__teil{margin-bottom:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.12)}
 .toc__teil-head{display:flex;flex-direction:column;gap:.2rem;font-family:var(--font-sans);margin-bottom:.4rem}
-.toc__teil-num{font-weight:600;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--vs-warm)}
+.toc__teil-num{font-weight:600;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brand-red)}
 .toc__teil-title{font-family:var(--font-serif);font-weight:600;font-size:.98rem;letter-spacing:-.005em;line-height:1.25}
 .toc__teil-title a{color:#fff;text-decoration:none;border-bottom:1px solid transparent}
-.toc__teil-title a:hover{border-bottom-color:var(--vs-warm)}
+.toc__teil-title a:hover{border-bottom-color:var(--brand-red)}
 .toc__chapters{list-style:none;padding:0;margin:.35rem 0 0;display:grid;gap:.18rem;font-family:var(--font-sans);font-size:.8rem;color:rgba(255,255,255,.72)}
-.toc__chapters a{color:inherit;text-decoration:none;display:flex;gap:.6rem;padding:.12rem 0;line-height:1.3}
-.toc__chapters a:hover{color:var(--vs-warm)}
+.toc__chapters a{color:inherit;text-decoration:none;display:flex;gap:.6rem;padding:.3rem 0;line-height:1.4}
+.toc__chapters a:hover{color:var(--brand-light)}
 .toc__chapters .num{flex:0 0 1.4rem;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.45);font-weight:500}
 
 .toc__chapters a.is-active,
-.toc__teil-title a.is-active{color:var(--vs-warm)}
+.toc__teil-title a.is-active{color:var(--brand-red)}
 .toc__chapters a.is-active{font-weight:600;position:relative}
-.toc__chapters a.is-active .num{color:var(--vs-warm)}
+.toc__chapters a.is-active .num{color:var(--brand-red)}
 .toc__chapters a.is-active::before{
   content:"";
   position:absolute;
   left:-.85rem;
   top:.35em;bottom:.35em;
   width:2px;
-  background:var(--vs-warm);
+  background:var(--brand-red);
   border-radius:2px;
 }
-.toc__teil-title a.is-active{border-bottom-color:var(--vs-warm)}
+.toc__teil-title a.is-active{border-bottom-color:var(--brand-red)}
 
 .toc__close{
   position:absolute;
   top:.6rem;right:.6rem;
-  width:2rem;height:2rem;
+  width:2.75rem;height:2.75rem;
   border-radius:50%;
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.16);
@@ -774,7 +742,12 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
   padding:0;
   font-family:var(--font-sans);
 }
-.toc__close:hover{background:var(--vs-warm);color:var(--vs-ink);border-color:var(--vs-warm)}
+.toc__close:hover{background:var(--brand-red);color:var(--vs-ink);border-color:var(--brand-red)}
+@media (min-width:1200px){
+  .toc{transform:translateX(0);visibility:visible}
+  .toc__close{display:none}
+  .nav-toc{display:none}
+}
 
 .toc-backdrop{
   position:fixed;inset:0;
@@ -789,14 +762,15 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
 .toc-backdrop.is-open{opacity:1;pointer-events:auto}
 
 .progress{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:100;pointer-events:none}
-.progress__bar{height:100%;background:var(--vs-warm);width:0;transition:width .12s ease-out}
+.progress__bar{height:100%;background:var(--brand-red);width:0;transition:width .12s ease-out}
 
-.nav-toc{position:fixed;top:1.1rem;right:1.1rem;z-index:90;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:opacity .25s, transform .25s}
-.nav-toc.is-hidden{opacity:0;pointer-events:none;transform:translateX(20px)}
+.nav-toc{position:fixed;top:1rem;right:1rem;z-index:90;font-family:var(--font-sans);font-size:.8rem;letter-spacing:.02em;font-weight:600;transition:opacity .25s, transform .25s}
+.nav-toc.is-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translateX(20px)}
 .nav-toc button,
 .nav-toc a{
   display:inline-block;
-  padding:.5rem .85rem;
+  padding:.7rem 1rem;
+  min-height:44px;
   background:rgba(0,0,0,.55);
   color:#fff;
   text-decoration:none;
@@ -811,26 +785,26 @@ article.text.praxis-teaser h2 em{color:var(--vs-warm);font-style:italic}
   cursor:pointer;
 }
 .nav-toc button:hover,
-.nav-toc a:hover{background:var(--vs-warm);color:var(--vs-ink);border-color:var(--vs-warm)}
+.nav-toc a:hover{background:var(--brand-red);color:var(--vs-ink);border-color:var(--brand-red)}
 
 /* On narrow screens the slider acts as a real drawer, not auto-sticky */
-@media (max-width:900px){
+@media (max-width:1199px){
   .toc{width:min(340px,88vw);z-index:200}
-  .toc.is-visible{transform:translateX(100%)}
-  .toc.is-open{transform:translateX(0)}
-  .nav-toc.is-hidden{opacity:1;pointer-events:auto;transform:none}
+  .toc__chapters a{min-height:44px;align-items:center}
+  .toc__teil-title a{display:block;padding:.5rem 0}
+  .nav-toc.is-hidden{opacity:1;visibility:visible;pointer-events:auto;transform:none}
 }
 
 footer.colophon{
-  background:#0a0807;
-  color:#b09c7e;
+  background:#180910;
+  color:#c8aeb8;
   font-family:var(--font-sans);
   padding:5rem 1.5rem;
   text-align:center;
   font-size:.85rem;line-height:1.8;letter-spacing:.02em;
 }
-footer.colophon strong{color:var(--vs-warm);font-family:var(--font-serif);font-weight:600;font-size:1.05rem;letter-spacing:0}
-footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px solid #4a3a20}
+footer.colophon strong{color:var(--brand-red);font-family:var(--font-serif);font-weight:600;font-size:1.05rem;letter-spacing:0}
+footer.colophon a{color:var(--brand-red);text-decoration:none;border-bottom:1px solid #72505e}
 
 /* Epigraph special */
 .slide--epigraph .slide__stage{max-width:42rem;text-align:center;margin:0 auto}
@@ -844,47 +818,46 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   line-height:1.5;
   margin:1rem 0 1.6rem;
   padding-left:1.2rem;
-  border-left:2px solid var(--vs-warm);
-  color:#f0e3c8;
+  border-left:2px solid var(--brand-red);
+  color:#f3dfe6;
 }
-.closing-quote .quote-mark{color:var(--vs-warm);opacity:.9}
+.closing-quote .quote-mark{color:var(--brand-red);opacity:.9}
 
 /* Autoren */
 .autoren{
   min-height:100vh;
   display:flex;align-items:center;
-  padding:8vh 6vw;
-  background:linear-gradient(170deg,#1a1410 0%,#0d0a08 100%);
+  padding:5rem var(--page-gutter);
+  background:linear-gradient(170deg,#261019 0%,#180910 100%);
   color:#fff;
   position:relative;overflow:hidden;
 }
-.autoren__inner{max-width:64rem;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.autoren__inner{max-width:64rem;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .autoren h2{
   grid-column:1/-1;
   font-family:var(--font-serif);
   font-weight:700;
   font-size:clamp(2rem,4vw,3rem);
   letter-spacing:-.02em;
-  margin:0 0 2rem;
+  margin:0;
   text-align:center;
 }
-.autoren h2 .accent{color:var(--vs-warm)}
+.autoren h2 .accent{color:var(--brand-red)}
 .autor{display:flex;flex-direction:column;align-items:center;text-align:center}
-.autor__photo{
+.autor__portrait{
   width:clamp(180px,22vw,260px);
   height:clamp(180px,22vw,260px);
   border-radius:50%;
   object-fit:cover;
   object-position:50% 25%;
-  filter:saturate(.88) contrast(1.03);
+  position:relative;overflow:hidden;isolation:isolate;
   box-shadow:
     0 0 0 1px rgba(255,255,255,.06),
-    0 0 0 4px rgba(212,140,73,.35),
+    0 0 0 4px rgba(183,12,52,.5),
     0 22px 60px rgba(0,0,0,.55);
   margin-bottom:1.4rem;
-  transition:transform .4s ease, filter .4s ease;
 }
-.autor__photo:hover{transform:translateY(-3px);filter:saturate(1) contrast(1.05)}
+.autor__photo{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .autor__name{
   font-family:var(--font-serif);
   font-weight:700;
@@ -895,10 +868,9 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 .autor__role{
   font-family:var(--font-sans);
   font-weight:600;
-  font-size:.66rem;
-  letter-spacing:.26em;
-  text-transform:uppercase;
-  color:var(--vs-warm);
+  font-size:.8rem;
+  letter-spacing:.02em;
+  color:var(--brand-red);
   margin:0 0 1rem;
 }
 .autor__bio{
@@ -914,12 +886,25 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   .autoren__inner{grid-template-columns:1fr;gap:3.5rem}
 }
 
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+.toc .accent,.toc__teil-num,.toc__chapters a.is-active,.toc__teil-title a.is-active,
+.toc__chapters a.is-active .num,.toc__chapters li.toc-praxis a:hover,
+.cover-scroll:hover,.closing-quote .quote-mark,.autoren h2 .accent,.autor__role,
+footer.colophon strong,footer.colophon a{color:var(--brand-light)}
+.toc__close:hover,.nav-toc button:hover,.nav-toc a:hover{color:#fff}
+body.toc-modal-open{overflow:hidden}
+
 @media print{
+  .slide:not(.slide--cover),article.text,.autoren,footer.colophon{margin-right:0}
+  .slide::after,.cover-scroll{display:none}
   .nav-toc,.progress,.toc,.toc-backdrop{display:none}
   .slide{page-break-after:always;min-height:auto;padding:2cm 1.5cm;background:white;color:black}
   .slide__bg,.slide__overlay,.big-num{display:none}
   .slide h1,.slide h2,.slogan{color:black;text-shadow:none}
-  .accent{color:#8a4f1f !important}
+  .accent{color:var(--brand-red) !important}
   .text__inner{padding:1cm 0}
   body{background:white;color:black;font-size:11pt}
 }
@@ -928,7 +913,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <body>
 
 <div class="progress"><div class="progress__bar" id="progressBar"></div></div>
-<nav class="nav-toc" id="navToc"><button type="button" id="tocToggle" aria-controls="toc" aria-expanded="false">Inhaltsverzeichnis öffnen</button></nav>
+<nav class="nav-toc" id="navToc" aria-label="Buchnavigation"><button type="button" id="tocToggle" aria-controls="toc" aria-expanded="false" aria-label="Inhaltsverzeichnis öffnen">Inhalt</button></nav>
 <div class="toc-backdrop" id="tocBackdrop" aria-hidden="true"></div>
 
 <!-- ============================================================
@@ -937,20 +922,30 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <section class="slide slide--center slide--cover" data-bg="cover" id="cover">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar"><span>Buchentwurf</span><span class="sep">·</span><span class="accent">Version 5 · 2026-05</span></div>
+  <div class="brand-bar"><span>Buchentwurf</span><span class="sep">·</span><span class="accent">Version 6 · 2026-10-09</span></div>
   <div class="slide__stage">
-    <h1>Höchstleistungs-<em>Killer</em></h1>
-    <p class="lead">Wie sich Unternehmen versehentlich zugrunde richten.<br>Und wie man die Leistungsfähigkeit wieder zurückgewinnen kann.</p>
+    <h1><span class="cover-title__line">Höchstleistungs-<em>Killer</em></span> <span class="cover-title__context">in Organisationen</span></h1>
+    <p class="lead"><span class="cover-subtitle__line">Wie sich Unternehmen versehentlich zugrunde richten.</span><span class="cover-subtitle__line">Und wie man die Leistungsfähigkeit wieder zurückgewinnen kann.</span></p>
     <p class="signature">— Benno Löffler & Florian Glöbl · <span class="accent">#saugutezusammenarbeit</span></p>
-    <a class="cover-cta-btn" href="mailto:tietz@v-und-s.de?subject=Vorbestellung%20H%C3%B6chstleistungskiller-Buch">Buch vorbestellen</a>
-    <p class="cover-pubdate">Erscheinungsdatum: <span class="accent">1.&thinsp;12.&thinsp;2026</span></p>
+    <a class="cover-cta-btn" href="mailto:tietz@v-und-s.de?cc=info%40g-u-p.de&amp;subject=Vorbestellung%20H%C3%B6chstleistungskiller%20in%20Organisationen">Buch vorbestellen</a>
+    <p class="cover-pubdate">Erscheinungsdatum: <span class="accent">Q1/2027</span></p>
   </div>
   <aside class="cover-stoerer">
-    <span class="cover-stoerer__label">Hinweis</span>
-    <p class="cover-stoerer__text">Hier in der Webpage ist die <strong>Theorie und Anregungen</strong> zur Veränderung. Tiefere <strong>Praxisbeispiele</strong> für die Reflexionsarbeit im eigenen Management-Team finden sich im Buch.</p>
+    <div class="cover-stoerer__back" aria-hidden="true">
+      <span>Hinter der Theorie</span>
+      <strong>steckt die Praxis.</strong>
+    </div>
+    <a class="cover-stoerer__front" href="#k-1-praxis">
+      <span class="cover-stoerer__label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Z"/><path d="M12 5v15M6 8l3 1M6 12l3 1m6-4 3-1m-3 5 3-1"/></svg>
+        Hinweis
+      </span>
+      <p class="cover-stoerer__text">Auf dieser Website finden Sie <strong>Theorie und Anregungen</strong> zur Veränderung. Tiefere <strong>Praxisbeispiele</strong> für die Reflexionsarbeit im eigenen Management-Team finden sich im Buch.</p>
+      <span class="cover-stoerer__action">Praxisbeispiel lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+    </a>
   </aside>
-  <a class="cover-scroll" href="#epigraph" aria-label="Zum Buch runter scrollen">
-    <span class="cover-scroll__text">Zum Buch: runter scrollen!</span>
+  <a class="cover-scroll" href="#epigraph" aria-label="Zum Buchentwurf">
+    <span class="cover-scroll__text">Im Buchentwurf lesen</span>
     <span class="cover-scroll__arrow">↓</span>
   </a>
 </section>
@@ -958,7 +953,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <!-- ============================================================
      TOC
      ============================================================ -->
-<aside class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+<aside class="toc" id="toc" aria-label="Inhaltsverzeichnis" aria-hidden="true" inert>
   <button type="button" class="toc__close" id="tocClose" aria-label="Inhalt schließen">×</button>
   <div class="toc__inner">
     <h2>Inhalt — <span class="accent">drei Teile.</span></h2>
@@ -1055,10 +1050,10 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="slide__overlay"></div>
   <div class="brand-bar">VORWORT</div>
   <div class="slide__stage">
-    <h2>Die unsichtbare<br><span class="accent">Katastrophe</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Jede Lösung erzeugt Folgeprobleme. Immer. Ausnahmslos.<span class=”quote-mark”>”</span></p>
+    <h2>Die unsichtbare <br><span class="accent">Katastrophe</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Jede Lösung erzeugt Folgeprobleme. Immer. Ausnahmslos.<span class="quote-mark">“</span></p>
   </div>
-  <div class=”footer-num”>Vorwort</div>
+  <div class="footer-num">Vorwort</div>
 </section>
 
 <article class="text">
@@ -1067,7 +1062,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
     <p class="drop">Viele mittelständische Unternehmen waren einmal Höchstleister. Ohne es zu wissen. Ohne Theorie. Ohne Methode. Einfach, weil der Marktdruck, die Nähe zum Kunden und die Könner in der Wertschöpfung das Richtige erzwungen haben. Mehr nebenbei als absichtlich. Leute haben sich voll reingehängt. Es gab wenige Regeln aber hohe Leistungserwartungen.</p>
 
-    <p>Dann wurde die Firma größer. Erfolgreicher. Und jemand sagte: <em>„Wir müssen professioneller werden."</em></p>
+    <p>Dann wurde die Firma größer. Erfolgreicher. Und jemand sagte: <em>„Wir müssen professioneller werden.“</em></p>
 
     <p>Dann begann die Höchstleistung zu bröckeln.</p>
 
@@ -1091,7 +1086,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="slide__stage">
     <h1>Wie Höchstleistung<br><span class="accent">verloren geht</span>.</h1>
     <p class="slogan"><span class="quote-mark">„</span>Mit den besten Absichten.<span class="quote-mark">“</span></p>
-    <p class="lead">Neun Kapitel über Professionalisierungs-Reflexe, ERP-Trojaner, Projekt-Management, Compliance-Lähmung, Prozess-Management, Qualitäts-Management — und warum jede gut gemeinte Lösung neue Probleme produziert.</p>
+    <p class="lead">Zehn Kapitel über Professionalisierungs-Reflexe, ERP-Trojaner, Projekt-Management, Compliance-Lähmung, Prozess-Management, Qualitäts-Management — und warum jede gut gemeinte Lösung neue Probleme produziert.</p>
   </div>
   <div class="footer-num">Teil I · 01 / 11</div>
 </section>
@@ -1103,7 +1098,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 1<span class="sep">·</span><span class="accent">NAIVE HÖCHSTLEISTUNG</span></div>
   <span class="big-num">1</span>
   <div class="slide__stage">
-    <h2>Naive Höchstleistung<br><span class="accent">das Geschenk, das niemand versteht.</span></h2>
+    <h2>Naive Höchstleistung <br><span class="accent">das Geschenk, das niemand versteht.</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Der Preis des Erfolges: Verständnislosigkeit.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 02 / 11</div>
@@ -1135,11 +1130,11 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p class="lead">Landmaschinenhersteller, über 1.000 Mitarbeiter — trotzdem schnell, erfolgreich. Allerdings …</p>
 
     <div class="praxis-body">
-      <p class="drop">Allerdings hätte niemand in der Firma erklären können, warum sie so gut war. Auf die Frage „Was macht euch eigentlich aus?" kamen Antworten wie *„Wir packen halt an"*, *„Bei uns redet man miteinander"*, *„Der Chef weiß, was er tut"*. Sympathisch, aber als Diagnose untauglich.</p>
+      <p class="drop">Allerdings hätte niemand in der Firma erklären können, warum sie so gut war. Auf die Frage „Was macht euch eigentlich aus?“ kamen Antworten wie <em>„Wir packen halt an“</em>, <em>„Bei uns redet man miteinander“</em>, <em>„Der Chef weiß, was er tut“</em>. Sympathisch, aber als Diagnose untauglich.</p>
 
       <p>Was tatsächlich passierte: Vertrieb, Konstruktion und Werkstatt saßen physisch in einem Gebäude — kein Zufall, sondern eine Anordnung aus den frühen Neunzigern, die nie hinterfragt wurde. Wenn ein Landwirt anrief und seine Häckseltrommel hatte einen seltenen Fehler, ging der Anruf an den Vertrieb, der lief drei Schritte rüber zum Konstrukteur, der lief weiter zur Werkstatt, und nach 20 Minuten gab es eine Antwort, die im Markt ohne Beispiel war. Niemand nannte das einen Prozess. Es war einfach so.</p>
 
-      <p>Drei Dinge fielen dem Beobachter auf: Erstens schrieben die Werkmeister Aufträge nicht in das ERP-System, sondern auf ein Whiteboard in der Halle — und das ERP wurde abends von einer Sekretärin „nachgepflegt". Zweitens gab es jeden Donnerstag ein <em>Stehgreif-Frühstück</em>, bei dem alle Führungskräfte über die Woche sprachen — ohne Folie, ohne Protokoll, dafür mit Brötchen. Drittens: kein Mitarbeiter hatte einen Jahres­zielbogen. Auf die Frage warum, sagte der Geschäftsführer: <em>„Wozu? Wir sehen doch, ob es läuft."</em></p>
+      <p>Drei Dinge fielen dem Beobachter auf: Erstens schrieben die Werkmeister Aufträge nicht in das ERP-System, sondern auf ein Whiteboard in der Halle — und das ERP wurde abends von einer Sekretärin „nachgepflegt“. Zweitens gab es jeden Donnerstag ein <em>Stehgreif-Frühstück</em>, bei dem alle Führungskräfte über die Woche sprachen — ohne Folie, ohne Protokoll, dafür mit Brötchen. Drittens: kein Mitarbeiter hatte einen Jahres­zielbogen. Auf die Frage warum, sagte der Geschäftsführer: <em>„Wozu? Wir sehen doch, ob es läuft.“</em></p>
 
       <p>Dann übernahm ein Konzern die Firma. Die ersten 90-Tage-Maßnahmen: ERP wird verpflichtend, das Whiteboard kommt weg. Donnerstag-Frühstück wird zum Strategiemeeting umgewidmet, jetzt mit Agenda und Folien. Jahres­zielgespräche werden eingeführt — alle gleich, alle dokumentiert, alle mit OKRs.</p>
 
@@ -1148,7 +1143,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
     <div class="praxis-cta-wrap">
       <span class="praxis-cta-hint">Wie der Vertrieb sich an die neue Realität gewöhnte und was die Werkmeister daraufhin entschieden — <strong>im Buch</strong>.</span>
-      <a class="praxis-cta" href="mailto:tietz@v-und-s.de?subject=Vorbestellung%20H%C3%B6chstleistungskiller-Buch">Im Buch weiterlesen</a>
+      <a class="praxis-cta" href="mailto:tietz@v-und-s.de?cc=info%40g-u-p.de&amp;subject=Vorbestellung%20H%C3%B6chstleistungskiller%20in%20Organisationen">Buch vorbestellen</a>
     </div>
   </div>
 </article>
@@ -1160,8 +1155,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 2<span class="sep">·</span><span class="accent">PROFESSIONALISIERUNGS-REFLEX</span></div>
   <span class="big-num">2</span>
   <div class="slide__stage">
-    <h2>Der Professionalisierungs-<br><span class=”accent”>Reflex</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Wie ‚endlich richtig machen'<br>alles kaputt macht.<span class=”quote-mark”>”</span></p>
+    <h2>Der Professionali&shy;sierungs-<wbr><span class="accent">Reflex</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Wie ‚endlich richtig machen‘ alles kaputt macht.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 03 / 11</div>
 </section>
@@ -1169,11 +1164,11 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <article class="text">
   <div class="text__inner">
     <h2>2 — Der Professionalisierungs-Reflex</h2>
-    <p class="lead">Wie „endlich richtig machen" alles kaputt macht.</p>
+    <p class="lead">Wie „endlich richtig machen“ alles kaputt macht.</p>
 
     <ul>
       <li>Eine Firma wächst. Der Gründer tritt ab. Der neue GF kommt aus dem Konzern.</li>
-      <li>Erster Gedanke: <em>„Hier fehlt Struktur."</em> Zweiter Gedanke: <em>„Das muss professioneller werden."</em></li>
+      <li>Erster Gedanke: <em>„Hier fehlt Struktur.“</em> Zweiter Gedanke: <em>„Das muss professioneller werden.“</em></li>
       <li>Was dann passiert: Organigramme, Stellenbeschreibungen, Berichtslinien, KPIs, Budgetrunden, Jahreszielgespräche.</li>
       <li>Alles blau. Alles Steuerung. Alles richtig — in einer Welt ohne Dynamik.</li>
       <li>In einer Welt mit Dynamik: Havarie.</li>
@@ -1195,18 +1190,18 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <div class="praxis-body">
       <p class="drop">Eine süddeutsche Werkzeugmaschinen­fabrik, 280 Mitarbeiter, vierte Generation: Der neue COO kommt aus dem Konzern und bringt SAP, Stage-Gates, eine sechsstufige Freigabelogik und einen frischen OKR-Prozess mit. Sechs Monate später produziert die Firma immer noch — aber niemand bemerkt mehr, dass die zwei Werkmeister, die seit 30 Jahren jeden Sonderauftrag retten, inzwischen Dienst nach Vorschrift machen.</p>
 
-      <p>Was im Reporting glänzt — Termintreue 94 %, Ausschussquote auf Rekordtief, alle KPIs grün — verschleiert den eigentlichen Vorgang: <em>Die Organisation hat ihre dynamikrobusten Reflexe verloren</em>. Drei Großaufträge, die im alten Modus in zwei Wochen abgewickelt worden wären, brauchen jetzt acht. Der Vertrieb fängt an, dem Kunden längere Lieferzeiten zu verkaufen — und nennt das „ehrliche Kommunikation".</p>
+      <p>Was im Reporting glänzt — Termintreue 94 %, Ausschussquote auf Rekordtief, alle KPIs grün — verschleiert den eigentlichen Vorgang: <em>Die Organisation hat ihre dynamikrobusten Reflexe verloren</em>. Drei Großaufträge, die im alten Modus in zwei Wochen abgewickelt worden wären, brauchen jetzt acht. Der Vertrieb fängt an, dem Kunden längere Lieferzeiten zu verkaufen — und nennt das „ehrliche Kommunikation“.</p>
 
       <p>Zweiter Fall, anderes Bundesland: Ein Familienunternehmen für Elektrotechnik, gegründet 1962. Der neue CFO bringt eine Compliance-Suite, die jede Bestellung über 500 € durch drei Freigabe­ebenen zwingt. Innerhalb eines Quartals ist die Innovationsabteilung — fünf Ingenieure, die normalerweise Prototypen am Wochenende bauten — komplett ausgebremst.</p>
 
-      <p>Dritter Fall, ein Maschinenbauer in Ostwestfalen: Die HR-Leitung führt ein flächendeckendes Talent-Management-Programm ein. Jährliche Beurteilungsgespräche, Skill-Matrices, Karrierepfade. Die zwei besten Konstrukteure — die seit Jahrzehnten ohne Programm „Talent" waren — verlassen die Firma innerhalb von acht Monaten. Die Begründung, mündlich: „Ich will nicht Talent sein müssen. Ich will arbeiten dürfen."</p>
+      <p>Dritter Fall, ein Maschinenbauer in Ostwestfalen: Die HR-Leitung führt ein flächendeckendes Talent-Management-Programm ein. Jährliche Beurteilungsgespräche, Skill-Matrices, Karrierepfade. Die zwei besten Konstrukteure — die seit Jahrzehnten ohne Programm „Talent“ waren — verlassen die Firma innerhalb von acht Monaten. Die Begründung, mündlich: „Ich will nicht Talent sein müssen. Ich will arbeiten dürfen.“</p>
 
       <p>Drei verschiedene Branchen, drei verschiedene Stoßrichtungen — und immer dasselbe Muster: Mit den besten Absichten ersetzt jemand etwas, das funktionierte, durch etwas, das auf dem Papier besser aussieht. Die Kosten fallen erst Monate später an, dann aber doppelt: Verlust an Wirksamkeit und an den Menschen, die sie getragen haben.</p>
     </div>
 
     <div class="praxis-cta-wrap">
       <span class="praxis-cta-hint">Drei vollständige Fälle plus die Diagnose-Checkliste finden Sie <strong>im Buch</strong>.</span>
-      <a class="praxis-cta" href="mailto:tietz@v-und-s.de?subject=Vorbestellung%20H%C3%B6chstleistungskiller-Buch">Im Buch weiterlesen</a>
+      <a class="praxis-cta" href="mailto:tietz@v-und-s.de?cc=info%40g-u-p.de&amp;subject=Vorbestellung%20H%C3%B6chstleistungskiller%20in%20Organisationen">Buch vorbestellen</a>
     </div>
   </div>
 </article>
@@ -1218,7 +1213,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 3<span class="sep">·</span><span class="accent">Das ERP-System als Trojanisches Pferd</span></div>
   <span class="big-num">3</span>
   <div class="slide__stage">
-    <h2>Das ERP-System als<br><span class="accent">Trojanisches Pferd.</span></h2>
+    <h2>Das ERP-System als <br><span class="accent">Trojanisches Pferd.</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Kein ERP-System hat jemals eine Idee gehabt.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 04 / 11</div>
@@ -1251,8 +1246,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 4<span class="sep">·</span><span class="accent">COMPLIANCE</span></div>
   <span class="big-num">4</span>
   <div class="slide__stage">
-    <h2>Compliance als<br><span class="accent">Immunsuppressivum.</span></h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Wenn das Immunsystem die eigenen<br>Organe angreift, wird es zum Killer.<span class=”quote-mark”>”</span></p>
+    <h2>Compliance als <br><span class="accent">Immun&shy;suppressivum.</span></h2>
+    <p class="slogan"><span class="quote-mark">„</span>Wenn das Immunsystem die eigenen Organe angreift, wird es zum Killer.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 05 / 11</div>
 </section>
@@ -1283,8 +1278,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 5<span class="sep">·</span><span class="accent">CHEFS</span></div>
   <span class="big-num">5</span>
   <div class="slide__stage">
-    <h2>Chefs, die führen wollen,<br><span class=”accent”>aber steuern.</span></h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Wer 10 Leuten ein echtes Problem<br>zeigt, bekommt 10 Ideen.<span class=”quote-mark”>”</span></p>
+    <h2>Chefs, die führen wollen, <br><span class="accent">aber steuern.</span></h2>
+    <p class="slogan"><span class="quote-mark">„</span>Wer 10 Leuten ein echtes Problem zeigt, bekommt 10 Ideen.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 06 / 11</div>
 </section>
@@ -1304,7 +1299,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     </ul>
 
     <h3>Der Mechanismus</h3>
-    <p class="drop">Chefs entscheiden über „richtig oder falsch". Chefs entscheiden über Werte. Chefs entscheiden, dass Prozesse „richtig" sind. Chefs entscheiden über Rollen. Das Management wird versehentlich zum Flaschenhals der Organisation. Die Peripherie wartet auf Anweisungen, statt Probleme zu lösen. Die Organisation verblödet — trotz reichlich vorhandener Intelligenz.</p>
+    <p class="drop">Chefs entscheiden über „richtig oder falsch“. Chefs entscheiden über Werte. Chefs entscheiden, dass Prozesse „richtig“ sind. Chefs entscheiden über Rollen. Das Management wird versehentlich zum Flaschenhals der Organisation. Die Peripherie wartet auf Anweisungen, statt Probleme zu lösen. Die Organisation verblödet — trotz reichlich vorhandener Intelligenz.</p>
 
     <blockquote><p>Wer 10 Leuten sagt, was sie tun sollen, bekommt 10 Ausführende.<br>Wer 10 Leuten ein echtes Problem zeigt, bekommt 10 Ideen.</p></blockquote>
   </div>
@@ -1317,8 +1312,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 6<span class="sep">·</span><span class="accent">SICHERHEITS-PARADOX</span></div>
   <span class="big-num">6</span>
   <div class="slide__stage">
-    <h2>Das Sicherheits-<br><span class=”accent”>Paradox</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Firmen, die ihre Zukunft planen, optimieren die Vergangenheit.<span class=”quote-mark”>”</span></p>
+    <h2>Das Sicherheits- <br><span class="accent">Paradox</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Firmen, die ihre Zukunft planen, optimieren die Vergangenheit.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 07 / 11</div>
 </section>
@@ -1336,7 +1331,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     </ul>
 
     <h3>Der Mechanismus</h3>
-    <p class="drop">Detaillierte Planung suggeriert Sicherheit. Aber: <em>„Wer glaubt, zu wissen, wie es geht, der muss nichts mehr auf dem Weg lernen."</em> Die Organisation wird blind für Überraschungen. Und Überraschungen sind in dynamischen Märkten keine Störung — sie sind der Normalfall.</p>
+    <p class="drop">Detaillierte Planung suggeriert Sicherheit. Aber: <em>„Wer glaubt, zu wissen, wie es geht, der muss nichts mehr auf dem Weg lernen.“</em> Die Organisation wird blind für Überraschungen. Und Überraschungen sind in dynamischen Märkten keine Störung — sie sind der Normalfall.</p>
 
     <blockquote><p>Firmen, die ihre Zukunft planen, optimieren die Vergangenheit.<br>Firmen, die ihre Zukunft suchen, finden Neues.</p></blockquote>
   </div>
@@ -1349,7 +1344,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 7<span class="sep">·</span><span class="accent">BLAUE FALLE</span></div>
   <span class="big-num">7</span>
   <div class="slide__stage">
-    <h2>Die<br><span class="accent">Blaue Falle</span>.</h2>
+    <h2>Die <br><span class="accent">Blaue Falle</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Erst Rot stärken. Dann wird Blau von alleine besser.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 08 / 11</div>
@@ -1358,10 +1353,10 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <article class="text">
   <div class="text__inner">
     <h2>7 — Die Blaue Falle</h2>
-    <p class="lead">Warum „zuerst die Prozesse, dann die Innovation" eine Katastrophe ist.</p>
+    <p class="lead">Warum „zuerst die Prozesse, dann die Innovation“ eine Katastrophe ist.</p>
 
     <ul>
-      <li>Der Reflex: <em>„Erst Ordnung schaffen, dann kreativ werden."</em></li>
+      <li>Der Reflex: <em>„Erst Ordnung schaffen, dann kreativ werden.“</em></li>
       <li>Die Realität: Wenn die Dynamik steigt und die roten Anteile zu schwach sind, trifft die Dynamik direkt auf die Prozesse. Die Prozesse blähen sich auf. Die Probleme wachsen. Der Versuch, sie zu reparieren, ist wie Löschen mit Benzin.</li>
       <li>Erst wenn die roten Anteile die Dynamik abfangen können, werden die blauen Prozesse wieder schlank und elegant.</li>
     </ul>
@@ -1380,8 +1375,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 8<span class="sep">·</span><span class="accent">TABU</span></div>
   <span class="big-num">8</span>
   <div class="slide__stage">
-    <h2>Was alle wissen,<br><span class=”accent”>aber niemand sagen darf</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Nicht das Unbekannte ist gefährlich.<br>Gefährlich ist das Bekannte, das nicht besprechbar ist.<span class=”quote-mark”>”</span></p>
+    <h2>Was alle wissen, <br><span class="accent">aber niemand sagen darf</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Nicht das Unbekannte ist gefährlich. Gefährlich ist das Bekannte, das nicht besprechbar ist.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 09 / 11</div>
 </section>
@@ -1428,8 +1423,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 9<span class="sep">·</span><span class="accent">FOLGEPROBLEME</span></div>
   <span class="big-num">9</span>
   <div class="slide__stage">
-    <h2>Jede Lösung erzeugt<br><span class="accent">Folgeprobleme</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Nicht die Lösung ist das Problem.<br>Sondern der Glaube, dass es eine endgültige gibt.<span class=”quote-mark”>”</span></p>
+    <h2>Jede Lösung erzeugt <br><span class="accent">Folgeprobleme</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Nicht die Lösung ist das Problem. Sondern der Glaube, dass es eine endgültige gibt.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 10 / 11</div>
 </section>
@@ -1437,7 +1432,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <article class="text">
   <div class="text__inner">
     <h2>9 — Jede Lösung erzeugt Folgeprobleme</h2>
-    <p class="lead">Der systemtheoretische Grund, warum es nie „fertig" wird.</p>
+    <p class="lead">Der systemtheoretische Grund, warum es nie „fertig“ wird.</p>
 
     <p class="drop">Dies ist vielleicht der wichtigste Gedanke dieses Buches. Und der unbequemste.</p>
 
@@ -1447,7 +1442,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <ul>
       <li>Die Firma führt ein ERP-System ein, um Effizienz zu steigern. Folge: Die Prozesse werden starrer, die Reaktionszeit steigt, die Könner verlieren ihren Spielraum. Neues Problem.</li>
       <li>Das Management zentralisiert Entscheidungen, um Qualität zu sichern. Folge: Die Peripherie wird passiv, wartet auf Anweisungen, hört auf mitzudenken. Neues Problem.</li>
-      <li>HR etabliert ein Talentmanagement-Programm. Folge: Alle wollen „Talent" sein, die wahren Könner empfinden es als Zirkus. Neues Problem.</li>
+      <li>HR etabliert ein Talentmanagement-Programm. Folge: Alle wollen „Talent“ sein, die wahren Könner empfinden es als Zirkus. Neues Problem.</li>
       <li>Die Compliance-Abteilung sichert Risiken ab. Folge: Innovation wird zum bürokratischen Hürdenlauf. Neues Problem.</li>
     </ul>
 
@@ -1472,8 +1467,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL I<span class="sep">·</span>KAPITEL 10<span class="sep">·</span><span class="accent">FINALE</span></div>
   <span class="big-num">10</span>
   <div class="slide__stage">
-    <h2>Die vier apokalyptischen<br><span class="accent">Illusionen</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Vier Selbstverständlichkeiten — vier blinde Flecken.<br>Jede für sich plausibel. Zusammen tödlich für Höchstleistung.<span class=”quote-mark”>”</span></p>
+    <h2>Die vier apokalyptischen <br><span class="accent">Illusionen</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Vier Selbstverständlichkeiten — vier blinde Flecken. Jede für sich plausibel. Zusammen tödlich für Höchstleistung.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil I · 11 / 11</div>
 </section>
@@ -1483,34 +1478,38 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>10 — Die vier apokalyptischen Illusionen</h2>
     <p class="lead">Vier Denkfehler, die fast jede gewachsene Organisation in sich trägt — und an denen Höchstleistung typischerweise zerschellt.</p>
 
-    <p class="drop">Wenn die ersten neun Kapitel die Mechanik einzelner Höchstleistungs-Killer zeigen, dann sind die vier Illusionen die Hintergrund-Annahmen, die diese Mechanik überhaupt erst zulassen. Vier Selbstverständlichkeiten, die jede für sich plausibel klingt — und die zusammen die Lernfähigkeit einer Organisation systematisch korrodieren.</p>
+    <p class="drop">Wenn die ersten neun Kapitel die Mechanik einzelner Höchstleistungs-Killer zeigen, dann sind die vier Illusionen die Hintergrund-Annahmen, die diese Mechanik überhaupt erst zulassen. Vier Selbstverständlichkeiten, von denen jede für sich plausibel klingt — und die zusammen die Lernfähigkeit einer Organisation systematisch korrodieren.</p>
 
     <p>Wir nennen sie <em>Illusionen</em>, weil sie sich anfühlen wie gesunder Menschenverstand. Sie sind so eingebaut, dass man sie nicht mehr sieht. Und genau deshalb wirken sie so verlässlich.</p>
 
     <h3>1. Zweck-Illusion — der Wertschöpfungs-Fokus geht unter</h3>
     <p>Eine Firma existiert, weil Kunden ein Problem haben, das die Firma löst — wertschöpfend, ertragreich, so, dass die Leute, die es tun, nicht kotzen. Dieser Dreiklang ist der originäre Zweck.</p>
-    <p>Die Zweck-Illusion entsteht, sobald interne Themen — Nachhaltigkeit, KI, Agilität, Digitalisierung, Compliance, „bessere Planung" — sich zum Selbstzweck erheben. Niemand kann offiziell dagegen sein. Und plötzlich messen interne KPIs den Fortschritt dieser Selbstzwecke statt der Wertschöpfung. Die Organisation referenziert nach innen, nicht mehr nach außen. Der Kunde merkt nichts davon. Der Eigentümer auch nicht. Die Mitarbeiter arbeiten länger — für etwas, das nichts nützt.</p>
+    <p>Die Zweck-Illusion entsteht, sobald interne Themen — Nachhaltigkeit, KI, Agilität, Digitalisierung, Compliance, „bessere Planung“ — sich zum Selbstzweck erheben. Niemand kann offiziell dagegen sein. Und plötzlich messen interne KPIs den Fortschritt dieser Selbstzwecke statt der Wertschöpfung. Die Organisation referenziert nach innen, nicht mehr nach außen. Der Kunde merkt nichts davon. Der Eigentümer auch nicht. Die Mitarbeiter arbeiten länger — für etwas, das nichts nützt.</p>
     <p><em>Diagnose-Frage:</em> Wenn wir das Programm morgen einstellten — würde irgendein Kunde es bemerken?</p>
 
     <h3>2. Mensch-Illusion — der Kontext bleibt blinder Fleck</h3>
-    <p>Der Reflex: Verhalten erklärt sich aus dem Menschen. „Der ist halt so." „Die brauchen ein anderes Mindset." „Wir brauchen mehr Akademiker / mehr Praktiker / mehr Persönlichkeitsentwicklung." Coaching, Trainings, Recruiting — alles mit demselben Hebel: Menschen ändern.</p>
+    <p>Der Reflex: Verhalten erklärt sich aus dem Menschen. „Der ist halt so.“ „Die brauchen ein anderes Mindset.“ „Wir brauchen mehr Akademiker / mehr Praktiker / mehr Persönlichkeitsentwicklung.“ Coaching, Trainings, Recruiting — alles mit demselben Hebel: Menschen ändern.</p>
     <p>Die Gegenthese stammt aus der Soziologie: <em>Verhältnisse prägen Verhalten</em> (Sprenger). <em>Das Spiel macht die Spieler — nicht umgekehrt</em> (Simon). 80–90 % des beobachtbaren Verhaltens erklärt sich aus dem Kontext: Sitzordnung, Incentives, Meeting-Struktur, Prozesse, was geduldet wird, was sanktioniert wird. Wer das System tatsächlich verändern will, muss am Kontext arbeiten — nicht an den Menschen.</p>
     <p>Das gilt mit Vorbehalt: Manchmal ist tatsächlich eine Person das Problem. Aber das ist der <em>zweite</em> Gedanke, nicht der erste.</p>
 
     <h3>3. Prozess-Illusion — die Könner werden unwirksam</h3>
     <p>Die Verwechslung von <em>Wissen</em> und <em>Können</em>. Wissen kann man aufschreiben, vorgeben, kopieren. Es funktioniert in stabilen, vorhersehbaren Umgebungen — Routine, Methode, Prozess, Plan. Wenn die Realität still hält, ist das großartig.</p>
     <p>Können entsteht durch lange Übung am Rand der Überforderung. Es ist nicht aufschreibbar. Es ist Voraussetzung, sobald Überraschungen die Realität durchschütteln — also dort, wo Probleme nicht trivial sind. Wenn Organisationen ihr ganzes Heil im Prozess suchen, lähmen sie genau die Könner, deren Urteil sie eigentlich bräuchten. Übrig bleibt: Disziplin ohne Wirkung. Methode statt Substanz.</p>
-    <p>Die Frage ist nie „Wissen oder Können?", sondern: <em>Welche Anteile hat dieses konkrete Problem?</em></p>
+    <p>Die Frage ist nie „Wissen oder Können?“, sondern: <em>Welche Anteile hat dieses konkrete Problem?</em></p>
 
     <h3>4. Wissens-Illusion — Chef-Perspektiven werden überschätzt</h3>
     <p>Die Annahme: Wer Macht hat, weiß, wie es geht. Das Zentrum denkt über Zukunft nach, formuliert Vorgaben, treibt sie über Macht in die Peripherie. Wenn Macht plus tatsächlicher Wissensvorsprung zusammenkommen, ist das funktional — Taylorismus.</p>
     <p>Aber im wirklichen Alltag sitzt das relevante Können <em>in der Peripherie</em>: bei denen, die täglich mit Kunden, Maschinen, Konstruktionen, Markt umgehen. Das Zentrum hat keinen Wissensvorsprung — sondern eine Wissensvorsprungs-<em>Illusion</em>. Es entsteht <em>Prozesstheater</em>: die Peripherie spielt Compliance, löst ihre Probleme aber so, wie sie es immer getan hat. Das Zentrum bekommt nur noch saubere Rückmeldungen — und kann nicht mehr lernen. Die <em>blaue Falle</em> schnappt zu.</p>
-    <p>Die Alternative ist nicht „keine Macht". Sondern: Macht wird anders eingesetzt — sie öffnet Schutzräume, in denen Könner würdevoll scheitern können, statt operative Vorgaben zu machen.</p>
+    <p>Die Alternative ist nicht „keine Macht“. Sondern: Macht wird anders eingesetzt — sie öffnet Schutzräume, in denen Könner würdevoll scheitern können, statt operative Vorgaben zu machen.</p>
 
     <h3>Warum gerade <em>vier</em>?</h3>
     <p>Weil sie unabhängig voneinander entstehen — und zusammen ein abgeschlossenes Lähmungs-System bilden. Die <em>Zweck-Illusion</em> verschiebt den Bezugspunkt nach innen. Die <em>Mensch-Illusion</em> verschiebt die Ursache aufs Individuum. Die <em>Prozess-Illusion</em> verschiebt die Lösung in die Standardisierung. Die <em>Wissens-Illusion</em> verschiebt die Entscheidung nach oben. In Summe: Eine Organisation, die nicht mehr weiß, wofür sie da ist, niemandem mehr zutraut, was zu können, und sich selbst über ein Theaterspiel hinwegtäuscht.</p>
 
     <blockquote><p>Vier Illusionen genügen, um eine erfolgreiche Organisation taub gegen ihre eigene Realität zu machen. Erst wer sie benennt, kann anfangen, durch sie hindurchzuschauen.</p></blockquote>
+    <div class="book-order">
+      <a class="book-order__button" href="mailto:tietz@v-und-s.de?cc=info%40g-u-p.de&amp;subject=Vorbestellung%20H%C3%B6chstleistungskiller%20in%20Organisationen">Buch vorbestellen</a>
+      <span class="book-order__date">Erscheint im Q1/2027</span>
+    </div>
   </div>
 </article>
 
@@ -1537,7 +1536,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 11<span class="sep">·</span><span class="accent">DIE EINE ERKENNTNIS</span></div>
   <span class="big-num">11</span>
   <div class="slide__stage">
-    <h2>Die eine Erkenntnis,<br><span class="accent">die alles verändert</span>.</h2>
+    <h2>Die eine Erkenntnis, <br><span class="accent">die alles verändert</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Kultur ist der <span class="accent">Schatten</span> des gemeinsamen Handelns.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 02 / 10</div>
@@ -1548,7 +1547,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>11 — Die eine Erkenntnis, die alles verändert</h2>
     <p class="lead">Der Denkfehler schlechthin — und was stattdessen hilft.</p>
 
-    <p class="drop"><strong>Der Denkfehler schlechthin: Menschen sind schuld.</strong> Nicht der Kontext. Nicht die Struktur. Nicht die Spielregeln. Sondern die Menschen. <em>„Die Leute müssen sich ändern."</em> <em>„Wir brauchen ein anderes Mindset."</em> <em>„Der Fisch stinkt vom Kopf."</em></p>
+    <p class="drop"><strong>Der Denkfehler schlechthin: Menschen sind schuld.</strong> Nicht der Kontext. Nicht die Struktur. Nicht die Spielregeln. Sondern die Menschen. <em>„Die Leute müssen sich ändern.“</em> <em>„Wir brauchen ein anderes Mindset.“</em> <em>„Der Fisch stinkt vom Kopf.“</em></p>
 
     <p>Der Fisch-Spruch stimmt — aber anders, als die meisten denken. Ja, es beginnt oben. Aber nicht, weil die Chefs schlechte Menschen wären. Sondern weil ihre Glaubenssätze die Management-Rituale erzeugen, die das System vergiften. Und weil dieselben Glaubenssätze zu Management-Unterlassungen führen: zu dem, was nicht getan wird, weil es niemand für nötig hält.</p>
 
@@ -1560,7 +1559,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
       <li>Kultur kann man nicht direkt verändern. Sie ist Ergebnis, nicht Ursache.</li>
       <li>Wer die Verhältnisse verändert, verändert das Verhalten. Dann die Leistung. Dann die Kultur.</li>
       <li>Nicht am Menschen arbeiten. Am Kontext.</li>
-      <li><em>„Die Menschen in Nordkorea verhalten sich ganz anders als die in Südkorea. Das kann nur am Mindset liegen."</em> — Wirklich?</li>
+      <li><em>„Die Menschen in Nordkorea verhalten sich ganz anders als die in Südkorea. Das kann nur am Mindset liegen.“</em> — Wirklich?</li>
     </ul>
 
     <blockquote><p>Kontext vor Mensch. Immer.</p></blockquote>
@@ -1574,8 +1573,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 12<span class="sep">·</span><span class="accent">ROT/BLAU</span></div>
   <span class="big-num">12</span>
   <div class="slide__stage">
-    <h2>Rot und Blau —<br><span class="accent">die Unterscheidung</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Das Rote erschafft<br>und schützt das Blaue.<span class=”quote-mark”>”</span></p>
+    <h2>Rot und Blau — <br><span class="accent">die Unterscheidung</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Das Rote erschafft und schützt das Blaue.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 03 / 10</div>
 </section>
@@ -1585,7 +1584,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h2>12 — Rot und Blau</h2>
     <p class="lead drop">Zwei Welten. Zwei Logiken. Ein Unternehmen.</p>
 
-    <table>
+    <table class="comparison-table">
       <thead><tr><th>&nbsp;</th><th>Blau (tot)</th><th>Rot (lebendig)</th></tr></thead>
       <tbody>
         <tr><td>Problem</td><td>Chaos (Unwissenheit)</td><td>Dynamik (Überraschung)</td></tr>
@@ -1615,8 +1614,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 13<span class="sep">·</span><span class="accent">WERTSCHÖPFUNG</span></div>
   <span class="big-num">13</span>
   <div class="slide__stage">
-    <h2>Primat der<br><span class="accent">Wertschöpfung</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Dient es der Wertschöpfung?<br>Nein? Dann nicht.<span class=”quote-mark”>”</span></p>
+    <h2>Primat der <br><span class="accent">Wertschöpfung</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Dient es der Wertschöpfung? Nein? Dann nicht.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 04 / 10</div>
 </section>
@@ -1644,8 +1643,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 14<span class="sep">·</span><span class="accent">ZENTRUM &amp; PERIPHERIE</span></div>
   <span class="big-num">14</span>
   <div class="slide__stage">
-    <h2>Zentrum und<br><span class="accent">Peripherie</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Die Produktion weiß mehr über die echten Probleme<br>als die Geschäftsführung.<span class=”quote-mark”>”</span></p>
+    <h2>Zentrum und <br><span class="accent">Peripherie</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Die Produktion weiß mehr über die echten Probleme als die Geschäftsführung.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 05 / 10</div>
 </section>
@@ -1673,7 +1672,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 15<span class="sep">·</span><span class="accent">FÖDERATIVES MANAGEMENT</span></div>
   <span class="big-num">15</span>
   <div class="slide__stage">
-    <h2>Föderatives Management,<br><span class="accent">Steuerung UND Führung</span>.</h2>
+    <h2>Föderatives Management, <br><span class="accent">Steuerung UND Führung</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Führung sitzt hierarchisch <span class="accent">tiefer</span> als Steuerung.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 06 / 10</div>
@@ -1692,7 +1691,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
       <li>Energie entfesseln statt Gehorsam einfordern.</li>
     </ul>
 
-    <blockquote><p>Wenn Führung fehlt und alles der Steuerung aufgebürdet wird, „verblödet" die Organisation des Unternehmens.</p></blockquote>
+    <blockquote><p>Wenn Führung fehlt und alles der Steuerung aufgebürdet wird, „verblödet“ die Organisation des Unternehmens.</p></blockquote>
   </div>
 </article>
 
@@ -1703,7 +1702,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 16<span class="sep">·</span><span class="accent">EINLADUNG</span></div>
   <span class="big-num">16</span>
   <div class="slide__stage">
-    <h2><span class="accent">Einladung</span><br>statt Vorladung.</h2>
+    <h2><span class="accent">Einladung</span><br> statt Vorladung.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Würdevolles Scheitern statt Fehlervermeidung.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 07 / 10</div>
@@ -1733,8 +1732,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 17<span class="sep">·</span><span class="accent">KO-EVOLUTION</span></div>
   <span class="big-num">17</span>
   <div class="slide__stage">
-    <h2>Die Ko-Evolution nutzen.<br><span class=”accent”>Löwen und Gazellen</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Die Gazellen machen die Löwen<br>schneller, indem sie selbst schneller rennen.<span class=”quote-mark”>”</span></p>
+    <h2>Die Ko-Evolution nutzen. <br><span class="accent">Löwen und Gazellen</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Die Gazellen machen die Löwen schneller, indem sie selbst schneller rennen.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 08 / 10</div>
 </section>
@@ -1749,7 +1748,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
       <li>Sperrt man die Löwen in ein Gehege und wirft ihnen tote Beutetiere, verkümmern sie in Generationen.</li>
       <li>In Organisationen: Management und Wertschöpfung sind ko-evolutionär gekoppelt.</li>
       <li>Die Gazellen können die Löwen nicht schneller machen, indem sie ihnen Tipps geben. Nur indem sie selbst schneller rennen.</li>
-      <li>Management kann die Wertschöpfung nicht „transformieren". Nur die eigenen Muster und den Kontext verändern.</li>
+      <li>Management kann die Wertschöpfung nicht „transformieren“. Nur die eigenen Muster und den Kontext verändern.</li>
     </ul>
 
     <blockquote><p>Wer die Organisation verbessern will, muss den Mut haben, sich selbst irritieren zu lassen.</p></blockquote>
@@ -1763,8 +1762,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 18<span class="sep">·</span><span class="accent">12 PRINZIPIEN</span></div>
   <span class="big-num">18</span>
   <div class="slide__stage">
-    <h2>Zwölf Prinzipien<br><span class="accent">für SystemPraktiker</span>.</h2>
-    <p class="slogan"><span class="quote-mark">„</span>Diese Prinzipien sind kein Programm.<br>Sie sind Haltung.<span class="quote-mark">“</span></p>
+    <h2>Zwölf Prinzipien <br><span class="accent">für SystemPraktiker</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Diese Prinzipien sind kein Programm. Sie sind Haltung.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 09 / 10</div>
 </section>
@@ -1782,7 +1781,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h3>2 — Menschen finden statt formen</h3>
     <p>Stärken fördern, statt normieren. Entscheidungen bei Teamzusammensetzung, Einstellung und Beförderung prägen die Wettbewerbsfähigkeit mehr als jeder Versuch, Mitarbeiter umzuformen.</p>
 
-    <h3>3 — Chefs bauen „das System"</h3>
+    <h3>3 — Chefs bauen „das System“</h3>
     <p>System-Praktiker arbeiten an Rahmenbedingungen — das ist DER Hebel. Nicht an einzelnen Personen oder Prozessen. Kontext vor Mensch.</p>
 
     <h3>4 — Überregulierung schadet</h3>
@@ -1798,7 +1797,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <p>Konflikte sind DER Treibstoff für Entscheidungen und Veränderung. Wer Konflikte unterdrückt, unterdrückt Lernen. Konstruktive Bearbeitung täglicher Konflikte fördert die Organisationsfähigkeit.</p>
 
     <h3>8 — Fokus hilft</h3>
-    <p>Zuviel gleichzeitig schadet. Fokus ist eine wesentliche Managementaufgabe — für Strategie und Wertschöpfung.</p>
+    <p>Zu viel gleichzeitig schadet. Fokus ist eine wesentliche Managementaufgabe — für Strategie und Wertschöpfung.</p>
 
     <h3>9 — Risiken sind normal</h3>
     <p>Entscheidungen trotz Ungewissheit schaffen Wettbewerbsfähigkeit. Psychologische Sicherheit ermöglicht schnellere, beherztere Entscheidungen. Wer nichts riskiert, riskiert alles.</p>
@@ -1823,8 +1822,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL II<span class="sep">·</span>KAPITEL 19<span class="sep">·</span><span class="accent">HASHTAGS</span></div>
   <span class="big-num">19</span>
   <div class="slide__stage">
-    <h2>Zehn Hashtags<br><span class=”accent”>für den Alltag</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Zum Aufhängen, Erinnern,<br><span class=”accent”>Streiten</span>.<span class=”quote-mark”>”</span></p>
+    <h2>Zehn Hashtags <br><span class="accent">für den Alltag</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Zum Aufhängen, Erinnern, <span class="accent">Streiten</span>.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil II · 10 / 10</div>
 </section>
@@ -1846,6 +1845,10 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
       <li><strong>#Selbstzweifel</strong> — statt Selbstüberschätzung im Management</li>
       <li><strong>#InTeamSphäre</strong> — statt funktionales Abteilungs-Defensivspiel</li>
     </ol>
+    <div class="book-order">
+      <a class="book-order__button" href="mailto:tietz@v-und-s.de?cc=info%40g-u-p.de&amp;subject=Vorbestellung%20H%C3%B6chstleistungskiller%20in%20Organisationen">Buch vorbestellen</a>
+      <span class="book-order__date">Erscheint im Q1/2027</span>
+    </div>
   </div>
 </article>
 
@@ -1860,7 +1863,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="slide__stage">
     <h1>Ein Workshop<br><span class="accent">zum Selbstdenken</span>.</h1>
     <p class="slogan"><span class="quote-mark">„</span>Nicht reden. Machen.<span class="quote-mark">“</span></p>
-    <p class="lead">Vier Kapitel mit Fragen, Unterscheidungen und drei kleinen Experimenten für den Anfang.</p>
+    <p class="lead">Vier Kapitel mit Fragen, Unterscheidungen und einem kleinen Experiment für den Anfang.</p>
   </div>
   <div class="footer-num">Teil III · 01 / 05</div>
 </section>
@@ -1872,7 +1875,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL III<span class="sep">·</span>KAPITEL 20<span class="sep">·</span><span class="accent">DIAGNOSE</span></div>
   <span class="big-num">20</span>
   <div class="slide__stage">
-    <h2>Diagnose —<br><span class="accent">wo stehen wir?</span></h2>
+    <h2>Diagnose — <br><span class="accent">wo stehen wir?</span></h2>
     <p class="slogan"><span class="quote-mark">„</span>Fragen an Ihr Führungsteam.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil III · 02 / 05</div>
@@ -1886,7 +1889,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     <h3>Runde 1 — Symptome erkennen</h3>
     <ul>
       <li>Welche der Höchstleistungs-Killer erkennen Sie in Ihrer Organisation?</li>
-      <li>Wo haben wir in den letzten 5 Jahren „professionalisiert" — und es wurde schlechter?</li>
+      <li>Wo haben wir in den letzten 5 Jahren „professionalisiert“ — und es wurde schlechter?</li>
       <li>Welche Prozesse haben wir eingeführt, die kein Mensch braucht?</li>
       <li>Wo warten Mitarbeiter auf Anweisungen, obwohl sie die Antwort kennen?</li>
     </ul>
@@ -1898,7 +1901,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
       <li>Wo brauchen wir Steuerung — und wo Führung?</li>
     </ul>
 
-    <h3>Runde 3 — Ehrliche Reflektion</h3>
+    <h3>Runde 3 — Ehrliche Reflexion</h3>
     <ul>
       <li>Was davon haben wir selbst verursacht?</li>
       <li>Wo behindert unsere eigene Führung Energie, statt sie freizusetzen?</li>
@@ -1914,7 +1917,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL III<span class="sep">·</span>KAPITEL 21<span class="sep">·</span><span class="accent">UNTERSCHEIDUNGEN</span></div>
   <span class="big-num">21</span>
   <div class="slide__stage">
-    <h2>Die wichtigen<br><span class="accent">Unterscheidungen</span>.</h2>
+    <h2>Die wichtigen <br><span class="accent">Unterscheidungen</span>.</h2>
     <p class="slogan"><span class="quote-mark">„</span>Wortpaare, die den Blick schärfen.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil III · 03 / 05</div>
@@ -1980,7 +1983,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
       </div>
       <div class="distinction">
         <p class="distinction__pair"><span class="from">Vorladung</span><span class="arrow">↦</span><span class="to">Einladung</span></p>
-        <p class="distinction__note">Vorladung erzwingt Anwesenheit. Einladung wirbt um Mitwirkung — und akzeptiert das „Nein".</p>
+        <p class="distinction__note">Vorladung erzwingt Anwesenheit. Einladung wirbt um Mitwirkung — und akzeptiert das „Nein“.</p>
       </div>
       <div class="distinction">
         <p class="distinction__pair"><span class="from">Menschen ändern</span><span class="arrow">↦</span><span class="to">Kontext ändern</span></p>
@@ -2014,8 +2017,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL III<span class="sep">·</span>KAPITEL 22<span class="sep">·</span><span class="accent">EXPERIMENT</span></div>
   <span class="big-num">22</span>
   <div class="slide__stage">
-    <h2>Ein Experiment<br><span class="accent">für den Anfang</span> …</h2>
-    <p class="slogan"><span class="quote-mark">„</span>Reden auch. Aber vor allem: Machen. <span style="white-space:nowrap">Und klein anfangen.<span class="quote-mark">“</span></span></p>
+    <h2>Ein Experiment <br><span class="accent">für den Anfang</span> …</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Reden auch. Aber vor allem: Machen. Und klein anfangen.<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil III · 04 / 05</div>
 </section>
@@ -2044,8 +2047,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="brand-bar">TEIL III<span class="sep">·</span>KAPITEL 23<span class="sep">·</span><span class="accent">DIE EINE FRAGE</span></div>
   <span class="big-num">23</span>
   <div class="slide__stage">
-    <h2>Die eine Frage<br><span class=”accent”>zum Schluss</span>.</h2>
-    <p class=”slogan”><span class=”quote-mark”>„</span>Welches Ihrer eigenen Management-Rituale<br>würden Sie als erstes in Frage stellen?<span class=”quote-mark”>”</span></p>
+    <h2>Die eine Frage <br><span class="accent">zum Schluss</span>.</h2>
+    <p class="slogan"><span class="quote-mark">„</span>Welches Ihrer eigenen Management-Rituale würden Sie als erstes in Frage stellen?<span class="quote-mark">“</span></p>
   </div>
   <div class="footer-num">Teil III · 05 / 05</div>
 </section>
@@ -2070,7 +2073,7 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 <section class="slide" data-bg="closing" id="closing">
   <div class="slide__bg"></div>
   <div class="slide__overlay"></div>
-  <div class="brand-bar"><span class="vs-mark">ANFANGEN!</span><span class="sep">·</span><span class="accent">Höchstleistungs-Killer</span></div>
+  <div class="brand-bar"><span class="vs-mark">ANFANGEN!</span><span class="sep">·</span><span class="accent">Höchstleistungskiller in Organisationen</span></div>
   <div class="slide__stage" style="text-align:left;max-width:54rem">
     <span class="kicker">Anfangen</span>
     <h1>Wie könnte man <span class="accent">anfangen</span>?</h1>
@@ -2078,11 +2081,15 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 
     <p style="margin-top:1.6rem">Es geht oben los — mit der Frage im Management-Team:</p>
 
-    <p class=”closing-quote”><span class=”quote-mark”>„</span>Hey Kollegen! Schaut euch mal diese vier Illusionen und diese sechs Höchstleistungs-Killer an. Mein Eindruck: Da könnte mehr dran sein, als ich mir wünsche …<br>Wie seht ihr das denn?<span class=”quote-mark”>”</span></p>
+    <p class="closing-quote"><span class="quote-mark">„</span>Hey Kollegen! Schaut euch mal diese vier Illusionen und diese sechs Höchstleistungs-Killer an. Mein Eindruck: Da könnte mehr dran sein, als ich mir wünsche …<br>Wie seht ihr das denn?<span class="quote-mark">“</span></p>
 
     <p>Wenn darüber offen gesprochen werden darf, kann echte Reflexion stattfinden — denn wenn sich das <span class="accent">kollektive Denken</span> ändert, hat die Transformation schon begonnen.</p>
 
     <p class="signature" style="margin-top:2.6rem">Benno Löffler · Florian Glöbl · <em>#saugutezusammenarbeit</em></p>
+    <div class="book-order">
+      <a class="book-order__button" href="mailto:tietz@v-und-s.de?cc=info%40g-u-p.de&amp;subject=Vorbestellung%20H%C3%B6chstleistungskiller%20in%20Organisationen">Buch vorbestellen</a>
+      <span class="book-order__date">Erscheint im Q1/2027</span>
+    </div>
   </div>
   <div class="footer-num">Ende</div>
 </section>
@@ -2094,13 +2101,13 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   <div class="autoren__inner">
     <h2>Die <span class="accent">Autoren</span></h2>
     <div class="autor">
-      <img class="autor__photo" src="img/autoren/benno.jpg" alt="Benno Löffler" loading="lazy" width="520" height="520">
+      <div class="autor__portrait"><img class="autor__photo" src="img/autoren/benno.jpg" alt="Benno Löffler" loading="lazy" width="520" height="520"></div>
       <h3 class="autor__name">Benno Löffler</h3>
       <p class="autor__role">Geschäftsführer · V&amp;S GmbH</p>
       <p class="autor__bio">Begleitet seit über zwei Jahrzehnten Unternehmen dabei, ihre eigenen Höchstleistungs-Killer zu erkennen — und Schritt für Schritt loszuwerden.</p>
     </div>
     <div class="autor">
-      <img class="autor__photo" src="img/autoren/florian.jpg" alt="Florian Glöbl" loading="lazy" width="520" height="520">
+      <div class="autor__portrait"><img class="autor__photo" src="img/autoren/florian.jpg" alt="Florian Glöbl" loading="lazy" width="520" height="520"></div>
       <h3 class="autor__name">Florian Glöbl</h3>
       <p class="autor__role">Geschäftsführer G&amp;P</p>
       <p class="autor__bio">Übersetzt Systemdenken in den Werks- und Büroalltag. Mag konkrete Experimente lieber als große Programme.</p>
@@ -2109,8 +2116,8 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
 </section>
 
 <footer class="colophon">
-  <p><strong>Höchstleistungs-Killer</strong> · Benno Löffler · Florian Glöbl</p>
-  <p>Buchentwurf v5 · 2026-05-17 · <a href="#cover">Zum Anfang</a> · <a href="#toc">Inhalt</a></p>
+  <p><strong>Höchstleistungskiller in Organisationen</strong> · Benno Löffler · Florian Glöbl</p>
+  <p>Buchentwurf v6 · 2026-10-09 · <a href="#cover">Zum Anfang</a> · <a href="#toc">Inhalt</a></p>
   <p>Satz in Fraunces und Inter.</p>
   <p><em>#höchstleistungsKiller</em></p>
   <p><em>#saugutezusammenarbeit</em></p>
@@ -2130,99 +2137,87 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
   tick();
 })();
 
-/* Side TOC slider — auto-sticks once content starts, manual drawer on mobile */
+/* Desktop contents stay visible; mobile uses the manual drawer. */
 (function(){
   var toc=document.getElementById('toc');
   var nav=document.getElementById('navToc');
   var btn=document.getElementById('tocToggle');
   var closeBtn=document.getElementById('tocClose');
   var backdrop=document.getElementById('tocBackdrop');
-  var cover=document.getElementById('cover');
   if(!toc||!btn) return;
 
-  var isDesktop=function(){return window.matchMedia('(min-width:901px)').matches};
-  var pastCover=false;       // scrolled past the cover slide
+  var isDesktop=function(){return window.matchMedia('(min-width:1200px)').matches};
   var mobileOpen=false;      // mobile drawer state
-  var userHidden=false;      // desktop: user clicked × to collapse
+  var returnFocus=btn;
 
   function render(){
+    var visible;
     if(isDesktop()){
-      var visible = pastCover && !userHidden;
+      mobileOpen=false;
+      visible=true;
       toc.classList.toggle('is-visible', visible);
       toc.classList.remove('is-open');
       nav.classList.toggle('is-hidden', visible);
       backdrop.classList.remove('is-open');
       btn.setAttribute('aria-expanded', visible?'true':'false');
-      btn.textContent = pastCover ? 'Inhaltsverzeichnis anzeigen' : 'Inhaltsverzeichnis öffnen';
     }else{
+      visible=mobileOpen;
       toc.classList.toggle('is-open', mobileOpen);
       toc.classList.remove('is-visible');
       backdrop.classList.toggle('is-open', mobileOpen);
       nav.classList.remove('is-hidden');
       btn.setAttribute('aria-expanded', mobileOpen?'true':'false');
-      btn.textContent = 'Inhaltsverzeichnis öffnen';
     }
+    toc.inert=!visible;
+    toc.setAttribute('aria-hidden', visible?'false':'true');
+    var modal=!isDesktop() && mobileOpen;
+    document.body.classList.toggle('toc-modal-open',modal);
+    if(modal){toc.setAttribute('role','dialog');toc.setAttribute('aria-modal','true');}
+    else{toc.removeAttribute('role');toc.removeAttribute('aria-modal');}
   }
 
-  // Auto-reveal once cover leaves the viewport
-  if(cover && 'IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        var nowPast = !e.isIntersecting;
-        if(!nowPast) userHidden=false;   // reset manual hide once we're back on the cover
-        pastCover = nowPast;
-      });
-      render();
-    },{threshold:0.15});
-    io.observe(cover);
-  }else{
-    pastCover=true;
+  function openToc(trigger){
+    returnFocus=trigger || btn;
+    if(!isDesktop()) mobileOpen=true;
+    render();
+    var target=isDesktop()?toc.querySelector('a[href]'):closeBtn;
+    target.focus({preventScroll:true});
+  }
+  function closeToc(restoreFocus){
+    if(isDesktop()) return;
+    mobileOpen=false;
+    render();
+    if(restoreFocus) returnFocus.focus({preventScroll:true});
   }
 
-  // "Inhalt" pill: expand on desktop, open drawer on mobile, scroll into content from cover
-  btn.addEventListener('click',function(){
-    if(isDesktop()){
-      if(pastCover){
-        userHidden=false; render();
-      }else{
-        var target=document.getElementById('epigraph');
-        if(target) window.scrollTo({top:target.offsetTop,behavior:'smooth'});
-      }
-    }else{
-      mobileOpen=true; render();
-    }
-  });
+  btn.addEventListener('click',function(){openToc(btn);});
 
-  // × button: hide on desktop, close drawer on mobile
-  closeBtn.addEventListener('click',function(){
-    if(isDesktop()){ userHidden=true; render(); }
-    else { mobileOpen=false; render(); }
-  });
-  backdrop.addEventListener('click',function(){ mobileOpen=false; render(); });
+  closeBtn.addEventListener('click',function(){closeToc(true);});
+  backdrop.addEventListener('click',function(){closeToc(true);});
   document.addEventListener('keydown',function(e){
-    if(e.key!=='Escape') return;
-    if(isDesktop() && pastCover && !userHidden){ userHidden=true; render(); }
-    else if(!isDesktop() && mobileOpen){ mobileOpen=false; render(); }
+    if(e.key==='Escape' && !toc.inert){closeToc(true);return;}
+    if(e.key!=='Tab' || isDesktop() || !mobileOpen) return;
+    var items=toc.querySelectorAll('button,a[href]');
+    var first=items[0],last=items[items.length-1];
+    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
 
   // Close drawer after jumping to a chapter (mobile only)
   toc.addEventListener('click',function(e){
     var a=e.target.closest && e.target.closest('a[href^="#"]');
-    if(a && !isDesktop()){ mobileOpen=false; render(); }
+    if(a && !isDesktop()){
+      closeToc(false);
+      var target=document.getElementById(a.getAttribute('href').slice(1));
+      if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}
+    }
   });
 
   // Any other "#toc" link (footer, etc.)
   document.querySelectorAll('a[href="#toc"]').forEach(function(a){
     a.addEventListener('click',function(e){
       e.preventDefault();
-      if(isDesktop()){
-        userHidden=false;
-        var target=document.getElementById('epigraph');
-        if(target) window.scrollTo({top:target.offsetTop,behavior:'smooth'});
-        render();
-      }else{
-        mobileOpen=true; render();
-      }
+      openToc(a);
     });
   });
 
@@ -2241,15 +2236,16 @@ footer.colophon a{color:var(--vs-warm);text-decoration:none;border-bottom:1px so
     var spy=new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(!entry.isIntersecting) return;
-        links.forEach(function(l){l.classList.remove('is-active');});
+        links.forEach(function(l){l.classList.remove('is-active');l.removeAttribute('aria-current');});
         var match=pairs.find(function(p){return p.el===entry.target;});
         if(!match) return;
         match.a.classList.add('is-active');
+        match.a.setAttribute('aria-current','location');
         // keep active link in view inside the sidebar
         var r=match.a.getBoundingClientRect();
         var tr=toc.getBoundingClientRect();
-        if(r.top<tr.top+40 || r.bottom>tr.bottom-40){
-          match.a.scrollIntoView({block:'nearest'});
+        if(!toc.inert && (r.top<tr.top+40 || r.bottom>tr.bottom-40)){
+          toc.scrollTop+=r.top-tr.top-toc.clientHeight/2;
         }
       });
     },{rootMargin:'-30% 0px -60% 0px',threshold:0});
